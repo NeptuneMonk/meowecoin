@@ -71,14 +71,25 @@
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="pill">Concept preview · no live transactions</span>
+          <span class="pill">MEOWE is live on Solana · protocol is a concept</span>
           <h1 id="hero-title">
             <span class="grad">Meowecoin</span> → DOGE&nbsp;Chain Injection Protocol <span class="tag-p2fk">(P2FK)</span>
           </h1>
           <p class="lead">A cross-chain meme engine that turns Meowecoin burns into real DOGE-chain on-chain creations.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#concept">View Concept</a>
+            <a class="btn btn-primary" data-meowe-link="buy" target="_blank" rel="noopener noreferrer">Buy Meowecoin</a>
+            <a class="btn btn-ghost" data-meowe-link="chart" target="_blank" rel="noopener noreferrer">Chart</a>
+            <a class="btn btn-ghost" href="#concept">View Concept</a>
             <button class="btn btn-ghost" type="button" disabled aria-disabled="true" title="Whitepaper coming soon">Read Whitepaper <em>(Soon)</em></button>
+          </div>
+          <div class="mkt" id="market" aria-live="polite">
+            <dl class="mkt-stats">
+              <div><dt>Market cap</dt><dd data-stat="mcap">—</dd></div>
+              <div><dt>Price</dt><dd data-stat="price">—</dd></div>
+              <div><dt>24h</dt><dd data-stat="change">—</dd></div>
+              <div><dt>24h volume</dt><dd data-stat="vol">—</dd></div>
+            </dl>
+            <a class="mkt-src" data-meowe-link="chart" target="_blank" rel="noopener noreferrer">Data: DexScreener</a>
           </div>
           <p class="micro">Built on <a href="#p2fk">P2FK (Pay-to-Future-Key)</a>, the multichain metaprotocol by embii behind <a href="https://github.com/embiimob/sup" target="_blank" rel="noopener">Sup!?</a>.</p>
         </div>
@@ -487,8 +498,21 @@
         <header class="section-head reveal">
           <span class="eyebrow">05 · Economics</span>
           <h2 id="tok-title">Tokenomics concept <span class="badge-concept">Concept: not final</span></h2>
-          <p>A sketch of how value could move. Numbers, ratios and mechanics will change before anything ships.</p>
+          <p>The MEOWE mint is live on Solana, paired with wrapped DOGE. The burn, fee, and node-reward ideas below are still a concept.</p>
         </header>
+        <div class="token-bar reveal">
+          <div class="ca">
+            <div class="ca-meta">
+              <span class="ca-label">Solana contract · <span data-meowe-text="symbol">MEOWE</span></span>
+              <code id="ca-text" class="ca-addr"></code>
+            </div>
+            <button type="button" class="btn btn-sm ca-copy" id="ca-copy" aria-label="Copy contract address">Copy</button>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" data-meowe-link="buy" target="_blank" rel="noopener noreferrer">Buy Meowecoin</a>
+            <a class="btn btn-ghost" data-meowe-link="chart" target="_blank" rel="noopener noreferrer">Chart</a>
+          </div>
+        </div>
         <div class="grid grid-4">
           <article class="card tok reveal">
             <span class="tok-k">🔥</span>
@@ -511,7 +535,7 @@
             <p>An optional ~0.5% fee might help fund the treasury and infrastructure, with a share going to node operators. Concept only, still to be decided, and not a promise of returns.</p>
           </article>
         </div>
-        <p class="fineprint reveal">Not an offer, not financial advice. There is no sale, no staking, and no live contract on this page. A share of fees for node operators is a concept only: no extra percentages, and no promised returns.</p>
+        <p class="fineprint reveal">Not an offer and not financial advice. This page does not connect a wallet or send a transaction. Buying happens on Pump.fun. A share of fees for node operators is a concept only: no extra percentages, and no promised returns.</p>
       </div>
     </section>
 
@@ -673,13 +697,15 @@
         <a class="is-live" href="https://t.me/meowecoinOG" target="_blank" rel="noopener noreferrer" aria-label="Join Meowecoin OG on Telegram" title="Join Meowecoin OG on Telegram">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         </a>
-        <a href="#" aria-label="X / Twitter (coming soon)" title="Coming soon">𝕏</a>
+        <a class="is-live" href="https://x.com/1742Meowe" target="_blank" rel="noopener noreferrer" aria-label="Follow Meowecoin on X" title="Follow Meowecoin on X">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
         <a href="#" aria-label="Discord (coming soon)" title="Coming soon">◉</a>
         <a href="#" aria-label="GitHub (coming soon)" title="Coming soon">⌥</a>
       </nav>
     </div>
     <div class="container disclaimer">
-      <p><strong>Concept only.</strong> This site describes a proposed design. It is not financial advice, and nothing here performs live transactions, connects wallets, or sells tokens. P2FK and Sup!? are created by <a href="https://github.com/embiimob" target="_blank" rel="noopener">embii</a>. See <a href="https://github.com/embiimob/sup" target="_blank" rel="noopener">github.com/embiimob/sup</a> and <a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a>.</p>
+      <p><strong>Concept only for the injection protocol.</strong> This site is not financial advice. It does not connect a wallet or send a transaction. MEOWE trades on Pump.fun. P2FK and Sup!? are created by <a href="https://github.com/embiimob" target="_blank" rel="noopener">embii</a>. See <a href="https://github.com/embiimob/sup" target="_blank" rel="noopener">github.com/embiimob/sup</a> and <a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a>.</p>
       <p class="copy">© <span id="year">2026</span> Meowecoin · meoweco.in</p>
     </div>
   </footer>
