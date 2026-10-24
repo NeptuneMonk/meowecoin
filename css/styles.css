@@ -155,7 +155,12 @@ p { margin: 0 0 1em; }
 .diagram .lane-t { fill: var(--gold); font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-anchor: middle; }
 .diagram .box rect { fill: #221d10; stroke: rgba(212,178,53,.55); stroke-width: 1.5; }
 .diagram .box rect.hl { fill: #3a2f0e; stroke: var(--gold-2); stroke-width: 2.5; }
+.diagram .box rect.community { fill: #14221f; stroke: rgba(43, 165, 154, .8); }
+.diagram .box rect.engine { fill: #2c2614; stroke: var(--gold); stroke-width: 2; }
 .diagram .box.side rect { fill: #17140c; stroke: rgba(231,127,168,.55); stroke-dasharray: 5 4; }
+.node-net { margin-bottom: 28px; }
+#nodes .callout { margin-top: 22px; }
+#nodes .fineprint { margin-top: 0; }
 .diagram .n { fill: var(--gold-2); font-size: 22px; font-weight: 900; text-anchor: middle; }
 .diagram .t { fill: var(--text); font-size: 15px; font-weight: 800; text-anchor: middle; }
 .diagram .t.sm { font-size: 13px; }

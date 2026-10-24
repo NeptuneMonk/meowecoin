@@ -53,6 +53,7 @@
         <a href="#concept">Solution</a>
         <a href="#p2fk">P2FK</a>
         <a href="#proof">Proof</a>
+        <a href="#nodes">Nodes</a>
         <a href="#tokenomics">Tokenomics</a>
         <a href="#showcase">Showcase</a>
         <a href="#airdrops">Airdrops</a>
@@ -174,7 +175,7 @@
             <li><span class="step">3</span><div><h3>Quote</h3><p>It works out the DOGE equivalent of the burned amount.</p></div></li>
             <li><span class="step">4</span><div><h3>Spend</h3><p>The treasury spends native DOGE from its own full node.</p></div></li>
             <li><span class="step">5</span><div><h3>Build</h3><p>A P2FK transaction is built that carries the payload.</p></div></li>
-            <li><span class="step">6</span><div><h3>Etch</h3><p>A permanent object (image, text, meme, metadata) lands on the Dogecoin chain.</p></div></li>
+            <li><span class="step">6</span><div><h3>Etch &amp; index</h3><p>A permanent object lands on Dogecoin. The project node and community nodes index it. p2fk.io stays an optional public reader.</p></div></li>
           </ol>
           <figure class="mascot reveal">
             <img src="assets/img/mascot-excellent-move.webp" width="500" height="500" loading="lazy" alt="Smug ginger cat meme captioned 'excellent move'">
@@ -183,7 +184,7 @@
 
         <figure class="diagram reveal" aria-labelledby="diagram-cap">
           <!-- Desktop / wide diagram -->
-          <svg class="diagram-wide" viewBox="0 0 1120 470" role="img" aria-label="Architecture: Solana burn, backend listener, DOGE quote, DOGE treasury, P2FK builder, Dogecoin chain. Side paths: treasury sends Meowecoin to a dead wallet; p2fk.io reads objects back.">
+          <svg class="diagram-wide" viewBox="0 0 1120 490" role="img" aria-label="Architecture: Solana burn, backend listener, DOGE quote, DOGE treasury, P2FK builder, Dogecoin chain. Side paths: optional fee, dead wallet, and an indexer run by the project node plus community nodes. p2fk.io is an optional public reader.">
             <defs>
               <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
               <linearGradient id="boxg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2312"/><stop offset="1" stop-color="#1a160c"/></linearGradient>
@@ -224,18 +225,18 @@
               <text x="467" y="394" class="t">Optional fee</text><text x="467" y="414" class="s">~0.5% (concept)</text>
               <rect x="578" y="360" width="150" height="80" rx="14"/>
               <text x="653" y="394" class="t">Dead wallet</text><text x="653" y="414" class="s">MEOWE received</text>
-              <rect x="950" y="360" width="150" height="80" rx="14"/>
-              <text x="1025" y="394" class="t">p2fk.io API</text><text x="1025" y="414" class="s">reads it back</text>
+              <rect x="945" y="348" width="160" height="112" rx="14"/>
+              <text x="1025" y="382" class="t">Node indexer</text><text x="1025" y="404" class="s">project + community</text><text x="1025" y="426" class="s">p2fk.io optional</text>
             </g>
             <g class="flowline dashed">
               <path d="M467 230 V358" marker-end="url(#arw)"/>
               <path d="M653 230 V358" marker-end="url(#arw)"/>
-              <path d="M1025 230 V358" marker-end="url(#arw)"/>
+              <path d="M1025 230 V346" marker-end="url(#arw)"/>
             </g>
           </svg>
 
           <!-- Mobile / narrow diagram -->
-          <svg class="diagram-tall" viewBox="0 0 360 860" role="img" aria-label="Architecture flow, top to bottom: burn, listener, quote, treasury spend, P2FK builder, on-chain object, with side paths to dead wallet and p2fk.io.">
+          <svg class="diagram-tall" viewBox="0 0 360 900" role="img" aria-label="Architecture flow, top to bottom: burn, listener, quote, treasury spend, P2FK builder, on-chain object. Side paths: fee, dead wallet, and a node indexer. p2fk.io is an optional public reader.">
             <defs>
               <marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
             </defs>
@@ -250,7 +251,7 @@
             <g class="box side">
               <rect x="256" y="382" width="94" height="84" rx="12"/><text x="303" y="418" class="t sm">Dead</text><text x="303" y="438" class="t sm">wallet</text>
               <rect x="256" y="258" width="94" height="84" rx="12"/><text x="303" y="294" class="t sm">Fee</text><text x="303" y="314" class="s">~0.5%</text>
-              <rect x="20" y="760" width="220" height="70" rx="14"/><text x="130" y="790" class="t">p2fk.io API</text><text x="130" y="812" class="s">reads objects back</text>
+              <rect x="20" y="748" width="220" height="112" rx="14"/><text x="130" y="782" class="t">Node indexer</text><text x="130" y="804" class="s">project + community</text><text x="130" y="826" class="s">p2fk.io optional</text>
             </g>
             <g class="flowline">
               <path d="M130 94 V132" marker-end="url(#arw2)"/>
@@ -262,10 +263,10 @@
             <g class="flowline dashed">
               <path d="M240 300 H254" marker-end="url(#arw2)"/>
               <path d="M240 424 H254" marker-end="url(#arw2)"/>
-              <path d="M130 714 V758" marker-end="url(#arw2)"/>
+              <path d="M130 714 V746" marker-end="url(#arw2)"/>
             </g>
           </svg>
-          <figcaption id="diagram-cap">Concept architecture. Solid arrows show the main flow; dashed arrows show side paths. The fee and the burn mechanics are not final.</figcaption>
+          <figcaption id="diagram-cap">Concept architecture. Solid arrows show the main flow; dashed arrows show side paths. Creations are indexed by the project node and community nodes. p2fk.io is an optional public reader, not the only backend. The fee and the burn mechanics are not final.</figcaption>
         </figure>
       </div>
     </section>
@@ -295,8 +296,8 @@
             <p>Sup!? references Dogecoin P2FK content with a <code>DOG:</code> prefix (for example <code>DOG:&lt;txid&gt;/dodge-meme.gif</code>) and ships with Dogecoin Core. That makes a DOGE full node a natural home for Meowecoin artifacts.</p>
           </article>
           <article class="card reveal">
-            <h3>Readable over the web</h3>
-            <p><a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a> (bitFossil) is an open-source REST API that exposes P2FK messages, objects and profiles across BTC, LTC, DOGE and MZC. Meowecoin artifacts could be looked up there.</p>
+            <h3>A public reader, not the only one</h3>
+            <p><a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a> (bitFossil), by embii, is an open-source REST API for P2FK messages, objects and profiles across BTC, LTC, DOGE and MZC. It stays a useful public reader. Meowecoin will not depend on it alone: the project node and community Dogecoin nodes index the network too.</p>
           </article>
         </div>
 
@@ -345,9 +346,142 @@
     </section>
 
     <!-- ============================================================
+         5c. COMMUNITY NODE NETWORK
+         ============================================================ -->
+    <section class="section section-alt" id="nodes" aria-labelledby="nodes-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">04c · The network</span>
+          <h2 id="nodes-title">Run a node, power the universe</h2>
+          <p>The system will not depend solely on <a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a>. Any user will be able to connect their own Dogecoin full node, and the project will run its own indexed node. p2fk.io remains a useful public reader and API, credited to <a href="https://github.com/embiimob" target="_blank" rel="noopener">embii</a>.</p>
+        </header>
+
+        <figure class="diagram node-net reveal">
+          <svg class="diagram-wide" viewBox="0 0 1040 420" role="img" aria-label="Three community Dogecoin nodes and the Meowecoin project node feed an injection engine and indexer, which writes to the Dogecoin chain. p2fk.io sits to the side as an optional public reader.">
+            <defs>
+              <marker id="node-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
+            </defs>
+            <g class="box">
+              <rect class="community" x="20" y="16" width="230" height="100" rx="14"/>
+              <text x="135" y="58" class="t">Community node</text>
+              <text x="135" y="82" class="s">your Dogecoin full node</text>
+              <rect class="community" x="270" y="16" width="230" height="100" rx="14"/>
+              <text x="385" y="58" class="t">Community node</text>
+              <text x="385" y="82" class="s">another full node</text>
+              <rect class="community" x="520" y="16" width="230" height="100" rx="14"/>
+              <text x="635" y="58" class="t">Community node</text>
+              <text x="635" y="82" class="s">the more, the stronger</text>
+              <rect class="hl" x="770" y="16" width="230" height="100" rx="14"/>
+              <text x="885" y="58" class="t">Project node</text>
+              <text x="885" y="82" class="s">our indexed full node</text>
+            </g>
+            <g class="flowline">
+              <path d="M135 116 V168" marker-end="url(#node-arw)"/>
+              <path d="M385 116 V168" marker-end="url(#node-arw)"/>
+              <path d="M635 116 V168" marker-end="url(#node-arw)"/>
+              <path d="M885 116 V168" marker-end="url(#node-arw)"/>
+            </g>
+            <g class="box">
+              <rect class="engine" x="20" y="170" width="980" height="88" rx="16"/>
+              <text x="510" y="206" class="t">Injection engine + indexer</text>
+              <text x="510" y="230" class="s">fed by the project node and every community node</text>
+            </g>
+            <g class="flowline">
+              <path d="M360 258 V308" marker-end="url(#node-arw)"/>
+            </g>
+            <g class="box">
+              <rect class="hl" x="180" y="310" width="360" height="84" rx="14"/>
+              <text x="360" y="346" class="t">Dogecoin chain</text>
+              <text x="360" y="370" class="s">permanent artifacts</text>
+            </g>
+            <g class="box side">
+              <rect x="620" y="310" width="300" height="84" rx="14"/>
+              <text x="770" y="346" class="t">p2fk.io</text>
+              <text x="770" y="370" class="s">optional public reader</text>
+            </g>
+            <g class="flowline dashed">
+              <path d="M540 352 H618" marker-end="url(#node-arw)"/>
+            </g>
+          </svg>
+
+          <svg class="diagram-tall" viewBox="0 0 360 760" role="img" aria-label="Community Dogecoin nodes and the project node stack into an injection engine and indexer, then the Dogecoin chain. p2fk.io is an optional public reader.">
+            <defs>
+              <marker id="node-arw-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
+            </defs>
+            <g class="box">
+              <rect class="community" x="30" y="8" width="300" height="86" rx="14"/>
+              <text x="180" y="46" class="t">Community node</text>
+              <text x="180" y="70" class="s">your Dogecoin full node</text>
+              <rect class="community" x="30" y="130" width="300" height="86" rx="14"/>
+              <text x="180" y="168" class="t">Community node</text>
+              <text x="180" y="192" class="s">another full node</text>
+              <rect class="hl" x="30" y="252" width="300" height="86" rx="14"/>
+              <text x="180" y="290" class="t">Project node</text>
+              <text x="180" y="314" class="s">our indexed full node</text>
+              <rect class="engine" x="30" y="374" width="300" height="96" rx="14"/>
+              <text x="180" y="412" class="t">Injection engine</text>
+              <text x="180" y="436" class="s">indexer for the universe</text>
+              <rect class="hl" x="30" y="506" width="300" height="86" rx="14"/>
+              <text x="180" y="544" class="t">Dogecoin chain</text>
+              <text x="180" y="568" class="s">permanent artifacts</text>
+            </g>
+            <g class="box side">
+              <rect x="30" y="640" width="300" height="86" rx="14"/>
+              <text x="180" y="678" class="t">p2fk.io</text>
+              <text x="180" y="702" class="s">optional public reader</text>
+            </g>
+            <g class="flowline">
+              <path d="M180 94 V128" marker-end="url(#node-arw-m)"/>
+              <path d="M180 216 V250" marker-end="url(#node-arw-m)"/>
+              <path d="M180 338 V372" marker-end="url(#node-arw-m)"/>
+              <path d="M180 470 V504" marker-end="url(#node-arw-m)"/>
+            </g>
+            <g class="flowline dashed">
+              <path d="M180 592 V638" marker-end="url(#node-arw-m)"/>
+            </g>
+          </svg>
+          <figcaption>Community nodes and the project node feed the same injection engine and indexer. p2fk.io stays beside them as an optional public reader. Concept only: nothing here is live.</figcaption>
+        </figure>
+
+        <div class="grid grid-4">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">Ð</div>
+            <h3>Connect your own node</h3>
+            <p>Any user will be able to connect their own Dogecoin full node to the network.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">◎</div>
+            <h3>The project's indexed node</h3>
+            <p>Meowecoin will run its own indexed Dogecoin node, so the system does not rely fully on p2fk.io.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">✦</div>
+            <h3>A more resilient universe</h3>
+            <p>The more users connect nodes, the more stable and resilient the Meowecoin universe becomes.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">◇</div>
+            <h3>Benefits for operators</h3>
+            <p>Node operators will receive benefits from the fee structure. Concept only: no specific percentages, and no promise of returns.</p>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <div class="callout-icon" aria-hidden="true">🐾</div>
+          <p><strong>More nodes, a stronger universe.</strong> Each Dogecoin full node someone connects makes indexing steadier. p2fk.io remains a public reader credited to embii. It is not the only way the network is read.</p>
+        </div>
+
+        <div class="cta-row">
+          <button class="btn btn-ghost" type="button" disabled aria-disabled="true" title="Node software coming soon">Run a Node <em>(Coming Soon)</em></button>
+        </div>
+        <p class="fineprint reveal">Concept only, not financial advice. Node software is not available yet, and benefits for operators are not a yield, a rate, or a promise of returns.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
          6. TOKENOMICS CONCEPT
          ============================================================ -->
-    <section class="section section-alt" id="tokenomics" aria-labelledby="tok-title">
+    <section class="section" id="tokenomics" aria-labelledby="tok-title">
       <div class="container">
         <header class="section-head reveal">
           <span class="eyebrow">05 · Economics</span>
@@ -373,17 +507,17 @@
           <article class="card tok reveal">
             <span class="tok-k">0.5%</span>
             <h3>Optional fee</h3>
-            <p>An optional ~0.5% fee might help fund the treasury and infrastructure. To be decided.</p>
+            <p>An optional ~0.5% fee might help fund the treasury and infrastructure, with a share going to node operators. Concept only, still to be decided, and not a promise of returns.</p>
           </article>
         </div>
-        <p class="fineprint reveal">Not an offer, not financial advice. There is no sale, no staking, and no live contract on this page.</p>
+        <p class="fineprint reveal">Not an offer, not financial advice. There is no sale, no staking, and no live contract on this page. A share of fees for node operators is a concept only: no extra percentages, and no promised returns.</p>
       </div>
     </section>
 
     <!-- ============================================================
          7. SHOWCASE EXAMPLES (non-functional)
          ============================================================ -->
-    <section class="section" id="showcase" aria-labelledby="show-title">
+    <section class="section section-alt" id="showcase" aria-labelledby="show-title">
       <div class="container">
         <header class="section-head reveal">
           <span class="eyebrow">06 · Imagine</span>
@@ -454,7 +588,7 @@
     <!-- ============================================================
          7b. HOLDER AIRDROPS (planned)
          ============================================================ -->
-    <section class="section section-alt" id="airdrops" aria-labelledby="air-title">
+    <section class="section" id="airdrops" aria-labelledby="air-title">
       <div class="container">
         <header class="section-head reveal">
           <span class="eyebrow">06b · Future</span>
@@ -505,7 +639,7 @@
     <!-- ============================================================
          8. ROADMAP
          ============================================================ -->
-    <section class="section" id="roadmap" aria-labelledby="road-title">
+    <section class="section section-alt" id="roadmap" aria-labelledby="road-title">
       <div class="container">
         <header class="section-head reveal">
           <span class="eyebrow">07 · Path</span>
@@ -513,9 +647,9 @@
         </header>
         <ol class="roadmap">
           <li class="phase now reveal"><span class="phase-n">Phase 1</span><h3>Concept website</h3><p>Explain the idea and gather the community. <em>You are here.</em></p></li>
-          <li class="phase reveal"><span class="phase-n">Phase 2</span><h3>Treasury + burn listener</h3><p>Fund a native-DOGE treasury on our own full node and watch Solana burns.</p></li>
-          <li class="phase reveal"><span class="phase-n">Phase 3</span><h3>P2FK injection engine</h3><p>Build P2FK transactions with embii's Sup!? tooling and broadcast them to Dogecoin.</p></li>
-          <li class="phase reveal"><span class="phase-n">Phase 4</span><h3>Full Meowecoin creative platform</h3><p>Mint, write, upload and remix DOGE-chain artifacts from one interface, plus <strong>planned airdrops</strong> of existing Doge-themed P2FK artifacts to Meowecoin holders.</p></li>
+          <li class="phase reveal"><span class="phase-n">Phase 2</span><h3>Treasury, project node, onboarding</h3><p>Fund a native-DOGE treasury on our own indexed full node, watch Solana burns, and open node-operator onboarding.</p></li>
+          <li class="phase reveal"><span class="phase-n">Phase 3</span><h3>Injection engine + node network</h3><p>Build P2FK transactions with embii's Sup!? tooling, broadcast them to Dogecoin, and let community nodes index alongside the project node.</p></li>
+          <li class="phase reveal"><span class="phase-n">Phase 4</span><h3>Platform, airdrops, node rewards</h3><p>Mint, write, upload and remix DOGE-chain artifacts from one interface, plus <strong>planned airdrops</strong> of existing Doge-themed P2FK artifacts to Meowecoin holders. Node operators are planned to receive benefits from the fee structure. Concept only: no promised returns.</p></li>
         </ol>
       </div>
     </section>
