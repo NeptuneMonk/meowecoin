@@ -56,7 +56,7 @@ Always check the current DNS values in each host's docs before you go live.
 
 - Theme colours are the CSS variables at the top of `css/styles.css`.
 - Sections in `index.html` are wrapped in clearly commented blocks. To add one, copy a `<section class="section">` block and add a nav link.
-- The social icons in the footer are placeholders (`href="#"`). Replace them with real URLs.
+- The footer Telegram button links to the Meowecoin OG group (`https://t.me/meowecoinOG`). The other social icons are still placeholders (`href="#"`).
 - The "Read Whitepaper (Soon)" and showcase buttons are intentionally disabled.
 
 ## Credits and facts
