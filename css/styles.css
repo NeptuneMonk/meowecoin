@@ -131,7 +131,7 @@ p { margin: 0 0 1em; }
 .coin-orbit { position: relative; width: min(380px, 80vw); aspect-ratio: 1; }
 .coin-orbit::before { content: ""; position: absolute; inset: -8%; border-radius: 50%; border: 2px dashed rgba(212,178,53,.35); animation: spin 40s linear infinite; }
 .coin-orbit::after { content: ""; position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(circle, rgba(212,178,53,.45), transparent 65%); filter: blur(30px); z-index: -1; }
-.coin { width: 100%; height: 100%; border-radius: 50%; animation: bob 6s ease-in-out infinite; box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+.coin { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; animation: bob 6s ease-in-out infinite; box-shadow: 0 30px 60px rgba(0,0,0,.5); }
 .orbit-chip { position: absolute; font-weight: 900; font-size: .85rem; padding: .4em .8em; border-radius: 999px; color: #1a1406; box-shadow: 0 6px 20px rgba(0,0,0,.4); animation: bob 5s ease-in-out infinite; }
 .chip-sol { background: linear-gradient(90deg, #9b7bff, #2ee6b6); top: 6%; left: -6%; }
 .chip-doge { background: var(--gold-2); bottom: 10%; right: -8%; animation-delay: -2s; }
