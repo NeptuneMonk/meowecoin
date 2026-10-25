@@ -57,7 +57,7 @@ Always check the current DNS values in each host's docs before you go live.
 - Theme colours are the CSS variables at the top of `css/styles.css`.
 - Sections in `index.html` are wrapped in clearly commented blocks. To add one, copy a `<section class="section">` block and add a nav link.
 - The footer Telegram button links to the Meowecoin OG group (`https://t.me/meowecoinOG`). The X button links to `https://x.com/1742Meowe`. Discord and GitHub are still placeholders (`href="#"`).
-- The Solana mint, Pump.fun buy URL, and DexScreener chart URL live in the `MEOWE` constant at the top of `js/main.js`.
+- The Solana mint, Pump.fun buy URL, and DexScreener chart URL are written in `index.html` so crawlers can read them without JavaScript. The same values live in the `MEOWE` constant at the top of `js/main.js`, which enhances copy and refreshes those links.
 - The "Read Whitepaper (Soon)" and showcase buttons are intentionally disabled.
 
 ## Credits and facts
