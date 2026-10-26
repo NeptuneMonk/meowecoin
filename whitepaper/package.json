@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "meowecoin-whitepaper",
+  "description": "Regenerate whitepaper HTML from Markdown. GitHub Pages does not run this.",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "marked": "^15.0.12"
+  }
+}

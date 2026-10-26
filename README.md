@@ -9,8 +9,9 @@ This is a single-page static **concept showcase** for Meowecoin. It is plain HTM
 ```
 index.html            all sections, with <!-- SECTION --> comments
 css/styles.css        theme variables (gold #d4b235), layout, animations, breakpoints
-js/main.js            mobile nav, scroll reveal, floating hero glyphs, footer year
+js/main.js            mobile nav, scroll reveal, floating hero glyphs, document modal, footer year
 assets/img/           coin logo, mascot, pop-art cat tiles, on-chain images, og-image.jpg
+whitepaper/           white paper + technical overview (Markdown, PDF, chart PNGs, full-screen reader)
 favicon.ico, favicon-32x32.png, apple-touch-icon.png, site.webmanifest
 CNAME                 meoweco.in (used by GitHub Pages)
 robots.txt, sitemap.xml
@@ -58,7 +59,8 @@ Always check the current DNS values in each host's docs before you go live.
 - Sections in `index.html` are wrapped in clearly commented blocks. To add one, copy a `<section class="section">` block and add a nav link.
 - The footer Telegram button links to the Meowecoin OG group (`https://t.me/meowecoinOG`). The X button links to `https://x.com/1742Meowe`. Discord and GitHub are still placeholders (`href="#"`).
 - The Solana mint, Pump.fun buy URL, and DexScreener chart URL are written in `index.html` so crawlers can read them without JavaScript. The same values live in the `MEOWE` constant at the top of `js/main.js`, which enhances copy and refreshes those links.
-- The "Read Whitepaper (Soon)" and showcase buttons are intentionally disabled.
+- **Read Whitepaper** opens an on-page reader. `#whitepaper` and `#technical` deep-link the two tabs (for Telegram and X). Download PDF and Open full screen live in the reader bar. The full-screen page is `whitepaper/`. Showcase buttons stay disabled.
+- Document wording lives in `whitepaper/*.md`. Regenerate the HTML with `cd whitepaper && npm install && node render.mjs`. Pages serves the committed HTML; it does not run that script. The technical overview's Mermaid block is shown as `assets/action-flow.png`.
 
 ## Credits and facts
 

@@ -232,4 +232,275 @@ var MEOWE = {
   /* ---------- Footer year ---------- */
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- White paper / technical modal ---------- */
+  var docModal = document.getElementById('doc-modal');
+  var docDialog = document.getElementById('doc-dialog');
+  if (docModal && docDialog) {
+    var docOrder = ['whitepaper', 'technical'];
+    var docMeta = {
+      whitepaper: {
+        tab: document.getElementById('doc-tab-whitepaper'),
+        panel: document.getElementById('doc-panel-whitepaper'),
+        label: 'wp-title',
+        pdf: 'whitepaper/meowecoin-whitepaper.pdf',
+        pdfName: 'meowecoin-whitepaper.pdf',
+        full: 'whitepaper/#whitepaper'
+      },
+      technical: {
+        tab: document.getElementById('doc-tab-technical'),
+        panel: document.getElementById('doc-panel-technical'),
+        label: 'tech-title',
+        pdf: 'whitepaper/technical-overview.pdf',
+        pdfName: 'technical-overview.pdf',
+        full: 'whitepaper/#technical'
+      }
+    };
+    var docDownload = document.getElementById('doc-download');
+    var docFull = document.getElementById('doc-fullscreen');
+    var docOpeners = document.querySelectorAll('[data-doc-open]');
+    var docOpen = false;
+    var docPushed = false;
+    var docUnlockLater = false;
+    var docLastFocus = null;
+    var docScrollY = 0;
+
+    function docHashName() {
+      var h = (location.hash || '').replace(/^#/, '');
+      return docMeta[h] ? h : '';
+    }
+
+    function setOpeners(expanded) {
+      docOpeners.forEach(function (el) {
+        el.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+    }
+
+    function showDoc(name) {
+      var active = docMeta[name] ? name : 'whitepaper';
+      docOrder.forEach(function (key) {
+        var item = docMeta[key];
+        var on = key === active;
+        item.tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        item.tab.tabIndex = on ? 0 : -1;
+        if (on) item.panel.removeAttribute('hidden');
+        else item.panel.setAttribute('hidden', '');
+      });
+      docDialog.setAttribute('aria-labelledby', docMeta[active].label);
+      docDownload.href = docMeta[active].pdf;
+      docDownload.setAttribute('download', docMeta[active].pdfName);
+      docFull.href = docMeta[active].full;
+      return active;
+    }
+
+    function lockPage() {
+      docScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      var gap = window.innerWidth - document.documentElement.clientWidth;
+      document.body.classList.add('doc-open');
+      document.body.style.position = 'fixed';
+      document.body.style.top = '-' + docScrollY + 'px';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      if (gap > 0) document.body.style.paddingRight = gap + 'px';
+      Array.prototype.forEach.call(document.body.children, function (el) {
+        if (el === docModal) return;
+        el.setAttribute('inert', '');
+        el.setAttribute('aria-hidden', 'true');
+      });
+    }
+
+    function unlockPage() {
+      document.body.classList.remove('doc-open');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      document.body.style.paddingRight = '';
+      Array.prototype.forEach.call(document.body.children, function (el) {
+        el.removeAttribute('inert');
+        el.removeAttribute('aria-hidden');
+      });
+      var root = document.documentElement;
+      var prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = 'auto';
+      window.scrollTo(0, docScrollY);
+      root.style.scrollBehavior = prev;
+    }
+
+    function restoreFocus() {
+      var back = docLastFocus;
+      docLastFocus = null;
+      if (back && typeof back.focus === 'function' && document.contains(back)) {
+        try { back.focus({ preventScroll: true }); }
+        catch (err) { back.focus(); }
+      }
+    }
+
+    function closeMobileNav() {
+      var menu = document.getElementById('nav-menu');
+      var toggle = document.querySelector('.nav-toggle');
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        if (toggle) {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Open menu');
+        }
+      }
+    }
+
+    function focusables() {
+      var sel = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+      return Array.prototype.filter.call(docDialog.querySelectorAll(sel), function (el) {
+        if (el.closest('[hidden]')) return false;
+        return el.getClientRects().length > 0;
+      });
+    }
+
+    function openDoc(name, opts) {
+      opts = opts || {};
+      if (!docMeta[name]) name = 'whitepaper';
+      if (!docOpen) {
+        docLastFocus = document.activeElement;
+        closeMobileNav();
+        lockPage();
+        docModal.hidden = false;
+        docOpen = true;
+        setOpeners(true);
+        document.addEventListener('keydown', onDocKey);
+      }
+      showDoc(name);
+      if (!opts.fromHistory) {
+        var hash = '#' + name;
+        if (location.hash !== hash) {
+          if (opts.replace || docHashName()) {
+            history.replaceState({ doc: name }, '', hash);
+          } else {
+            history.pushState({ doc: name }, '', hash);
+            docPushed = true;
+          }
+        }
+      }
+      if (opts.focusDialog) {
+        try { docDialog.focus({ preventScroll: true }); }
+        catch (err) { docDialog.focus(); }
+      }
+    }
+
+    function finishClose() {
+      docModal.hidden = true;
+      unlockPage();
+      setOpeners(false);
+      restoreFocus();
+    }
+
+    function closeDoc(opts) {
+      opts = opts || {};
+      if (!docOpen) return;
+      var pushed = docPushed;
+      docOpen = false;
+      docPushed = false;
+      document.removeEventListener('keydown', onDocKey);
+      if (!opts.fromHistory && pushed) {
+        docUnlockLater = true;
+        history.back();
+        window.setTimeout(function () {
+          if (!docUnlockLater) return;
+          docUnlockLater = false;
+          finishClose();
+        }, 350);
+        return;
+      }
+      if (!opts.fromHistory && docHashName()) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      finishClose();
+    }
+
+    function onDocKey(e) {
+      if (!docOpen) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeDoc();
+        return;
+      }
+      var onTab = document.activeElement && document.activeElement.getAttribute('role') === 'tab';
+      if (onTab && (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'Home' || e.key === 'End')) {
+        e.preventDefault();
+        var current = document.activeElement.id === 'doc-tab-technical' ? 1 : 0;
+        var next = current;
+        if (e.key === 'ArrowRight') next = (current + 1) % docOrder.length;
+        else if (e.key === 'ArrowLeft') next = (current + docOrder.length - 1) % docOrder.length;
+        else if (e.key === 'Home') next = 0;
+        else next = docOrder.length - 1;
+        openDoc(docOrder[next], { replace: true });
+        docMeta[docOrder[next]].tab.focus({ preventScroll: true });
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      var items = focusables();
+      if (!items.length) {
+        e.preventDefault();
+        docDialog.focus({ preventScroll: true });
+        return;
+      }
+      var first = items[0];
+      var last = items[items.length - 1];
+      var active = document.activeElement;
+      if (e.shiftKey && (active === first || !docDialog.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener('focusin', function (e) {
+      if (!docOpen) return;
+      if (docDialog.contains(e.target)) return;
+      var items = focusables();
+      (items[0] || docDialog).focus({ preventScroll: true });
+    });
+
+    docModal.addEventListener('click', function (e) {
+      if (e.target.closest('[data-doc-dismiss]')) closeDoc();
+    });
+
+    var backdrop = docModal.querySelector('.doc-backdrop');
+    if (backdrop) {
+      backdrop.addEventListener('wheel', function (e) { e.preventDefault(); }, { passive: false });
+      backdrop.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+    }
+
+    docOrder.forEach(function (name) {
+      docMeta[name].tab.addEventListener('click', function () {
+        openDoc(name, { replace: true });
+      });
+    });
+
+    docOpeners.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        openDoc(el.getAttribute('data-doc-open') || 'whitepaper', { focusDialog: true });
+      });
+    });
+
+    function onHistory() {
+      if (docUnlockLater) {
+        docUnlockLater = false;
+        finishClose();
+        return;
+      }
+      var name = docHashName();
+      if (name) openDoc(name, { fromHistory: true, focusDialog: !docOpen });
+      else if (docOpen) closeDoc({ fromHistory: true });
+    }
+    window.addEventListener('hashchange', onHistory);
+    window.addEventListener('popstate', onHistory);
+
+    if (docHashName()) openDoc(docHashName(), { fromHistory: true, focusDialog: true });
+  }
 })();
