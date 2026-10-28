@@ -1,1280 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meowecoin (MEOWE) | meoweco.in</title>
-  <meta name="description" content="Official site for Meowecoin (MEOWE) on Solana. A concept showcase for a cross-chain meme engine that turns Meowecoin burns into permanent Dogecoin on-chain creations using the P2FK metaprotocol.">
-  <meta name="theme-color" content="#0f0d08">
-  <link rel="canonical" href="https://meoweco.in/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meowecoin (MEOWE) | Decentralized content monetization, powered by $MEOWE</title>
+<meta name="description" content="Decentralized content monetization, powered by $MEOWE. Mint your profile, your store items and your Spaces as tokenized content you truly own.">
+<meta name="theme-color" content="#1e1f22">
+<link rel="canonical" href="https://meoweco.in/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 
-  <!-- Icons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Meowecoin (MEOWE)">
+<meta property="og:url" content="https://meoweco.in/">
+<meta property="og:title" content="Decentralized content monetization, powered by $MEOWE">
+<meta property="og:description" content="Decentralized content monetization, powered by $MEOWE. Mint your profile, your store items and your Spaces as tokenized content you truly own.">
+<meta property="og:image" content="https://meoweco.in/assets/img/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Decentralized content monetization, powered by $MEOWE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@1742Meowe">
+<meta name="twitter:title" content="Decentralized content monetization, powered by $MEOWE">
+<meta name="twitter:description" content="Decentralized content monetization, powered by $MEOWE. Mint your profile, your store items and your Spaces as tokenized content you truly own.">
+<meta name="twitter:image" content="https://meoweco.in/assets/img/og-home.jpg">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Meowecoin (MEOWE)">
-  <meta property="og:url" content="https://meoweco.in/">
-  <meta property="og:title" content="Meowecoin (MEOWE)">
-  <meta property="og:description" content="Official site for Meowecoin (MEOWE) on Solana. Concept showcase for DOGE-chain creations using P2FK.">
-  <meta property="og:image" content="https://meoweco.in/assets/img/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Meowecoin gold cat coin logo">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@1742Meowe">
-  <meta name="twitter:title" content="Meowecoin (MEOWE)">
-  <meta name="twitter:description" content="Official site for Meowecoin (MEOWE) on Solana. Concept showcase for DOGE-chain creations using P2FK.">
-  <meta name="twitter:image" content="https://meoweco.in/assets/img/og-image.jpg">
-
-  <link rel="preload" as="image" href="assets/img/meowecoin-coin.webp" imagesrcset="assets/img/meowecoin-coin-480.webp 480w, assets/img/meowecoin-coin.webp 760w, assets/img/meowecoin-coin-1140.webp 1140w" imagesizes="(max-width: 820px) min(240px, 62vw), min(380px, 80vw)">
-  <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- ============================================================
-       HEADER / NAV
-       ============================================================ -->
-  <header class="site-header" id="top">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Meowecoin home">
-        <img src="assets/img/meowecoin-coin-96.png" srcset="assets/img/meowecoin-coin-96.png 2x, assets/img/meowecoin-coin-144.png 3x" width="40" height="40" alt="">
-        <span>Meowecoin</span>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="nav-menu" class="nav-menu" aria-label="Primary">
-        <a href="#what">What</a>
-        <a href="#problem">Problem</a>
-        <a href="#concept">Solution</a>
-        <a href="#p2fk">P2FK</a>
-        <a href="#proof">Proof</a>
-        <a href="#nodes">Nodes</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#showcase">Showcase</a>
-        <a href="#airdrops">Airdrops</a>
-        <a href="#roadmap">Roadmap</a>
-      </nav>
+<a class="skip-link" href="#top">Skip to content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top"><img src="assets/img/meowecoin-coin-96.png" srcset="assets/img/meowecoin-coin-96.png 2x, assets/img/meowecoin-coin-144.png 3x" width="34" height="34" alt=""><span>Meowecoin</span></a>
+    <nav class="nav-menu" id="nav-menu" aria-label="Primary">
+      <a href="#showcase">Showcase</a>
+      <a href="#how">How it works</a>
+      <a href="whitepaper/#wh-7-tokenomics-and-supply">Tokenomics</a>
+      <a href="whitepaper/#wh-12-roadmap">Roadmap</a>
+      <a href="whitepaper/#whitepaper">Whitepaper</a>
+      <a class="btn btn-primary btn-sm nav-cta" href="https://pump.fun/coin/FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump" target="_blank" rel="noopener noreferrer">Buy $MEOWE</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span></button>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>$MEOWE is live on Solana, paired with wDOGE</span>
+      <h1>Decentralized content monetization, powered by <span class="hl">$MEOWE</span></h1>
+      <p class="lead">Mint your profile, your store items and your Spaces as tokenized content you truly own. Build a community, grow it, and sell it whenever you want.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://pump.fun/coin/FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump" target="_blank" rel="noopener noreferrer">Buy Meowecoin</a>
+        <a class="btn btn-ghost" href="https://neptunemonk.github.io/meowcoin-portal/" target="_blank" rel="noopener noreferrer">Try the demo <span class="btn-tag">Preview</span></a>
+        <a class="btn btn-ghost" href="https://dexscreener.com/solana/5iq5n8sir2xkpgdjycem5vxw6hvquf6rkvyyemepls6u" target="_blank" rel="noopener noreferrer">Chart</a>
+        <a class="btn btn-ghost" href="whitepaper/#whitepaper">Whitepaper</a>
+      </div>
+      <ul class="facts">
+        <li>Token on Solana</li>
+        <li>Paired with wDOGE</li>
+        <li>Content written to Dogecoin</li>
+        <li>Community takeover</li>
+      </ul>
+      <p class="micro">Built on <a href="https://github.com/embiimob/Sup" target="_blank" rel="noopener noreferrer">P2FK</a>, the protocol by embii behind Sup!?.</p>
     </div>
-  </header>
-
-  <main id="main">
-
-    <!-- ============================================================
-         1. HERO
-         ============================================================ -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="pill">MEOWE is live on Solana · protocol is a concept</span>
-          <h1 id="hero-title">
-            <span class="grad">Meowecoin</span> → DOGE&nbsp;Chain Injection Protocol <span class="tag-p2fk">(P2FK)</span>
-          </h1>
-          <p class="lead">A cross-chain meme engine that turns Meowecoin burns into real DOGE-chain on-chain creations.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" data-meowe-link="buy" href="https://pump.fun/coin/FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump" target="_blank" rel="noopener noreferrer">Buy Meowecoin</a>
-            <a class="btn btn-ghost" data-meowe-link="chart" href="https://dexscreener.com/solana/5iq5n8sir2xkpgdjycem5vxw6hvquf6rkvyyemepls6u" target="_blank" rel="noopener noreferrer">Chart</a>
-            <a class="btn btn-ghost" href="#concept">View Concept</a>
-            <a class="btn btn-ghost" href="whitepaper/#whitepaper" data-doc-open="whitepaper" aria-haspopup="dialog" aria-controls="doc-dialog" aria-expanded="false">Read Whitepaper</a>
-            <a class="btn btn-ghost" href="https://neptunemonk.github.io/meowcoin-portal/" target="_blank" rel="noopener">Try the Demo <span class="btn-tag">Preview</span></a>
-          </div>
-          <div class="mkt" id="market" aria-live="polite">
-            <dl class="mkt-stats">
-              <div><dt>Market cap</dt><dd data-stat="mcap">—</dd></div>
-              <div><dt>Price</dt><dd data-stat="price">—</dd></div>
-              <div><dt>24h</dt><dd data-stat="change">—</dd></div>
-              <div><dt>24h volume</dt><dd data-stat="vol">—</dd></div>
-            </dl>
-            <a class="mkt-src" data-meowe-link="chart" href="https://dexscreener.com/solana/5iq5n8sir2xkpgdjycem5vxw6hvquf6rkvyyemepls6u" target="_blank" rel="noopener noreferrer">Data: DexScreener</a>
-          </div>
-          <p class="micro">Built on <a href="#p2fk">P2FK (Pay-to-Future-Key)</a>, the multichain metaprotocol by embii behind <a href="https://github.com/embiimob/sup" target="_blank" rel="noopener">Sup!?</a>.</p>
+    <div class="window" aria-label="Preview of a Space and store in the portal">
+      <div class="win-top"><span>Sea Creatures</span><span class="ch"># store</span></div>
+      <div class="win-body">
+        <div class="side">
+          <h4>Channels</h4>
+          <span># general</span>
+          <span class="on"># store</span>
+          <span># art</span>
+          <span># music</span>
+          <h4 style="margin-top:14px">Spaces</h4>
+          <span>Cat memes</span>
+          <span>Doge archive</span>
         </div>
-        <div class="hero-art reveal">
-          <div class="coin-orbit">
-            <img class="coin" src="assets/img/meowecoin-coin.webp" srcset="assets/img/meowecoin-coin-480.webp 480w, assets/img/meowecoin-coin.webp 760w, assets/img/meowecoin-coin-1140.webp 1140w" sizes="(max-width: 820px) min(240px, 62vw), min(380px, 80vw)" width="380" height="380" decoding="async" fetchpriority="high" alt="Meowecoin logo: a gold coin with a ginger cat and a white M">
-            <span class="orbit-chip chip-sol">SOL</span>
-            <span class="orbit-chip chip-doge">Ð DOGE</span>
-            <span class="orbit-chip chip-fire">🔥 burn</span>
+        <div class="store">
+          <div class="store-head">
+            <img class="av" src="assets/showcase/coral-queen.jpg" alt="">
+            <div><b>Store items</b><small>Give, list or sell</small></div>
+          </div>
+          <div class="items">
+            <div class="item"><img src="assets/showcase/seadragon.jpg" alt="SeaDragon"><p>SeaDragon</p></div>
+            <div class="item"><img src="assets/showcase/tadar-sauce.jpg" alt="Tadar Sauce"><p>Tadar Sauce</p></div>
+            <div class="item"><img src="assets/showcase/rainbow-mind.jpg" alt="rainbow mind"><p>rainbow mind</p></div>
+          </div>
+          <div class="msg">
+            <img class="av" src="assets/showcase/the-wow-doge.jpg" alt="">
+            <div><b>wow</b><span class="rec">recorded on-chain</span><br>new drop in the store, take a look</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         2. WHAT MEOWECOIN IS
-         ============================================================ -->
-    <section class="section" id="what" aria-labelledby="what-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">01 · The token</span>
-          <h2 id="what-title">What Meowecoin is</h2>
-          <p>A meme token with a job: bridging cat energy on Solana to permanent creativity on Dogecoin.</p>
-        </header>
-        <div class="grid grid-4">
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">◎</div>
-            <h3>A Solana meme token</h3>
-            <p>Meowecoin (MEOWE) lives on Solana: fast, cheap, and built for community.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">⇄</div>
-            <h3>Paired with wDOGE</h3>
-            <p>Traded against wrapped DOGE on Solana in a Pump.fun AMM pool.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">Ð</div>
-            <h3>Touches native DOGE</h3>
-            <p>A project treasury holds <strong>native</strong> Dogecoin, so it can do things on the real DOGE chain.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">✦</div>
-            <h3>Fuels on-chain creativity</h3>
-            <p>Burns are planned to pay for permanent memes, messages and art written to Dogecoin.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         3. THE PROBLEM
-         ============================================================ -->
-    <section class="section section-alt" id="problem" aria-labelledby="problem-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">02 · The gap</span>
-          <h2 id="problem-title">The problem</h2>
-        </header>
-        <div class="grid grid-3">
-          <article class="card card-problem reveal">
-            <span class="num">A</span>
-            <h3>Wrapped DOGE can't write to Dogecoin</h3>
-            <p>wDOGE on Solana is an SPL token. It can't sign or broadcast a transaction on the Dogecoin blockchain itself.</p>
-          </article>
-          <article class="card card-problem reveal">
-            <span class="num">B</span>
-            <h3>P2FK needs native DOGE</h3>
-            <p>P2FK data is written into ordinary Dogecoin transactions, which have to be funded by real, spendable DOGE UTXOs.</p>
-          </article>
-          <article class="card card-problem reveal">
-            <span class="num">C</span>
-            <h3>Meme tokens rarely do anything</h3>
-            <p>Most meme coins are vibes only. Meowecoin wants every burn to leave something behind.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         4. THE SOLUTION (flow + architecture diagram)
-         ============================================================ -->
-    <section class="section" id="concept" aria-labelledby="concept-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">03 · The concept</span>
-          <h2 id="concept-title">The solution: burn on Solana, etch on Dogecoin</h2>
-          <p>A treasury-backed relay connects the two chains. All of this is a design concept. Nothing is live.</p>
-        </header>
-
-        <div class="solution-grid">
-          <ol class="flow reveal">
-            <li><span class="step">1</span><div><h3>Burn</h3><p>A user burns Meowecoin on Solana and attaches what they want to create.</p></div></li>
-            <li><span class="step">2</span><div><h3>Listen</h3><p>A backend listener sees the confirmed burn.</p></div></li>
-            <li><span class="step">3</span><div><h3>Quote</h3><p>It works out the DOGE equivalent of the burned amount.</p></div></li>
-            <li><span class="step">4</span><div><h3>Spend</h3><p>The treasury spends native DOGE from its own full node.</p></div></li>
-            <li><span class="step">5</span><div><h3>Build</h3><p>A P2FK transaction is built that carries the payload.</p></div></li>
-            <li><span class="step">6</span><div><h3>Etch &amp; index</h3><p>A permanent object lands on Dogecoin. The project node and community nodes index it. p2fk.io stays an optional public reader.</p></div></li>
-          </ol>
-          <figure class="mascot reveal">
-            <img src="assets/img/mascot-excellent-move.webp" width="500" height="500" loading="lazy" alt="Smug ginger cat meme captioned 'excellent move'">
-          </figure>
-        </div>
-
-        <figure class="diagram reveal" aria-labelledby="diagram-cap">
-          <!-- Desktop / wide diagram -->
-          <svg class="diagram-wide" viewBox="0 0 1120 490" role="img" aria-label="Architecture: Solana burn, backend listener, DOGE quote, DOGE treasury, P2FK builder, Dogecoin chain. Side paths: optional fee, dead wallet, and an indexer run by the project node plus community nodes. p2fk.io is an optional public reader.">
-            <defs>
-              <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
-              <linearGradient id="boxg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2312"/><stop offset="1" stop-color="#1a160c"/></linearGradient>
-            </defs>
-            <!-- lanes -->
-            <g class="lane">
-              <rect x="10" y="20" width="170" height="300" rx="16"/><text x="95" y="48" class="lane-t">SOLANA</text>
-              <rect x="196" y="20" width="356" height="300" rx="16"/><text x="374" y="48" class="lane-t">OFF-CHAIN BACKEND</text>
-              <rect x="568" y="20" width="356" height="300" rx="16"/><text x="746" y="48" class="lane-t">DOGE TREASURY + FULL NODE</text>
-              <rect x="940" y="20" width="170" height="300" rx="16"/><text x="1025" y="48" class="lane-t">DOGECOIN</text>
-            </g>
-            <!-- main boxes -->
-            <g class="box">
-              <rect x="20" y="120" width="150" height="110" rx="14"/>
-              <text x="95" y="160" class="n">1</text><text x="95" y="186" class="t">Burn MEOWE</text><text x="95" y="206" class="s">user wallet</text>
-              <rect x="206" y="120" width="150" height="110" rx="14"/>
-              <text x="281" y="160" class="n">2</text><text x="281" y="186" class="t">Burn listener</text><text x="281" y="206" class="s">watches burns</text>
-              <rect x="392" y="120" width="150" height="110" rx="14"/>
-              <text x="467" y="160" class="n">3</text><text x="467" y="186" class="t">DOGE quote</text><text x="467" y="206" class="s">MEOWE → DOGE</text>
-              <rect x="578" y="120" width="150" height="110" rx="14"/>
-              <text x="653" y="160" class="n">4</text><text x="653" y="186" class="t">Treasury spend</text><text x="653" y="206" class="s">native DOGE UTXOs</text>
-              <rect x="764" y="120" width="150" height="110" rx="14"/>
-              <text x="839" y="160" class="n">5</text><text x="839" y="186" class="t">P2FK builder</text><text x="839" y="206" class="s">Sup!? / P2FK</text>
-              <rect x="950" y="120" width="150" height="110" rx="14" class="hl"/>
-              <text x="1025" y="160" class="n">6</text><text x="1025" y="186" class="t">On-chain object</text><text x="1025" y="206" class="s">permanent artifact</text>
-            </g>
-            <!-- main arrows -->
-            <g class="flowline">
-              <path d="M170 175 H204" marker-end="url(#arw)"/>
-              <path d="M356 175 H390" marker-end="url(#arw)"/>
-              <path d="M542 175 H576" marker-end="url(#arw)"/>
-              <path d="M728 175 H762" marker-end="url(#arw)"/>
-              <path d="M914 175 H948" marker-end="url(#arw)"/>
-            </g>
-            <!-- side paths -->
-            <g class="box side">
-              <rect x="392" y="360" width="150" height="80" rx="14"/>
-              <text x="467" y="394" class="t">Optional fee</text><text x="467" y="414" class="s">~0.5% (concept)</text>
-              <rect x="578" y="360" width="150" height="80" rx="14"/>
-              <text x="653" y="394" class="t">Dead wallet</text><text x="653" y="414" class="s">MEOWE received</text>
-              <rect x="945" y="348" width="160" height="112" rx="14"/>
-              <text x="1025" y="382" class="t">Node indexer</text><text x="1025" y="404" class="s">project + community</text><text x="1025" y="426" class="s">p2fk.io optional</text>
-            </g>
-            <g class="flowline dashed">
-              <path d="M467 230 V358" marker-end="url(#arw)"/>
-              <path d="M653 230 V358" marker-end="url(#arw)"/>
-              <path d="M1025 230 V346" marker-end="url(#arw)"/>
-            </g>
-          </svg>
-
-          <!-- Mobile / narrow diagram -->
-          <svg class="diagram-tall" viewBox="0 0 360 900" role="img" aria-label="Architecture flow, top to bottom: burn, listener, quote, treasury spend, P2FK builder, on-chain object. Side paths: fee, dead wallet, and a node indexer. p2fk.io is an optional public reader.">
-            <defs>
-              <marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
-            </defs>
-            <g class="box">
-              <rect x="20" y="10" width="220" height="84" rx="14"/><text x="130" y="44" class="t">1 · Burn MEOWE</text><text x="130" y="68" class="s">Solana · user wallet</text>
-              <rect x="20" y="134" width="220" height="84" rx="14"/><text x="130" y="168" class="t">2 · Burn listener</text><text x="130" y="192" class="s">off-chain backend</text>
-              <rect x="20" y="258" width="220" height="84" rx="14"/><text x="130" y="292" class="t">3 · DOGE quote</text><text x="130" y="316" class="s">MEOWE → DOGE</text>
-              <rect x="20" y="382" width="220" height="84" rx="14"/><text x="130" y="416" class="t">4 · Treasury spend</text><text x="130" y="440" class="s">native DOGE · full node</text>
-              <rect x="20" y="506" width="220" height="84" rx="14"/><text x="130" y="540" class="t">5 · P2FK builder</text><text x="130" y="564" class="s">Sup!? / P2FK</text>
-              <rect x="20" y="630" width="220" height="84" rx="14" class="hl"/><text x="130" y="664" class="t">6 · On-chain object</text><text x="130" y="688" class="s">Dogecoin · permanent</text>
-            </g>
-            <g class="box side">
-              <rect x="256" y="382" width="94" height="84" rx="12"/><text x="303" y="418" class="t sm">Dead</text><text x="303" y="438" class="t sm">wallet</text>
-              <rect x="256" y="258" width="94" height="84" rx="12"/><text x="303" y="294" class="t sm">Fee</text><text x="303" y="314" class="s">~0.5%</text>
-              <rect x="20" y="748" width="220" height="112" rx="14"/><text x="130" y="782" class="t">Node indexer</text><text x="130" y="804" class="s">project + community</text><text x="130" y="826" class="s">p2fk.io optional</text>
-            </g>
-            <g class="flowline">
-              <path d="M130 94 V132" marker-end="url(#arw2)"/>
-              <path d="M130 218 V256" marker-end="url(#arw2)"/>
-              <path d="M130 342 V380" marker-end="url(#arw2)"/>
-              <path d="M130 466 V504" marker-end="url(#arw2)"/>
-              <path d="M130 590 V628" marker-end="url(#arw2)"/>
-            </g>
-            <g class="flowline dashed">
-              <path d="M240 300 H254" marker-end="url(#arw2)"/>
-              <path d="M240 424 H254" marker-end="url(#arw2)"/>
-              <path d="M130 714 V746" marker-end="url(#arw2)"/>
-            </g>
-          </svg>
-          <figcaption id="diagram-cap">Concept architecture. Solid arrows show the main flow; dashed arrows show side paths. Creations are indexed by the project node and community nodes. p2fk.io is an optional public reader, not the only backend. The fee and the burn mechanics are not final.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5. WHY P2FK MATTERS
-         ============================================================ -->
-    <section class="section section-alt" id="p2fk" aria-labelledby="p2fk-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">04 · The rails</span>
-          <h2 id="p2fk-title">Why P2FK matters</h2>
-          <p><strong>P2FK (Pay-to-Future-Key)</strong> is a multichain metaprotocol invented by <a href="https://github.com/embiimob" target="_blank" rel="noopener">embii</a> in 2013 as part of the HugPuddle project. It writes data straight into ordinary blockchain transactions, and it runs on Dogecoin as well as Bitcoin, Litecoin and Mazacoin.</p>
-        </header>
-
-        <div class="grid grid-2 p2fk-grid">
-          <article class="card reveal">
-            <h3>How it stores data</h3>
-            <p>A payload is cut into 20-byte chunks. Each chunk is encoded as a regular-looking address and sent a tiny output. Software like Sup!? reads a transaction's outputs, decodes those addresses and puts the bytes back together into messages, files and metadata. The idea comes from the early "Satoshi uploader".</p>
-          </article>
-          <article class="card reveal">
-            <h3>Sup!? objects, profiles &amp; messages</h3>
-            <p><a href="https://github.com/embiimob/sup" target="_blank" rel="noopener">Sup!? (satoshi universal protocol)</a> is embii's experimental app on top of P2FK. It supports profiles, tradeable objects with creators, owners and royalties, public and private messages, and polls. Larger media can be linked through IPFS.</p>
-          </article>
-          <article class="card reveal">
-            <h3>Dogecoin is a supported chain</h3>
-            <p>Sup!? references Dogecoin P2FK content with a <code>DOG:</code> prefix (for example <code>DOG:&lt;txid&gt;/dodge-meme.gif</code>) and ships with Dogecoin Core. That makes a DOGE full node a natural home for Meowecoin artifacts.</p>
-          </article>
-          <article class="card reveal">
-            <h3>A public reader, not the only one</h3>
-            <p><a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a> (bitFossil), by embii, is an open-source REST API for P2FK messages, objects and profiles across BTC, LTC, DOGE and MZC. It stays a useful public reader. Meowecoin will not depend on it alone: the project node and community Dogecoin nodes index the network too.</p>
-          </article>
-        </div>
-
-        <div class="callout reveal">
-          <div class="callout-icon" aria-hidden="true">♾️</div>
-          <p><strong>Every burn becomes a DOGE-chain artifact.</strong> When the data sits in confirmed Dogecoin transactions, a meme, a message or a piece of art stays readable by anyone with a copy of the chain. No server has to stay online for it to survive.</p>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         5b. PROOF IT WORKS (real 2014 Dogecoin P2FK injection)
-         ============================================================ -->
-    <section class="section" id="proof" aria-labelledby="proof-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">04b · Proof it works</span>
-          <h2 id="proof-title">On Dogecoin since 2014</h2>
-          <p>This isn't hypothetical. The Meowecoin creator wrote this P2FK injection to the Dogecoin chain in September 2014, and it can still be read back today.</p>
-        </header>
-        <article class="proof reveal">
-          <figure class="proof-img">
-            <img src="assets/img/onchain-doge-2014.jpg" width="680" height="510" loading="lazy" alt="The classic Doge Shiba Inu photo, decoded from Dogecoin transaction data">
-            <figcaption><code>doge.jpg</code> · 15,342 bytes, decoded straight from the transaction</figcaption>
-          </figure>
-          <div class="proof-body">
-            <dl class="proof-meta">
-              <div><dt>Chain</dt><dd>Dogecoin mainnet</dd></div>
-              <div><dt>Block time</dt><dd>16 Sep 2014, 04:21:22 UTC</dd></div>
-              <div><dt>Transaction size</dt><dd>17,288 bytes</dd></div>
-              <div><dt>Contents</dt><dd>1 text message + 1 file (<code>doge.jpg</code>)</dd></div>
-              <div class="full"><dt>Transaction ID</dt><dd><code class="txid">ca8b09131e8b04aa91092be78a2355da78fbe3f75c81d1aaa086a76d65316665</code></dd></div>
-            </dl>
-            <blockquote class="proof-quote">
-              “Dogecoin (/ˈdoʊʒkɔɪn/ DOHZH-koyn, code: DOGE, symbol: Ð and D) is a cryptocurrency featuring a Shiba Inu from the "Doge" Internet meme on its logo. It was introduced on December 8, 2013…  …use the phrase "To the moon!" to describe the overall sentiment of the coin's rising value.”
-              <cite>Excerpt of the on-chain message</cite>
-            </blockquote>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="https://p2fk.io/?message=ca8b09131e8b04aa91092be78a2355da78fbe3f75c81d1aaa086a76d65316665&amp;blockchain=DOG" target="_blank" rel="noopener">View on p2fk.io ↗</a>
-              <a class="btn btn-ghost" href="https://p2fk.io/GetRootByTransactionID/ca8b09131e8b04aa91092be78a2355da78fbe3f75c81d1aaa086a76d65316665?blockchain=DOG&amp;verbose=false" target="_blank" rel="noopener">Raw API JSON</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5c. COMMUNITY NODE NETWORK
-         ============================================================ -->
-    <section class="section section-alt" id="nodes" aria-labelledby="nodes-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">04c · The network</span>
-          <h2 id="nodes-title">Run a node, power the universe</h2>
-          <p>The system will not depend solely on <a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a>. Any user will be able to connect their own Dogecoin full node, and the project will run its own indexed node. p2fk.io remains a useful public reader and API, credited to <a href="https://github.com/embiimob" target="_blank" rel="noopener">embii</a>.</p>
-        </header>
-
-        <figure class="diagram node-net reveal">
-          <svg class="diagram-wide" viewBox="0 0 1040 420" role="img" aria-label="Three community Dogecoin nodes and the Meowecoin project node feed an injection engine and indexer, which writes to the Dogecoin chain. p2fk.io sits to the side as an optional public reader.">
-            <defs>
-              <marker id="node-arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
-            </defs>
-            <g class="box">
-              <rect class="community" x="20" y="16" width="230" height="100" rx="14"/>
-              <text x="135" y="58" class="t">Community node</text>
-              <text x="135" y="82" class="s">your Dogecoin full node</text>
-              <rect class="community" x="270" y="16" width="230" height="100" rx="14"/>
-              <text x="385" y="58" class="t">Community node</text>
-              <text x="385" y="82" class="s">another full node</text>
-              <rect class="community" x="520" y="16" width="230" height="100" rx="14"/>
-              <text x="635" y="58" class="t">Community node</text>
-              <text x="635" y="82" class="s">the more, the stronger</text>
-              <rect class="hl" x="770" y="16" width="230" height="100" rx="14"/>
-              <text x="885" y="58" class="t">Project node</text>
-              <text x="885" y="82" class="s">our indexed full node</text>
-            </g>
-            <g class="flowline">
-              <path d="M135 116 V168" marker-end="url(#node-arw)"/>
-              <path d="M385 116 V168" marker-end="url(#node-arw)"/>
-              <path d="M635 116 V168" marker-end="url(#node-arw)"/>
-              <path d="M885 116 V168" marker-end="url(#node-arw)"/>
-            </g>
-            <g class="box">
-              <rect class="engine" x="20" y="170" width="980" height="88" rx="16"/>
-              <text x="510" y="206" class="t">Injection engine + indexer</text>
-              <text x="510" y="230" class="s">fed by the project node and every community node</text>
-            </g>
-            <g class="flowline">
-              <path d="M360 258 V308" marker-end="url(#node-arw)"/>
-            </g>
-            <g class="box">
-              <rect class="hl" x="180" y="310" width="360" height="84" rx="14"/>
-              <text x="360" y="346" class="t">Dogecoin chain</text>
-              <text x="360" y="370" class="s">permanent artifacts</text>
-            </g>
-            <g class="box side">
-              <rect x="620" y="310" width="300" height="84" rx="14"/>
-              <text x="770" y="346" class="t">p2fk.io</text>
-              <text x="770" y="370" class="s">optional public reader</text>
-            </g>
-            <g class="flowline dashed">
-              <path d="M540 352 H618" marker-end="url(#node-arw)"/>
-            </g>
-          </svg>
-
-          <svg class="diagram-tall" viewBox="0 0 360 760" role="img" aria-label="Community Dogecoin nodes and the project node stack into an injection engine and indexer, then the Dogecoin chain. p2fk.io is an optional public reader.">
-            <defs>
-              <marker id="node-arw-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#D4B235"/></marker>
-            </defs>
-            <g class="box">
-              <rect class="community" x="30" y="8" width="300" height="86" rx="14"/>
-              <text x="180" y="46" class="t">Community node</text>
-              <text x="180" y="70" class="s">your Dogecoin full node</text>
-              <rect class="community" x="30" y="130" width="300" height="86" rx="14"/>
-              <text x="180" y="168" class="t">Community node</text>
-              <text x="180" y="192" class="s">another full node</text>
-              <rect class="hl" x="30" y="252" width="300" height="86" rx="14"/>
-              <text x="180" y="290" class="t">Project node</text>
-              <text x="180" y="314" class="s">our indexed full node</text>
-              <rect class="engine" x="30" y="374" width="300" height="96" rx="14"/>
-              <text x="180" y="412" class="t">Injection engine</text>
-              <text x="180" y="436" class="s">indexer for the universe</text>
-              <rect class="hl" x="30" y="506" width="300" height="86" rx="14"/>
-              <text x="180" y="544" class="t">Dogecoin chain</text>
-              <text x="180" y="568" class="s">permanent artifacts</text>
-            </g>
-            <g class="box side">
-              <rect x="30" y="640" width="300" height="86" rx="14"/>
-              <text x="180" y="678" class="t">p2fk.io</text>
-              <text x="180" y="702" class="s">optional public reader</text>
-            </g>
-            <g class="flowline">
-              <path d="M180 94 V128" marker-end="url(#node-arw-m)"/>
-              <path d="M180 216 V250" marker-end="url(#node-arw-m)"/>
-              <path d="M180 338 V372" marker-end="url(#node-arw-m)"/>
-              <path d="M180 470 V504" marker-end="url(#node-arw-m)"/>
-            </g>
-            <g class="flowline dashed">
-              <path d="M180 592 V638" marker-end="url(#node-arw-m)"/>
-            </g>
-          </svg>
-          <figcaption>Community nodes and the project node feed the same injection engine and indexer. p2fk.io stays beside them as an optional public reader. Concept only: nothing here is live.</figcaption>
-        </figure>
-
-        <div class="grid grid-4">
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">Ð</div>
-            <h3>Connect your own node</h3>
-            <p>Any user will be able to connect their own Dogecoin full node to the network.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">◎</div>
-            <h3>The project's indexed node</h3>
-            <p>Meowecoin will run its own indexed Dogecoin node, so the system does not rely fully on p2fk.io.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">✦</div>
-            <h3>A more resilient universe</h3>
-            <p>The more users connect nodes, the more stable and resilient the Meowecoin universe becomes.</p>
-          </article>
-          <article class="card reveal">
-            <div class="card-icon" aria-hidden="true">◇</div>
-            <h3>Benefits for operators</h3>
-            <p>Node operators will receive benefits from the fee structure. Concept only: no specific percentages, and no promise of returns.</p>
-          </article>
-        </div>
-
-        <div class="callout reveal">
-          <div class="callout-icon" aria-hidden="true">🐾</div>
-          <p><strong>More nodes, a stronger universe.</strong> Each Dogecoin full node someone connects makes indexing steadier. p2fk.io remains a public reader credited to embii. It is not the only way the network is read.</p>
-        </div>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://t.me/meowecoinOG" target="_blank" rel="noopener noreferrer">Join the Telegram</a>
-          <button class="btn btn-ghost" type="button" disabled aria-disabled="true" title="Node software coming soon">Run a Node <em>(Coming Soon)</em></button>
-        </div>
-        <p class="fineprint reveal">Concept only, not financial advice. Node software is not available yet, and benefits for operators are not a yield, a rate, or a promise of returns.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         6. TOKENOMICS CONCEPT
-         ============================================================ -->
-    <section class="section" id="tokenomics" aria-labelledby="tok-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">05 · Economics</span>
-          <h2 id="tok-title">Tokenomics concept <span class="badge-concept">Concept: not final</span></h2>
-          <p>The MEOWE mint is live on Solana, paired with wrapped DOGE. The burn, fee, and node-reward ideas below are still a concept.</p>
-        </header>
-        <div class="token-bar reveal">
-          <div class="ca">
-            <div class="ca-meta">
-              <span class="ca-label">Meowecoin (MEOWE) · official Solana contract</span>
-              <code id="ca-text" class="ca-addr">FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump</code>
-            </div>
-            <button type="button" class="btn btn-sm ca-copy" id="ca-copy" aria-label="Copy contract address">Copy</button>
-          </div>
-          <div class="cta-row">
-            <a class="btn btn-primary" data-meowe-link="buy" href="https://pump.fun/coin/FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump" target="_blank" rel="noopener noreferrer">Buy Meowecoin</a>
-            <a class="btn btn-ghost" data-meowe-link="chart" href="https://dexscreener.com/solana/5iq5n8sir2xkpgdjycem5vxw6hvquf6rkvyyemepls6u" target="_blank" rel="noopener noreferrer">Chart</a>
-          </div>
-        </div>
-        <div class="grid grid-4">
-          <article class="card tok reveal">
-            <span class="tok-k">🔥</span>
-            <h3>Burn-to-create</h3>
-            <p>Users burn MEOWE to request an on-chain creation. Burned supply is gone for good.</p>
-          </article>
-          <article class="card tok reveal">
-            <span class="tok-k">Ð</span>
-            <h3>DOGE-equivalent spend</h3>
-            <p>The backend converts the burn into a DOGE amount, and the treasury pays the Dogecoin transaction from native DOGE.</p>
-          </article>
-          <article class="card tok reveal">
-            <span class="tok-k">💀</span>
-            <h3>Dead-wallet sweep</h3>
-            <p>Any Meowecoin the treasury receives gets sent to a dead wallet, which keeps reducing supply.</p>
-          </article>
-          <article class="card tok reveal">
-            <span class="tok-k">0.5%</span>
-            <h3>Optional fee</h3>
-            <p>An optional ~0.5% fee might help fund the treasury and infrastructure, with a share going to node operators. Concept only, still to be decided, and not a promise of returns.</p>
-          </article>
-        </div>
-        <p class="fineprint reveal">Not an offer and not financial advice. This page does not connect a wallet or send a transaction. Buying happens on Pump.fun. A share of fees for node operators is a concept only: no extra percentages, and no promised returns.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         7. SHOWCASE EXAMPLES (non-functional)
-         ============================================================ -->
-    <section class="section section-alt" id="showcase" aria-labelledby="show-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">06 · Imagine</span>
-          <h2 id="show-title">Showcase examples</h2>
-          <p>Previews of what the creative platform could do. These are mockups. The buttons do nothing yet.</p>
-        </header>
-        <div class="grid grid-4 showcase">
-          <article class="show-card reveal" style="--accent:#E8963A">
-            <img src="assets/img/cat-shades-ginger.webp" width="320" height="320" loading="lazy" alt="Ginger cat in sunglasses, pop-art style">
-            <div class="show-body">
-              <h3>Mint a DOGE-chain meme</h3>
-              <p>Turn a meme into a Sup!?-style object on Dogecoin.</p>
-              <button class="btn btn-sm" type="button" disabled>Coming soon</button>
-            </div>
-          </article>
-          <article class="show-card reveal" style="--accent:#E2483A">
-            <img src="assets/img/cat-top-cat.webp" width="320" height="320" loading="lazy" alt="Cream cat wearing a red TOP CAT cap">
-            <div class="show-body">
-              <h3>Write a DOGE-chain message</h3>
-              <p>Etch a short public message that stays in the chain.</p>
-              <button class="btn btn-sm" type="button" disabled>Coming soon</button>
-            </div>
-          </article>
-          <article class="show-card reveal" style="--accent:#8B8B9A">
-            <img src="assets/img/cat-pixel-shades.webp" width="320" height="320" loading="lazy" alt="Black cat in pixel sunglasses">
-            <div class="show-body">
-              <h3>Upload a small image via P2FK</h3>
-              <p>Store a small image directly in Dogecoin transaction data.</p>
-              <button class="btn btn-sm" type="button" disabled>Coming soon</button>
-            </div>
-          </article>
-          <article class="show-card reveal" style="--accent:#2BA59A">
-            <img src="assets/img/cat-shades-teal.webp" width="320" height="320" loading="lazy" alt="Teal cat in sunglasses, pop-art style">
-            <div class="show-body">
-              <h3>Create a Meowe-DOGE hybrid artifact</h3>
-              <p>Mix cat and doge culture into a one-of-one artifact.</p>
-              <button class="btn btn-sm" type="button" disabled>Coming soon</button>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <!-- Community / artifacts strip (pop-art concept tiles) -->
-      <div class="clowder reveal" aria-label="Meowe pop-art concept tiles">
-        <div class="clowder-track">
-          <img src="assets/img/cat-shades-ginger.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-shades-teal.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-shades-purple.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-cap-blue.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-top-cat.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-flat-cap.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-pixel-shades.webp" alt="" loading="lazy" width="160" height="160">
-          <img src="assets/img/cat-beanie-pink.webp" alt="" loading="lazy" width="160" height="160">
-          <!-- duplicated set for a seamless loop -->
-          <img src="assets/img/cat-shades-ginger.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-shades-teal.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-shades-purple.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-cap-blue.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-top-cat.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-flat-cap.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-pixel-shades.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-          <img src="assets/img/cat-beanie-pink.webp" alt="" loading="lazy" width="160" height="160" aria-hidden="true">
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-         7b. HOLDER AIRDROPS (planned)
-         ============================================================ -->
-    <section class="section" id="airdrops" aria-labelledby="air-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">06b · Future</span>
-          <h2 id="air-title">Holder airdrops <span class="badge-concept">Planned</span></h2>
-          <p>Doge-themed P2FK artifacts already on the Dogecoin chain are planned to be airdropped to Meowecoin holders once the system is built. These are real artifacts you can inspect today. The airdrop itself is a future plan, with no set date, eligibility rules or promised value.</p>
-        </header>
-        <div class="grid grid-4 air-grid">
-          <a class="air-card reveal" href="https://p2fk.io/?object=1EBDgBApSooXPCdr2W7pBenCpdPpYRGG4r&amp;mainnet=true" target="_blank" rel="noopener">
-            <img src="assets/img/onchain-doge-2014.jpg" width="680" height="510" loading="lazy" alt="Doge Shiba Inu photo stored on Dogecoin">
-            <div class="air-body">
-              <h3>DOGE</h3>
-              <p>Sup!? object · CC0 · content etched on Dogecoin on 16 Sep 2014</p>
-              <code>DOG:ca8b09…6665/doge.jpg</code>
-            </div>
-          </a>
-          <a class="air-card reveal" href="https://p2fk.io/?object=1GdixtzWRPJjXMEq8EaL3pJksYAjgka8N7&amp;mainnet=true" target="_blank" rel="noopener">
-            <img src="assets/img/onchain-wow-doge.webp" width="245" height="180" loading="lazy" alt="Animated doge meme GIF stored on Dogecoin">
-            <div class="air-body">
-              <h3>THE WOW DOGE</h3>
-              <p>Sup!? object · CC0 · 1.1 MB GIF etched on Dogecoin on 27 Oct 2014</p>
-              <code>DOG:73e146…c58f/dodge-meme.gif</code>
-            </div>
-          </a>
-          <a class="air-card reveal" href="https://p2fk.io/?object=16PVUyxfdZhfHdDZwfg3CnfsL3DB9y8qjt&amp;mainnet=true" target="_blank" rel="noopener">
-            <img class="contain" src="assets/img/onchain-dogecoin-logo.jpg" width="256" height="256" loading="lazy" alt="Dogecoin coin logo stored on Dogecoin">
-            <div class="air-body">
-              <h3>dogecoin</h3>
-              <p>Sup!? object · content etched on Dogecoin on 28 Dec 2024</p>
-              <code>DOG:d8a4f0…8353/doge.jpg</code>
-            </div>
-          </a>
-          <a class="air-card air-text reveal" href="https://p2fk.io/?message=7ce86d2cdd13504943ee4d359d70ad672bc21709d9e169aa16dc1eb5c97747d5&amp;blockchain=DOG" target="_blank" rel="noopener">
-            <div class="air-quote" aria-hidden="true">“Who let the doge out?”</div>
-            <div class="air-body">
-              <h3>Who let the doge out?</h3>
-              <p>P2FK message on Dogecoin · 15 Sep 2014</p>
-              <code>DOG:7ce86d…47d5</code>
-            </div>
-          </a>
-        </div>
-        <div class="cta-row center reveal">
-          <a class="btn btn-primary" href="https://p2fk.io/?search=Doge" target="_blank" rel="noopener">Browse all on p2fk.io ↗</a>
-        </div>
-        <p class="fineprint reveal">Planned feature, subject to change. Artifacts shown come from a live p2fk.io search for “Doge”. The objects are Sup!? registrations whose content lives on the Dogecoin chain. Distribution mechanics, eligibility and timing are still to be decided. Nothing here is a promise of value.</p>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         8. ROADMAP
-         ============================================================ -->
-    <section class="section section-alt" id="roadmap" aria-labelledby="road-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <span class="eyebrow">07 · Path</span>
-          <h2 id="road-title">Roadmap</h2>
-        </header>
-        <ol class="roadmap">
-          <li class="phase now reveal"><span class="phase-n">Phase 1</span><h3>Concept website</h3><p>Explain the idea and gather the community. <em>You are here.</em></p></li>
-          <li class="phase reveal"><span class="phase-n">Phase 2</span><h3>Treasury, project node, onboarding</h3><p>Fund a native-DOGE treasury on our own indexed full node, watch Solana burns, and open node-operator onboarding.</p></li>
-          <li class="phase reveal"><span class="phase-n">Phase 3</span><h3>Injection engine + node network</h3><p>Build P2FK transactions with embii's Sup!? tooling, broadcast them to Dogecoin, and let community nodes index alongside the project node.</p></li>
-          <li class="phase reveal"><span class="phase-n">Phase 4</span><h3>Platform, airdrops, node rewards</h3><p>Mint, write, upload and remix DOGE-chain artifacts from one interface, plus <strong>planned airdrops</strong> of existing Doge-themed P2FK artifacts to Meowecoin holders. Node operators are planned to receive benefits from the fee structure. Concept only: no promised returns.</p></li>
-        </ol>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============================================================
-       9. FOOTER
-       ============================================================ -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="assets/img/meowecoin-coin-96.png" srcset="assets/img/meowecoin-coin-96.png 2x, assets/img/meowecoin-coin-144.png 3x" width="48" height="48" alt="" loading="lazy" decoding="async">
-        <div>
-          <strong>Meowecoin (MEOWE)</strong>
-          <span>DOGE Chain Injection Concept</span>
-        </div>
-      </div>
-      <div class="footer-side">
-      <nav class="socials" aria-label="Social links">
-        <a class="is-live" href="https://t.me/meowecoinOG" target="_blank" rel="noopener noreferrer" aria-label="Join Meowecoin OG on Telegram" title="Join Meowecoin OG on Telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-        </a>
-        <a class="is-live" href="https://x.com/1742Meowe" target="_blank" rel="noopener noreferrer" aria-label="Follow Meowecoin on X" title="Follow Meowecoin on X">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="#" aria-label="Discord (coming soon)" title="Coming soon">◉</a>
-        <a href="#" aria-label="GitHub (coming soon)" title="Coming soon">⌥</a>
-      </nav>
-      <p class="footer-contact">Contact: <a href="mailto:team@meoweco.in">team@meoweco.in</a></p>
-      <p class="footer-contact"><a class="footer-listings" href="listings/">Listings</a></p>
-      <p class="footer-contact"><a href="https://neptunemonk.github.io/meowcoin-portal/" target="_blank" rel="noopener">Try the Forge demo</a></p>
-      </div>
-    </div>
-    <div class="container footer-official">
-      <p><strong>Meowecoin (MEOWE)</strong> · Official CA (Solana): <code>FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump</code></p>
-    </div>
-    <div class="container disclaimer">
-      <p><strong>Concept only for the injection protocol.</strong> This site is not financial advice. It does not connect a wallet or send a transaction. MEOWE trades on Pump.fun. P2FK and Sup!? are created by <a href="https://github.com/embiimob" target="_blank" rel="noopener">embii</a>. See <a href="https://github.com/embiimob/sup" target="_blank" rel="noopener">github.com/embiimob/sup</a> and <a href="https://p2fk.io" target="_blank" rel="noopener">p2fk.io</a>.</p>
-      <p class="copy">© <span id="year">2026</span> Meowecoin · meoweco.in</p>
-    </div>
-  </footer>
-
-  <div class="doc-modal" id="doc-modal" hidden>
-    <div class="doc-backdrop" data-doc-dismiss></div>
-    <div class="doc-dialog" id="doc-dialog" role="dialog" aria-modal="true" aria-labelledby="wp-title" tabindex="-1">
-      <header class="doc-toolbar">
-        <button type="button" class="doc-x" data-doc-dismiss>
-          <span aria-hidden="true">×</span>
-          Close
-        </button>
-        <p class="doc-kicker">
-          <img src="assets/img/meowecoin-coin-96.png" width="28" height="28" alt="">
-          <span>Meowecoin documents</span>
-        </p>
-        <div class="doc-tabs" role="tablist" aria-label="Documents">
-          <button type="button" class="doc-tab" id="doc-tab-whitepaper" role="tab" aria-selected="true" aria-controls="doc-panel-whitepaper" tabindex="0">White Paper</button>
-          <button type="button" class="doc-tab" id="doc-tab-technical" role="tab" aria-selected="false" aria-controls="doc-panel-technical" tabindex="-1">Technical</button>
-        </div>
-        <div class="doc-toolbar-actions">
-          <a class="doc-action" id="doc-download" href="whitepaper/meowecoin-whitepaper.pdf" download="meowecoin-whitepaper.pdf">Download PDF</a>
-          <a class="doc-action" id="doc-fullscreen" href="whitepaper/#whitepaper">Open full screen</a>
-        </div>
-      </header>
-      <div class="doc-scroll" id="doc-panel-whitepaper" role="tabpanel" aria-labelledby="doc-tab-whitepaper" tabindex="0">
-<!-- DOC:whitepaper:start -->
-<article class="doc" data-doc="whitepaper">
-<h1 id="wp-title">Meowecoin (MEOWE) White Paper</h1>
-<p><em>Memes are forever on Doge.</em></p>
-<p>Version 1.0 · October 2026 · Community edition</p>
-<blockquote>
-<p><strong>Status note.</strong> MEOWE is live on Solana. The MEOWE Portal (&quot;the forge&quot;), the burn engine, the Dogecoin indexer, the marketplace and holder rewards in wDOGE are <strong>planned and in development</strong>. Nothing in this paper is a promise of features, timelines, returns or price. Illustrative numbers use today&#39;s estimated prices and are labeled as illustrations.</p>
-</blockquote>
-<div class="pb"></div>
-
-<h2 id="wh-1-abstract">1. Abstract</h2>
-<p>Meowecoin (MEOWE) is a community-run meme token on Solana that started life as a reaction emoji in the DOGEos Discord server. After its original deployer abandoned it, the community took it over and is rebuilding it with a new website, a verified X account, a Telegram group and a product: the <strong>MEOWE Portal</strong>, nicknamed <strong>&quot;the forge&quot;</strong>.</p>
-<p>The portal is planned as a place where memes and social content are made to last. Users get a portal-generated Solana wallet, mint a profile, post messages and memes, mint items and later trade them on a marketplace, paying only in MEOWE. Files live on IPFS. Small pointers to them are written to Solana. Profiles, items and ownership are written permanently to <strong>Dogecoin mainnet</strong> using Sup&#39;s P2FK (pay-to-fake-key) format, the same way Sup records data on Bitcoin.</p>
-<p>Every action is priced in pennies and paid in MEOWE: a post costs about a penny (~$0.01) and creating a profile costs about $0.15. Of each fee, <strong>30% is burned forever</strong>, <strong>60% is swapped to DOGE</strong> to pay for Dogecoin records and fund the treasury, and <strong>10% goes to community nodes</strong> that pin files and run indexers. Separately, the PumpSwap creator fee is planned to go <strong>100% to holders, paid in wDOGE</strong>.</p>
-<p>The design is simple to state: use creates demand for MEOWE, use burns MEOWE, and the records it creates sit on the oldest meme chain there is. Memes are forever on Doge.</p>
-<h2 id="wh-2-origin-and-lore">2. Origin and lore</h2>
-<p>MEOWE did not start as a token. It started as a <strong>reaction emoji in the DOGEos Discord server</strong>, a cat face the community used to react to Doge memes. It spread the way good emojis do, and eventually it became a token.</p>
-<p>The lore leans on two ideas:</p>
-<ul>
-<li><strong>The cat that sits next to the Doge.</strong> MEOWE is a cat living in a Doge world. The main liquidity pool pairs MEOWE with wrapped DOGE, the planned holder rewards are paid in wDOGE, and the permanent records live on Dogecoin.</li>
-<li><strong>Nine lives.</strong> Cats have nine lives, and so does MEOWE. Its first life ended when the original deployer walked away. Its second life is the community takeover. The branding uses the &quot;9 lives&quot; idea to say that a meme with a community behind it does not die when one person leaves.</li>
-</ul>
-<h2 id="wh-3-community-takeover">3. Community takeover</h2>
-<p>MEOWE was launched on <strong>pump.fun</strong>. The original deployer launched it with <strong>no website, no Telegram and no socials</strong>, pumped it, dumped it, and abandoned it.</p>
-<p>The holders who stayed decided to rebuild instead of walking away. This is a <strong>community takeover (CTO)</strong>. So far the community has:</p>
-<ul>
-<li>launched a new website, <strong>meoweco.in</strong>;</li>
-<li>set up a <strong>verified X account, @1742Meowe</strong>;</li>
-<li>opened a <strong>Telegram community, t.me/meowecoinOG</strong>;</li>
-<li>worked on listings and visibility;</li>
-<li>started building the <strong>MEOWE Portal</strong>, which is under construction.</li>
-</ul>
-<p>There are <strong>no team wallets and no vesting</strong>. Nobody holds a reserved allocation waiting to unlock. The community owns the project because the community is all that is left, and that is the point.</p>
-<h2 id="wh-4-the-problem-memes-are-ephemeral-or-centralized">4. The problem: memes are ephemeral or centralized</h2>
-<p>Memes are the culture of crypto, but where they live is fragile.</p>
-<ul>
-<li><strong>Social platforms own your posts.</strong> Accounts get suspended, posts get deleted, platforms change rules or shut down. The meme you made can vanish, and you never really owned it.</li>
-<li><strong>Most chains are not built for history.</strong> Fast chains are great for payments, but many nodes do not keep old transaction history forever. Data that only lives in old transactions can become hard to find.</li>
-<li><strong>&quot;On-chain&quot; art is often a link.</strong> Many NFTs point to files on a single server. When the server goes, the art goes.</li>
-<li><strong>Meme tokens rarely do anything.</strong> Most meme coins have no product, so there is no reason to hold or use them beyond speculation. When the hype fades, so does the token.</li>
-</ul>
-<p>MEOWE&#39;s answer is to give the token a job: paying for a place where memes, profiles and items are recorded on a chain that keeps everything.</p>
-<h2 id="wh-5-the-solution-the-meowe-portal-the-forge">5. The solution: the MEOWE Portal (&quot;the forge&quot;)</h2>
-<p>The MEOWE Portal is a web app, separate from the meoweco.in website, that is <strong>in development</strong>. Everything in this section is <strong>planned</strong>.</p>
-<h3 id="wh-what-users-will-be-able-to-do">What users will be able to do</h3>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>What it means</th>
-<th>Where it is recorded</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Wallet</td>
-<td>A portal-generated Solana wallet, similar to SupSpace (supspace.io, built by embiimob)</td>
-<td>Solana</td>
-</tr>
-<tr>
-<td>Profiles</td>
-<td>Mint a profile with a name, image and bio</td>
-<td>Dogecoin mainnet (P2FK) + IPFS</td>
-</tr>
-<tr>
-<td>Posts</td>
-<td>Post messages and memes</td>
-<td>Solana memo pointer + IPFS</td>
-</tr>
-<tr>
-<td>Items</td>
-<td>Mint memes and art as items you own</td>
-<td>Dogecoin mainnet (P2FK) + IPFS</td>
-</tr>
-<tr>
-<td>Marketplace</td>
-<td>Browse items, later buy and sell</td>
-<td>Preview first, then trading</td>
-</tr>
-</tbody></table>
-</div>
-<p><strong>One currency.</strong> Every action is paid <strong>only in MEOWE</strong>. Users never need to hold DOGE or manage a Dogecoin wallet. The backend handles the burns, swaps and Dogecoin conversions behind the scenes.</p>
-<p><strong>Why &quot;the forge&quot;.</strong> Content goes in as a file and comes out as a permanent record: forged onto Dogecoin, pinned on IPFS and paid for with MEOWE that is partly burned in the process.</p>
-<h2 id="wh-6-architecture">6. Architecture</h2>
-<p>The portal uses three layers, each doing what it is best at: Solana for payments and pointers, IPFS for files and Dogecoin for permanent records.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/architecture.png" alt="MEOWE Portal architecture (planned)" width="1805" height="1283" loading="lazy" decoding="async"><figcaption aria-hidden="true">MEOWE Portal architecture (planned)</figcaption></figure>
-<p><strong>Solana: the payment and pointer layer.</strong> Every portal action is one Solana transaction. It pays the fee in MEOWE, burns the burn share, swaps the swap share into wDOGE for the treasury, and attaches a memo. The memo is a small JSON pointer holding the IPFS CID (content ID) of the post or profile update.</p>
-<p><strong>IPFS: the file layer.</strong> Images, memes and JSON payloads live on IPFS. They are pinned by the project&#39;s own Kubo node plus public pinning services, and later by community nodes. A CID is a fingerprint of the content: if the file changes, the CID changes, so a CID recorded on chain proves exactly which file was meant.</p>
-<p><strong>Dogecoin mainnet: the permanent record layer.</strong> Profiles, items and ownership are written to Dogecoin using <strong>Sup&#39;s P2FK (pay-to-fake-key)</strong> structure, the same way Sup does on Bitcoin. P2FK encodes data into tiny unspendable outputs, so every Dogecoin full node keeps it forever.</p>
-<p><strong>Our own Dogecoin indexer.</strong> p2fk.io indexes Sup records on Bitcoin only, so the project runs its own Dogecoin indexer. It reads every Dogecoin block, rebuilds P2FK records with Sup&#39;s rules, and tells the portal who owns what.</p>
-<p><strong>Linking Solana to Dogecoin.</strong> Each Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so ownership links back to that wallet. The per-user Dogecoin key that signs these records is derived by the portal and is <strong>not exportable, by design</strong>.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/action-flow.png" alt="Life of one action (planned flow)" width="1805" height="1098" loading="lazy" decoding="async"><figcaption aria-hidden="true">Life of one action (planned flow)</figcaption></figure>
-<p><strong>Phasing.</strong> Phase 1 uses Solana memos plus IPFS CIDs for posts, with Dogecoin (via Sup&#39;s format) for objects. A <strong>daily Dogecoin anchor</strong>, one batch hash covering the day&#39;s Solana activity, is planned for later. The marketplace starts <strong>preview-only</strong>.</p>
-<h2 id="wh-7-tokenomics-and-supply">7. Tokenomics and supply</h2>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Detail</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Name / ticker</td>
-<td>Meowecoin / MEOWE</td>
-</tr>
-<tr>
-<td>Chain</td>
-<td>Solana (SPL token), launched on pump.fun</td>
-</tr>
-<tr>
-<td>Contract address</td>
-<td><code>FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump</code></td>
-</tr>
-<tr>
-<td>Main pool</td>
-<td>PumpSwap, MEOWE paired with wrapped DOGE (wDOGE)</td>
-</tr>
-<tr>
-<td>Pool address</td>
-<td><code>5iQ5n8Sir2xKpGDJYcem5VxW6HVqUF6rkVyYeMepLs6u</code></td>
-</tr>
-<tr>
-<td>Launch supply</td>
-<td>1,000,000,000 MEOWE</td>
-</tr>
-<tr>
-<td>Current supply</td>
-<td>~960.7M MEOWE (~39.3M already burned)</td>
-</tr>
-<tr>
-<td>Team wallets</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Vesting</td>
-<td>None</td>
-</tr>
-</tbody></table>
-</div>
-<figure class="doc-fig"><img src="/whitepaper/assets/supply-now.png" alt="Supply snapshot" width="1228" height="809" loading="lazy" decoding="async"><figcaption aria-hidden="true">Supply snapshot</figcaption></figure>
-<p>There is no reserved team or marketing allocation and nothing scheduled to unlock. Supply only goes one way: down, through burns.</p>
-<h2 id="wh-8-burn-mechanics-and-the-fee-model">8. Burn mechanics and the fee model</h2>
-<h3 id="wh-8-1-how-an-action-is-priced">8.1 How an action is priced</h3>
-<p>Each portal action has a simple price in USD terms, converted to MEOWE at the moment of the action and paid in MEOWE. <strong>A post costs about a penny</strong> (~$0.01, about 1,246 MEOWE at today&#39;s estimated price), and <strong>creating a profile costs pennies</strong> (~$0.15, about 19,025 MEOWE). Every fee is split three ways:</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/fee-split.png" alt="Fee split per action (planned)" width="1435" height="969" loading="lazy" decoding="async"><figcaption aria-hidden="true">Fee split per action (planned)</figcaption></figure>
-<ul>
-<li><strong>30% burned forever.</strong> Removed from supply permanently.</li>
-<li><strong>60% swapped to DOGE.</strong> Pays for Dogecoin injections and funds the treasury.</li>
-<li><strong>10% to community nodes.</strong> Pays the people who run IPFS pinning and indexer nodes.</li>
-</ul>
-<p>The treasury also sponsors users&#39; Solana network fees, with an optional user-paid speedup for people who want faster processing.</p>
-<h3 id="wh-8-2-what-a-burn-looks-like-illustration">8.2 What a burn looks like (illustration)</h3>
-<p><em>Illustration at today&#39;s estimated prices. Not a projection.</em></p>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Fee</th>
-<th>MEOWE burned</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>One post</td>
-<td>~1,246 MEOWE (~$0.01)</td>
-<td>~374 MEOWE</td>
-</tr>
-<tr>
-<td>One profile mint</td>
-<td>~19,025 MEOWE (~$0.15)</td>
-<td>~5,700 MEOWE</td>
-</tr>
-<tr>
-<td>1,000 posts a day</td>
-<td>~1.25M MEOWE a day</td>
-<td>~374K a day, ~136M a year</td>
-</tr>
-</tbody></table>
-</div>
-<p>At 1,000 posts a day, about <strong>136M MEOWE a year</strong> would be burned, roughly <strong>14% of the current ~960.7M supply</strong>. Each user only burns pennies&#39; worth, but it adds up across the community.</p>
-<h3 id="wh-8-3-fees-are-priced-in-pennies-not-tokens">8.3 Fees are priced in pennies, not tokens</h3>
-<p>This is the key mechanic. A post costs about a penny whether MEOWE is cheap or expensive. So the <strong>number of tokens</strong> burned per action depends on price:</p>
-<blockquote>
-<p><strong>tokens burned per action = 30% × (fee in dollars ÷ MEOWE price)</strong></p>
-</blockquote>
-<p>If MEOWE&#39;s price rises, the same penny fee burns fewer tokens: at ten times today&#39;s price, a post would burn about 37 MEOWE instead of 374. The dollar value burned stays the same.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/burn-vs-price.png" alt="Burn per post vs price" width="1715" height="972" loading="lazy" decoding="async"><figcaption aria-hidden="true">Burn per post vs price</figcaption></figure>
-<p>Now put that together with steady usage and steady demand (a roughly constant market cap). As supply shrinks, each token is worth a little more, so each action burns a little less. The result is that the burn removes a <strong>roughly constant share of the remaining supply</strong> each year, about 14% a year in the illustration, rather than a fixed number of tokens:</p>
-<blockquote>
-<p><strong>supply after t years = today&#39;s supply × (1 − 0.14)^t</strong></p>
-</blockquote>
-<p>Supply keeps falling but <strong>never reaches zero</strong>. Mathematically this is geometric decay.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/supply-decay.png" alt="Supply over time (illustration)" width="1624" height="1036" loading="lazy" decoding="async"><figcaption aria-hidden="true">Supply over time (illustration)</figcaption></figure>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Year (illustration)</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>5</th>
-<th>10</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Supply (M MEOWE)</td>
-<td>960.7</td>
-<td>~826</td>
-<td>~711</td>
-<td>~452</td>
-<td>~213</td>
-</tr>
-</tbody></table>
-</div>
-<p><em>These figures only show the shape of the curve under fixed assumptions. Real usage, prices and demand will differ, and could be far lower.</em></p>
-<h3 id="wh-8-4-being-honest-about-what-burns-do">8.4 Being honest about what burns do</h3>
-<p>Market cap equals price times supply. Burning tokens <strong>does not by itself raise market cap</strong>: if supply falls and nothing else changes, each token is worth a bit more and the total stays the same. The value case for MEOWE is not &quot;burns make number go up&quot;. It is:</p>
-<ol>
-<li><strong>Use requires MEOWE.</strong> Every portal action is paid in MEOWE, so using the portal means buying MEOWE. That is real buy pressure tied to real use.</li>
-<li><strong>Burns concentrate ownership.</strong> Each burn makes every remaining token a slightly bigger share of the network.</li>
-</ol>
-<p>Neither point is a promise of returns. If nobody uses the portal, neither effect happens.</p>
-<h2 id="wh-9-holder-rewards-in-doge">9. Holder rewards in DOGE</h2>
-<p>MEOWE trades in a PumpSwap pool paired with wrapped DOGE. PumpSwap pays a <strong>creator fee</strong> on trading in that pool. The community plans to send <strong>100% of that creator fee to MEOWE holders, paid in wDOGE</strong>.</p>
-<ul>
-<li><strong>Status: planned / rolling out.</strong> This is not yet confirmed live. Details such as eligibility, frequency and distribution method will be published by the community before or as it goes live.</li>
-<li><strong>Separate from the portal treasury.</strong> The creator fee goes to holders, not to the treasury. The treasury runs only on its share of portal fees and its starting deposit.</li>
-<li><strong>Paid in wDOGE.</strong> Holders of a cat token get paid in Doge, which keeps MEOWE tied to the Dogecoin community it came from.</li>
-</ul>
-<p>Rewards depend on trading activity in the pool and can be small or zero. They are not interest, yield or a guaranteed income.</p>
-<h2 id="wh-10-treasury-sustainability">10. Treasury sustainability</h2>
-<p>The treasury keeps the portal running: it funds writing records to Dogecoin and sponsors users&#39; Solana fees. It is designed to fund itself from usage instead of from a large war chest.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/treasury-loop.png" alt="Self-funding treasury loop" width="1650" height="972" loading="lazy" decoding="async"><figcaption aria-hidden="true">Self-funding treasury loop</figcaption></figure>
-<ul>
-<li><strong>Starting deposit.</strong> The treasury starts with a DOGE deposit of a few hundred dollars.</li>
-<li><strong>Income.</strong> 60% of every fee is swapped to DOGE inside the user&#39;s own transaction, so the treasury receives DOGE, not MEOWE.</li>
-<li><strong>What it funds.</strong> Writing records to Dogecoin and sponsored Solana fees.</li>
-<li><strong>Self-funding.</strong> Fees are set to fully cover writing records to Dogecoin and running the network, so the treasury funds itself from usage after the initial deposit.</li>
-<li><strong>wDOGE to DOGE.</strong> Swaps produce wrapped DOGE on Solana. The treasury redeems it to native DOGE <strong>on demand</strong>, through a bridge or an exchange, when it needs to pay for Dogecoin records.</li>
-</ul>
-<p>If prices or network fees change, the fee in MEOWE adjusts, because the price of each action is set in USD or DOGE terms.</p>
-<h2 id="wh-11-security-and-verifiability">11. Security and verifiability</h2>
-<p><strong>Anyone can check.</strong> Profiles, items and ownership live on Dogecoin mainnet. Anyone can verify marketplace objects by syncing a Dogecoin node and running the indexer. You do not need to trust the project&#39;s servers.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/ownership-link.png" alt="Ownership link" width="1805" height="782" loading="lazy" decoding="async"><figcaption aria-hidden="true">Ownership link</figcaption></figure>
-<p><strong>Ownership traces back to the payer.</strong> Every Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so an item on Dogecoin can be traced to the wallet that created it.</p>
-<p><strong>Non-exportable Dogecoin key.</strong> The per-user Dogecoin key is derived by the portal, only signs records, never holds coins, and cannot be exported. This keeps a user&#39;s Dogecoin identity bound to their Solana wallet.</p>
-<p><strong>Files are pinned in more than one place.</strong> IPFS content is pinned by the project&#39;s own Kubo node plus public pinning services, with community nodes planned to add more copies.</p>
-<p><strong>Atomic payments.</strong> Burn, swap and memo happen in one Solana transaction. If the swap price moves too far, the transaction fails and nothing is charged.</p>
-<p><strong>Known risks the design must manage.</strong> A browser wallet is only as safe as the user&#39;s password and the code the site serves. The relayer&#39;s Dogecoin key holds real funds, so only an operating float should be kept online. Redeeming wDOGE depends on bridge smart contracts and signers. No third-party audit has been announced; treat all code as unaudited until one is published.</p>
-<div class="pb"></div>
-
-<h2 id="wh-12-roadmap">12. Roadmap</h2>
-<figure class="doc-fig"><img src="/whitepaper/assets/roadmap.png" alt="Roadmap" width="1805" height="817" loading="lazy" decoding="async"><figcaption aria-hidden="true">Roadmap</figcaption></figure>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Phase</th>
-<th>Scope</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Phase 0</td>
-<td>Community takeover, new site, verified X, Telegram, listings</td>
-<td>Done / ongoing</td>
-</tr>
-<tr>
-<td>Phase 1</td>
-<td>Portal MVP: wallet, profiles, posts, burn engine</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>Phase 2</td>
-<td>Dogecoin P2FK item minting + the Dogecoin indexer</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>Phase 3</td>
-<td>Marketplace (preview first, then trading) + holder wDOGE rewards</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>Phase 4</td>
-<td>Daily Dogecoin anchor + community-run nodes</td>
-<td>Planned</td>
-</tr>
-</tbody></table>
-</div>
-<h2 id="wh-13-community-and-links">13. Community and links</h2>
-<p>MEOWE is a community takeover: no company, no team allocation, just holders who decided to build. Join in here:</p>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Channel</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Website</td>
-<td>meoweco.in</td>
-</tr>
-<tr>
-<td>X (verified)</td>
-<td>@1742Meowe (x.com/1742Meowe)</td>
-</tr>
-<tr>
-<td>Telegram</td>
-<td>t.me/meowecoinOG</td>
-</tr>
-<tr>
-<td>Contract address</td>
-<td><code>FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump</code></td>
-</tr>
-<tr>
-<td>PumpSwap pool (MEOWE/wDOGE)</td>
-<td><code>5iQ5n8Sir2xKpGDJYcem5VxW6HVqUF6rkVyYeMepLs6u</code></td>
-</tr>
-</tbody></table>
-</div>
-<p><strong>Always check the contract address</strong> before buying; the only official links are the ones above. Ways to help: make memes, share them, run a node when community nodes open up, and give feedback on the portal.</p>
-<div class="pb"></div>
-
-<h2 id="wh-14-disclaimer">14. Disclaimer</h2>
-<p><strong>Not financial advice.</strong> This white paper is for information and community discussion only. It is not financial, investment, legal or tax advice, and it is not an offer or solicitation to buy or sell any token or security. <strong>Do your own research (DYOR)</strong> and talk to a qualified professional before making any decision.</p>
-<p><strong>No promises.</strong> Nothing here promises returns, profits, price levels, price targets, listings, partnerships or delivery dates. Illustrative figures are based on today&#39;s estimated prices and simple assumptions. They are not projections and actual results may be very different.</p>
-<p><strong>Risks.</strong> Buying, holding or using MEOWE involves serious risk, including:</p>
-<ul>
-<li><strong>Meme-token volatility.</strong> MEOWE&#39;s price can rise or fall sharply, and you can lose all of the money you put in. Liquidity can be thin.</li>
-<li><strong>Development risk.</strong> The MEOWE Portal is <strong>not live</strong>. The portal, burn engine, indexer, marketplace and holder rewards are planned and may be delayed, changed, reduced or never delivered.</li>
-<li><strong>Holder rewards are not confirmed live.</strong> Rewards depend on trading activity and may be small, irregular or zero.</li>
-<li><strong>Smart-contract and bridge risk.</strong> wDOGE is a wrapped asset that depends on bridge smart contracts and signers. A bug, hack, pause or failure could make wDOGE impossible to redeem or worthless. Pools, programs and wallets can also contain bugs.</li>
-<li><strong>Technology risk.</strong> Solana, Dogecoin, IPFS and pinning services can suffer outages, fee spikes or changes. Content stays available only while someone pins it.</li>
-<li><strong>Wallet and key risk.</strong> Lost passwords, phishing or malicious code can mean lost access or stolen funds. The portal&#39;s derived Dogecoin key cannot be exported.</li>
-<li><strong>Regulatory uncertainty.</strong> Laws on crypto assets, rewards and node payments are unclear and changing in many countries. Future rules could restrict MEOWE, the portal or rewards.</li>
-<li><strong>Community-run project.</strong> MEOWE is a community takeover with no company behind it. Plans depend on volunteers and may change.</li>
-</ul>
-<p>Only use money you can afford to lose. By interacting with MEOWE you accept these risks.</p>
-<p><em>Memes are forever on Doge.</em></p>
-</article>
-<!-- DOC:whitepaper:end -->
-      </div>
-      <div class="doc-scroll" id="doc-panel-technical" role="tabpanel" aria-labelledby="doc-tab-technical" tabindex="0" hidden>
-<!-- DOC:technical:start -->
-<article class="doc" data-doc="technical">
-<h1 id="tech-title">Meowecoin (MEOWE): Technical Overview</h1>
-<p><em>Architecture, data flow and fee mechanics of the MEOWE Portal (&quot;the forge&quot;). Version 1.0, October 2026.</em></p>
-<p><strong>Audience:</strong> developers and technical investors. <strong>Status:</strong> the MEOWE Portal is <strong>in development</strong>. Everything in this document about the portal, the burn engine, the indexer, the marketplace and holder rewards describes the <strong>planned</strong> design, not a live system. Numbers marked <em>illustration</em> use today&#39;s estimated prices and are not projections.</p>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Token</td>
-<td>MEOWE (SPL token on Solana), launched on pump.fun</td>
-</tr>
-<tr>
-<td>Contract address (mint)</td>
-<td><code>FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump</code></td>
-</tr>
-<tr>
-<td>Main pool</td>
-<td>PumpSwap MEOWE / wDOGE: <code>5iQ5n8Sir2xKpGDJYcem5VxW6HVqUF6rkVyYeMepLs6u</code></td>
-</tr>
-<tr>
-<td>Supply</td>
-<td>1,000,000,000 at launch; ~960.7M now (~39.3M burned). No team wallets, no vesting</td>
-</tr>
-<tr>
-<td>Links</td>
-<td>meoweco.in · X @1742Meowe · t.me/meowecoinOG</td>
-</tr>
-</tbody></table>
-</div>
-<h2 id="te-1-system-overview">1. System overview</h2>
-<p>The portal is a separate web app from meoweco.in. It lets holders create profiles, post messages and memes, mint items and later trade them, paying <strong>only in MEOWE</strong>. Four layers do the work:</p>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Layer</th>
-<th>Role</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Solana</strong></td>
-<td>Payment layer. Every action is one Solana transaction that pays the MEOWE fee, burns the burn share, swaps the swap share to wDOGE for the treasury, and carries an SPL memo with a small JSON pointer (IPFS CID).</td>
-</tr>
-<tr>
-<td><strong>IPFS</strong></td>
-<td>Content layer. Files and JSON payloads, pinned by the project&#39;s own Kubo node plus public pinning services.</td>
-</tr>
-<tr>
-<td><strong>Dogecoin mainnet</strong></td>
-<td>Permanent record layer for profiles, items and ownership, written in Sup&#39;s P2FK (pay-to-fake-key) format, the same way Sup writes records to Bitcoin.</td>
-</tr>
-<tr>
-<td><strong>Backend</strong></td>
-<td>Relayer (watches Solana, funds and broadcasts Dogecoin injections, sponsors Solana fees), treasury, and the project&#39;s own Dogecoin P2FK indexer.</td>
-</tr>
-</tbody></table>
-</div>
-<figure class="doc-fig"><img src="/whitepaper/assets/architecture.png" alt="MEOWE Portal architecture (planned)" width="1805" height="1283" loading="lazy" decoding="async"><figcaption aria-hidden="true">MEOWE Portal architecture (planned)</figcaption></figure>
-<h2 id="te-2-wallet-and-identity">2. Wallet and identity</h2>
-<ul>
-<li><strong>Portal wallet.</strong> Each user gets a portal-generated Solana wallet, in the style of SupSpace (supspace.io, built by embiimob): the key is created and encrypted in the browser. Per the design notes, connecting an existing wallet is also supported.</li>
-<li><strong>Derived Dogecoin key.</strong> The portal derives a per-user Dogecoin signing key from the user&#39;s Solana wallet. It only signs P2FK records and never holds coins. <strong>It is not exportable, by design</strong>, so a Dogecoin identity cannot be separated from the Solana wallet that owns it.</li>
-<li><strong>Ownership link.</strong> Each Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it. Anyone can therefore trace an item on Dogecoin back to the paying Solana wallet and check that the Solana payment really happened.</li>
-</ul>
-<h2 id="te-3-data-flow-of-one-action">3. Data flow of one action</h2>
-<figure class="doc-fig"><img src="/whitepaper/assets/action-flow.png" alt="Life of one action (planned flow)" width="1805" height="1098" loading="lazy" decoding="async"><figcaption aria-hidden="true">Life of one action (planned flow)</figcaption></figure>
-<ol>
-<li><strong>Compose and pin.</strong> The portal uploads the file and a JSON payload to IPFS and gets a CID.</li>
-<li><strong>Quote.</strong> The fee is computed in USD or DOGE terms and converted to MEOWE at the current pool price.</li>
-<li><strong>One Solana transaction.</strong> The user signs a single transaction containing the MEOWE burn, the swap of the swap share into wDOGE paid to the treasury (with a minimum-output guard, so if the price moves too far the transaction fails and nothing is charged), the node share, and an SPL memo. The memo holds a small JSON pointer, for example (illustrative format): <code>{&quot;v&quot;:1,&quot;t&quot;:&quot;post&quot;,&quot;id&quot;:&quot;&lt;action-id&gt;&quot;,&quot;cid&quot;:&quot;bafy...&quot;}</code>.</li>
-<li><strong>Relay.</strong> The relayer watches Solana for finalized portal actions. Posts and profile updates are complete at this point (Solana memo + IPFS CID). For lasting records (profiles, items, ownership changes) it builds a Sup-format P2FK transaction signed by the user&#39;s derived Dogecoin key, funds it from treasury DOGE, and broadcasts it to Dogecoin mainnet.</li>
-<li><strong>Index.</strong> The project&#39;s Dogecoin indexer reads every block, rebuilds P2FK messages using Sup&#39;s rules, and serves the current state (&quot;what does this address own?&quot;) back to the portal.</li>
-</ol>
-<h2 id="te-4-the-dogecoin-record-layer-p2fk">4. The Dogecoin record layer (P2FK)</h2>
-<ul>
-<li><strong>How P2FK stores data.</strong> A message is cut into small pieces, each encoded as a &quot;fake&quot; destination address that receives a dust output. Those outputs can never be spent, so every Dogecoin full node keeps them forever. Sup reassembles the pieces in output order and verifies the signature at the front.</li>
-<li><strong>Why our own indexer.</strong> p2fk.io indexes Sup records on Bitcoin only. The project therefore runs its own Dogecoin indexer that applies Sup&#39;s profile and object rules and answers the same kinds of queries. Community nodes can run the same indexer later.</li>
-<li><strong>Verifiability.</strong> Anyone can verify marketplace objects and ownership by syncing a Dogecoin node and running the indexer; no trust in the project&#39;s servers is required.</li>
-<li><strong>Phasing.</strong> Phase 1 uses Solana memo + IPFS CID, with Dogecoin (via Sup&#39;s format) for objects. A <strong>daily Dogecoin anchor</strong>, one batch hash of the day&#39;s Solana actions, comes later (Phase 4). The marketplace starts <strong>preview-only</strong>.</li>
-</ul>
-<h2 id="te-5-fee-mechanics">5. Fee mechanics</h2>
-<p><strong>Pricing.</strong> Each action has a simple price in USD terms and is paid in MEOWE at the current price. A post costs about a penny (~$0.01, about 1,246 MEOWE at today&#39;s estimated price); creating a profile costs pennies (~$0.15, about 19,025 MEOWE).</p>
-<pre><code>fee_USD      = price of the action in USD   (post ≈ $0.01, profile ≈ $0.15)
-fee_MEOWE    = fee_USD / P_MEOWE             (P_MEOWE = MEOWE price in USD at quote time)
-
-burn         = 0.30 × fee_MEOWE   → burned forever (sent to the burn, removed from supply)
-swap         = 0.60 × fee_MEOWE   → swapped to wDOGE in the same tx → treasury
-nodes        = 0.10 × fee_MEOWE   → community IPFS and indexer operators
-</code></pre>
-<figure class="doc-fig"><img src="/whitepaper/assets/fee-split.png" alt="Fee split per action (planned)" width="1435" height="969" loading="lazy" decoding="async"><figcaption aria-hidden="true">Fee split per action (planned)</figcaption></figure>
-<p><strong>Treasury.</strong> Treasury income is the 60% swap share of action fees plus a starting DOGE deposit of a few hundred dollars. (The PumpSwap creator fee is planned to go 100% to holders, so it is not treasury income.) The treasury funds the Dogecoin record writes and <strong>sponsors users&#39; Solana fees</strong> by acting as fee payer, with an optional user-paid speedup. wDOGE is redeemed to native DOGE <strong>on demand</strong>, via bridge or exchange. Fees are set to fully cover writing records to Dogecoin and running the network, so the treasury funds itself from usage after the initial deposit.</p>
-<p><strong>Illustration at today&#39;s estimated prices (not a projection):</strong></p>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Fee</th>
-<th>Burned (30%)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Post</td>
-<td>~1,246 MEOWE (~$0.01)</td>
-<td>~374 MEOWE</td>
-</tr>
-<tr>
-<td>Profile mint</td>
-<td>~19,025 MEOWE (~$0.15)</td>
-<td>~5,700 MEOWE</td>
-</tr>
-<tr>
-<td>1,000 posts/day</td>
-<td>~1.25M MEOWE/day</td>
-<td>~374K/day ≈ 136M/yr ≈ 14% of ~960.7M</td>
-</tr>
-</tbody></table>
-</div>
-<h2 id="te-6-burn-dynamics-fees-in-pennies-not-tokens">6. Burn dynamics: fees in pennies, not tokens</h2>
-<p>Fees are fixed in <strong>dollars</strong>, not in tokens. If daily usage is N actions with burn value b (USD) each:</p>
-<pre><code>tokens burned per year   B = 365 × N × b / P
-if demand is steady, market cap M = P × S is roughly constant, so P = M / S
-then  B / S = 365 × N × b / M = k        (a constant share of the remaining supply)
-supply after t years     S_t = S_0 × (1 − k)^t      (illustration: k ≈ 0.14)
-</code></pre>
-<p>As supply shrinks and each token is worth more, each action burns <strong>fewer</strong> tokens. Under steady usage and demand the burn removes a roughly constant share of what remains: supply keeps falling but never reaches zero (geometric decay). At 14% a year the illustrative path is ~960.7M → ~452M after 5 years → ~213M after 10 years.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/supply-decay.png" alt="Supply over time, illustration" width="1624" height="1036" loading="lazy" decoding="async"><figcaption aria-hidden="true">Supply over time, illustration</figcaption></figure>
-<p><strong>Economic honesty.</strong> Market cap = price × supply, so burning tokens does not by itself raise market cap. The value case is (1) using the portal requires buying MEOWE, which is buy pressure, and (2) burns make each remaining token a larger share of the network. No returns or price targets are implied.</p>
-<h2 id="te-7-security-and-trust-model">7. Security and trust model</h2>
-<ul>
-<li><strong>Verifiable records:</strong> profiles, items and ownership live on Dogecoin mainnet and can be checked by anyone with a Dogecoin node and the indexer.</li>
-<li><strong>Atomic payment:</strong> burn, swap and memo are in one Solana transaction with a slippage guard; it either all succeeds or nothing is charged.</li>
-<li><strong>Key design:</strong> the derived Dogecoin key is non-exportable and signs only; browser-held wallets depend on the user&#39;s password and on the site serving clean code.</li>
-<li><strong>Treasury hot wallet:</strong> the relayer needs a funded Dogecoin key; the design keeps only an operating float online.</li>
-<li><strong>wDOGE:</strong> redeeming wrapped DOGE depends on bridge smart contracts and signers (bridge risk).</li>
-<li><strong>Pinning:</strong> content stays available only while at least one node pins it; the project runs Kubo and uses public pinning services, and community nodes add redundancy later.</li>
-</ul>
-<h2 id="te-8-roadmap-no-dates">8. Roadmap (no dates)</h2>
-<div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
-<table>
-<thead>
-<tr>
-<th>Phase</th>
-<th>Scope</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>Community takeover, new site, verified X, Telegram, listings</td>
-<td>Done / ongoing</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Portal MVP: wallet, profiles, posts, burn engine</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Dogecoin P2FK item minting + Dogecoin indexer</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Marketplace (preview first, then trading) + holder wDOGE rewards</td>
-<td>Planned</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Daily Dogecoin anchor + community-run nodes</td>
-<td>Planned</td>
-</tr>
-</tbody></table>
-</div>
-<p><em>Not financial advice. MEOWE is a highly volatile meme token; the portal is not live; wDOGE carries smart-contract and bridge risk; regulation is uncertain. Do your own research.</em></p>
-</article>
-<!-- DOC:technical:end -->
       </div>
     </div>
   </div>
+</section>
 
-  <script src="js/main.js" defer></script>
+<section class="section section-alt" id="showcase">
+  <div class="container">
+    <header class="section-head">
+      <span class="eyebrow">Showcase</span>
+      <h2>Real items minted with P2FK</h2>
+      <p>Each of these is a live object you can open on p2fk.io. Images are stored on Dogecoin or on IPFS.</p>
+    </header>
+    <div class="show-grid">
+      <a class="card" href="https://p2fk.io/?object=1H7UGQKeDezKKfgFiBeBLJWxxiQo6qFaiN&amp;mainnet=true" target="_blank" rel="noopener noreferrer">
+        <img src="assets/showcase/tadar-sauce.jpg" alt="Tadar Sauce" width="408" height="503" loading="lazy">
+        <div class="card-body">
+          <h3>Tadar Sauce</h3>
+          <div class="tags"><span class="tag doge">Image on Dogecoin</span></div>
+          <span class="addr">1H7UGQ…6qFaiN</span>
+          <span class="view">View on p2fk.io</span>
+        </div>
+      </a>
+      <a class="card" href="https://p2fk.io/?object=1GdixtzWRPJjXMEq8EaL3pJksYAjgka8N7&amp;mainnet=true" target="_blank" rel="noopener noreferrer">
+        <img src="assets/showcase/the-wow-doge.gif" alt="THE WOW DOGE" width="245" height="180" loading="lazy">
+        <div class="card-body">
+          <h3>THE WOW DOGE</h3>
+          <div class="tags"><span class="tag doge">Image on Dogecoin</span></div>
+          <span class="addr">1Gdixt…gka8N7</span>
+          <span class="view">View on p2fk.io</span>
+        </div>
+      </a>
+      <a class="card" href="https://p2fk.io/?object=mh9aDiGyPMM7XdqruTEQmHWFMx968K2ejW&amp;mainnet=false" target="_blank" rel="noopener noreferrer">
+        <img src="assets/showcase/coral-queen.jpg" alt="Coral Queen" width="835" height="960" loading="lazy">
+        <div class="card-body">
+          <h3>Coral Queen</h3>
+          <div class="tags"><span class="tag">Image on IPFS</span></div>
+          <span class="addr">mh9aDi…8K2ejW</span>
+          <span class="view">View on p2fk.io</span>
+        </div>
+      </a>
+      <a class="card" href="https://p2fk.io/?object=mij8qZgSmZASEchZRjPYGjCAaXPqdYidRL&amp;mainnet=false" target="_blank" rel="noopener noreferrer">
+        <img src="assets/showcase/seadragon.jpg" alt="SeaDragon" width="1058" height="1400" loading="lazy">
+        <div class="card-body">
+          <h3>SeaDragon</h3>
+          <div class="tags"><span class="tag">Image on IPFS</span></div>
+          <span class="addr">mij8qZ…dYidRL</span>
+          <span class="view">View on p2fk.io</span>
+        </div>
+      </a>
+      <a class="card" href="https://p2fk.io/?object=mkuGShCyzRf68hexbZWRCHUgkcMc1r9nCd&amp;mainnet=false" target="_blank" rel="noopener noreferrer">
+        <img src="assets/showcase/rainbow-mind.jpg" alt="rainbow mind" width="256" height="256" loading="lazy">
+        <div class="card-body">
+          <h3>rainbow mind</h3>
+          <div class="tags"><span class="tag">Image on IPFS</span></div>
+          <span class="addr">mkuGSh…1r9nCd</span>
+          <span class="view">View on p2fk.io</span>
+        </div>
+      </a>
+      <a class="card" href="https://p2fk.io/?object=mijw4Fw3DBBxsxBkPCH2hFUidgunfdrDCT&amp;mainnet=false" target="_blank" rel="noopener noreferrer">
+        <img src="assets/showcase/springtime.jpg" alt="Springtime" width="547" height="419" loading="lazy">
+        <div class="card-body">
+          <h3>Springtime</h3>
+          <div class="tags"><span class="tag">Image on IPFS</span></div>
+          <span class="addr">mijw4F…nfdrDCT</span>
+          <span class="view">View on p2fk.io</span>
+        </div>
+      </a>
+    </div>
+    <p class="note">Items shown were made by Sup!? users and are linked for illustration. Explore more at <a href="https://p2fk.io" target="_blank" rel="noopener noreferrer">p2fk.io</a>.</p>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <header class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Mint it. Own it. Grow it.</h2>
+      <p>Three steps from your first mint to a growing Space.</p>
+    </header>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Mint it</h3><p>Profiles, store items, Spaces and channels are written straight to Dogecoin.</p></div>
+      <div class="step"><div class="num">2</div><h3>Own it</h3><p>Everything you mint can be given, listed or sold from your store.</p></div>
+      <div class="step"><div class="num">3</div><h3>Grow it</h3><p>Every message in your Space is recorded on-chain.</p></div>
+    </div>
+    <div class="cta-band">
+      <p>See it in the portal preview.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://neptunemonk.github.io/meowcoin-portal/" target="_blank" rel="noopener noreferrer">Try the demo</a>
+        <a class="btn btn-ghost" href="whitepaper/#whitepaper">Read the whitepaper</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <span>Meowecoin ($MEOWE) · community takeover · meoweco.in</span>
+    <span><a href="https://x.com/1742Meowe" target="_blank" rel="noopener noreferrer">X @1742Meowe</a> · <a href="https://github.com/NeptuneMonk/meowecoin" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <span>Not financial advice. Crypto is risky.</span>
+  </div>
+</footer>
+<script>
+(function () {
+  var toggle = document.querySelector('.menu-btn');
+  var menu = document.getElementById('nav-menu');
+  if (!toggle || !menu) return;
+  function setOpen(open) {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', function () {
+    setOpen(!menu.classList.contains('open'));
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>

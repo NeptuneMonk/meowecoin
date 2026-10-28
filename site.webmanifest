@@ -2,7 +2,7 @@
   "name": "Meowecoin",
   "short_name": "Meowecoin",
   "icons": [{ "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" }],
-  "theme_color": "#0f0d08",
-  "background_color": "#0f0d08",
+  "theme_color": "#1e1f22",
+  "background_color": "#1e1f22",
   "display": "standalone"
 }
