@@ -65,16 +65,11 @@ img { max-width: 100%; height: auto; }
   font-weight: 700;
   font-size: 18px;
 }
-.mark {
+.brand img {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--blurple);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 17px;
-  color: #fff;
+  object-fit: cover;
   box-shadow: 0 0 0 3px var(--bg-3);
 }
 .nav-menu { display: flex; gap: 4px; margin-left: auto; }
