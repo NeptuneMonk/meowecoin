@@ -2,9 +2,9 @@
 
 *Decentralized content monetization, powered by $MEOWE.*
 
-Meowecoin (MEOWE) is a community-run token on Solana, paired with wrapped DOGE. The community is building the **MEOWE Portal**, a place to create, own and sell tokenized content. Profiles, store items, Spaces and channels are recorded on Dogecoin mainnet with P2FK, and every action is paid in MEOWE.
+Meowecoin (MEOWE) is a community-run token on Solana, paired with wrapped DOGE. The community is building **DustForge**, where you forge content on Dogecoin. MEOWE is its first and home token. DustForge is a place to create, own and sell tokenized content. Profiles, store items, Spaces and channels are recorded on Dogecoin mainnet with P2FK, and every action is paid in MEOWE.
 
-This repo is the **meoweco.in website**: plain HTML and CSS with a little inline JavaScript. There is no build step for the site, no backend, no wallet connection and no live transactions. The portal itself is a separate app; the site links to its preview at https://neptunemonk.github.io/meowcoin-portal/.
+This repo is the **meoweco.in website**: plain HTML and CSS with a little inline JavaScript. There is no build step for the site, no backend, no wallet connection and no live transactions. DustForge itself is a separate app; the site links to its preview at https://neptunemonk.github.io/meowcoin-portal/.
 
 ## Structure
 
@@ -77,6 +77,6 @@ Always check the current DNS values in each host's docs before you go live.
 
 - **P2FK (Pay to Future Key)** and **Sup!?** were created by embii: https://github.com/embiimob/sup
 - **p2fk.io / bitFossil**, the open-source API for reading P2FK data: https://github.com/embiimob/p2fk.io and https://p2fk.io
-- Meowecoin did not create P2FK. The portal uses it to record tokenized content on Dogecoin.
+- Meowecoin did not create P2FK. DustForge uses it to record tokenized content on Dogecoin.
 
-**Disclaimer:** not financial advice and not an offer. The MEOWE Portal is in development, and holder rewards are planned and not confirmed live. No value, returns or dates are promised.
+**Disclaimer:** not financial advice and not an offer. DustForge is in development, and holder rewards are planned and not confirmed live. No value, returns or dates are promised.

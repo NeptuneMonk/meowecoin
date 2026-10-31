@@ -4,21 +4,21 @@
 
 Version 1.1 · October 2026 · Community edition
 
-> **Status note.** MEOWE is live on Solana. The MEOWE Portal ("the forge"), including profiles, stores, Spaces and channels, the burn engine, the Dogecoin indexer and holder rewards in wDOGE, is **planned and in development**. Nothing in this paper is a promise of features, timelines, returns or price. Illustrative numbers use today's estimated prices and are labeled as illustrations.
+> **Status note.** MEOWE is live on Solana. **DustForge** is where you forge content on Dogecoin, and MEOWE is its first and home token. DustForge, including profiles, stores, Spaces and channels, the burn engine, the Dogecoin indexer and holder rewards in wDOGE, is **planned and in development**. Nothing in this paper is a promise of features, timelines, returns or price. Illustrative numbers use today's estimated prices and are labeled as illustrations.
 
 <div class="pb"></div>
 
 ## 1. Abstract
 
-Meowecoin (MEOWE) is a community-run meme token on Solana that started life as a reaction emoji in the DOGEos Discord server. After its original deployer abandoned it, the community took it over and is rebuilding it with a new website, a verified X account, a Telegram group and a product: the **MEOWE Portal**, nicknamed **"the forge"**.
+Meowecoin (MEOWE) is a community-run meme token on Solana that started life as a reaction emoji in the DOGEos Discord server. After its original deployer abandoned it, the community took it over and is rebuilding it with a new website, a verified X account, a Telegram group and a product: **DustForge**. DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token.
 
-The portal is planned as a place to create, own and sell **tokenized content**. Users get a portal-generated Solana wallet. They can make a profile, open a store, mint items into it, start a **Space** with its own text channels, follow and message other people, and give away or sell what they own from their store. Everything is paid only in MEOWE. Files live on IPFS.
+DustForge is planned as a place to create, own and sell **tokenized content**. Users get a Solana wallet generated in DustForge. They can make a profile, open a store, mint items into it, start a **Space** with its own text channels, follow and message other people, and give away or sell what they own from their store. Everything is paid only in MEOWE. Files live on IPFS.
 
 Anything you own (a profile, a store item, a Space or a channel), and every give or sale of it, is written to **Dogecoin mainnet** as its own transaction. These records use P2FK (Pay to Future Key), the record format of embii's Sup!? app, which Sup uses on Bitcoin. Ownership is therefore on-chain, not in our database. Follows and messages are paid in MEOWE on Solana, then recorded to Dogecoin together in a periodic batch, instead of one Dogecoin transaction per message.
 
 Every action is priced in pennies and paid in MEOWE: a message costs about a penny (~$0.01) and creating a profile costs about $0.15. Prices for other actions are not published yet (—). Of each fee, **30% is burned forever**, **60% is swapped to DOGE** for the treasury, and **10% goes to community nodes** that pin files and run indexers. Separately, the PumpSwap creator fee is planned to go **100% to holders, paid in wDOGE**.
 
-The design is simple to state: using the portal creates demand for MEOWE, using it burns MEOWE, and what you make is tokenized content you own on Dogecoin, the oldest meme chain there is.
+The design is simple to state: using DustForge creates demand for MEOWE, using it burns MEOWE, and what you make is tokenized content you own on Dogecoin, the oldest meme chain there is.
 
 ## 2. Origin and lore
 
@@ -39,7 +39,7 @@ The holders who stayed decided to rebuild instead of walking away. This is a **c
 - set up a **verified X account, @1742Meowe**;
 - opened a **Telegram community, t.me/meowecoinOG**;
 - worked on listings and visibility;
-- started building the **MEOWE Portal**, which is under construction.
+- started building **DustForge**, which is under construction.
 
 There are **no team wallets and no vesting**. Nobody holds a reserved allocation waiting to unlock. The community owns the project because the community is all that is left, and that is the point.
 
@@ -54,15 +54,15 @@ Memes and creator content are the culture of crypto, but where they live is frag
 
 MEOWE's answer is to give the token a job: paying for a place where your profile, your store, your Spaces and everything in them are tokenized content you own on a chain that keeps everything, and that you can give away or sell.
 
-## 5. The solution: the MEOWE Portal ("the forge")
+## 5. The solution: DustForge
 
-The MEOWE Portal is a web app, separate from the meoweco.in website, that is **in development**. Everything in this section is **planned**.
+DustForge is a web app, separate from the meoweco.in website, that is **in development**. DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token. Everything in this section is **planned**.
 
 ### What users will be able to do
 
 | Feature | What it means | Where it is recorded |
 |---|---|---|
-| Wallet | A portal-generated Solana wallet, similar to SupSpace (supspace.io, built by embiimob) | Solana |
+| Wallet | A Solana wallet generated in DustForge, similar to SupSpace (supspace.io, built by embiimob) | Solana |
 | Profile | Your name, picture and bio, as tokenized content you own | Dogecoin mainnet (its own transaction) + IPFS |
 | Store | Mint your art, memes, files or small apps as store items. Give them away or list them for sale | Dogecoin mainnet (each mint, give and sale is its own transaction) + IPFS |
 | Spaces | A community you create and own, with text channels. You can give it away or sell it from your store, and its channels go with it | Dogecoin mainnet (its own transaction) |
@@ -78,37 +78,37 @@ There is no shared marketplace at first. You buy something from the owner's own 
 
 A Space is a community you create. It is tokenized content you own, recorded on Dogecoin. Its text channels are recorded on Dogecoin too, and each one is linked to its Space. Only channels made by the Space's owner count as part of the Space. You can give a Space to someone, or sell it by listing it in your store. Its channels go with it.
 
-**One currency.** Every action is paid **only in MEOWE**. Users never need to hold DOGE or manage a Dogecoin wallet. The portal takes care of the rest.
+**One currency.** Every action is paid **only in MEOWE**. Users never need to hold DOGE or manage a Dogecoin wallet. DustForge takes care of the rest.
 
-**Why "the forge".** Content goes in as a file and comes out as tokenized content: forged onto Dogecoin, pinned on IPFS and paid for with MEOWE that is partly burned in the process.
+**Why DustForge.** DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token. Content goes in as a file and comes out as tokenized content: forged onto Dogecoin, pinned on IPFS and paid for with MEOWE that is partly burned in the process.
 
 ## 6. Architecture
 
-The portal uses three layers, each doing what it is best at: Solana for payments and pointers, IPFS for files and Dogecoin for permanent records.
+DustForge uses three layers, each doing what it is best at: Solana for payments and pointers, IPFS for files and Dogecoin for permanent records.
 
-![MEOWE Portal architecture (planned)](assets/architecture.png)
+![DustForge architecture (planned)](assets/architecture.png)
 
-**Solana: the payment and pointer layer.** Every paid portal action is paid in one Solana transaction. It pays the fee in MEOWE, burns the burn share, swaps the swap share into wDOGE for the treasury, and attaches a memo. For a follow or a message, the memo is a small JSON pointer holding the IPFS CID (content ID) of the message.
+**Solana: the payment and pointer layer.** Every paid DustForge action is paid in one Solana transaction. It pays the fee in MEOWE, burns the burn share, swaps the swap share into wDOGE for the treasury, and attaches a memo. For a follow or a message, the memo is a small JSON pointer holding the IPFS CID (content ID) of the message.
 
 **IPFS: the file layer.** Images, memes and JSON payloads live on IPFS. They are pinned by the project's own Kubo node plus public pinning services, and later by community nodes. A CID is a fingerprint of the content: if the file changes, the CID changes, so a CID recorded on chain proves exactly which file was meant.
 
 **Dogecoin mainnet: where ownership lives.** Profiles, store items, Spaces and channels are each written to Dogecoin as their own transaction, and so is every give and every sale. These use **P2FK (Pay to Future Key)**, the record format of embii's Sup!? app, the same way Sup does on Bitcoin. P2FK packs data into tiny unspendable outputs, so every Dogecoin full node keeps it forever, and anyone can check who owns what.
 
-**Follows and messages.** A follow or a message is paid in MEOWE on Solana, and the message content is pinned on IPFS. Instead of writing one Dogecoin transaction per message, the portal periodically writes **one** Dogecoin record that covers a whole batch of follows and messages. Anyone who has a message can check it against that record. No tiny Dogecoin payment is made for each message. Private messages are planned to work the same way: encrypted, then covered by the same periodic batch. <!-- [CONFIRM] Private messages are batched like public messages. Owner to confirm before publishing. -->
+**Follows and messages.** A follow or a message is paid in MEOWE on Solana, and the message content is pinned on IPFS. Instead of writing one Dogecoin transaction per message, DustForge periodically writes **one** Dogecoin record that covers a whole batch of follows and messages. Anyone who has a message can check it against that record. No tiny Dogecoin payment is made for each message. Private messages are planned to work the same way: encrypted, then covered by the same periodic batch. <!-- [CONFIRM] Private messages are batched like public messages. Owner to confirm before publishing. -->
 
 **The one exception: "Carve it on Doge".** A planned optional extra lets you choose to write a single message in full to Dogecoin as its own transaction, instead of leaving it only in the periodic batch. It is opt-in, one message at a time. Price: —.
 
 **Every object has an address.** Each piece of tokenized content (a profile, a store item, a Space or a channel) has its own permanent address: the address of the wallet that first created it. Each one also has its own chat. You can share any of them in a message as a card, by picking it from your store or pasting its address. Objects use the same fields as embii's Sup samples: a main file reference, image, link, name, description, attributes, license, creators, owners, royalties and maximum supply.
 
-**Our own Dogecoin indexer.** p2fk.io indexes Sup records on Bitcoin only, so the project runs its own Dogecoin indexer. It reads every Dogecoin block, starting from the very first one, rebuilds P2FK records with Sup's rules, and tells the portal who owns what. It runs on Dogecoin Core 1.14.6 only, because newer versions change the order of transaction outputs, and P2FK depends on that order.
+**Our own Dogecoin indexer.** p2fk.io indexes Sup records on Bitcoin only, so the project runs its own Dogecoin indexer. It reads every Dogecoin block, starting from the very first one, rebuilds P2FK records with Sup's rules, and tells DustForge who owns what. It runs on Dogecoin Core 1.14.6 only, because newer versions change the order of transaction outputs, and P2FK depends on that order.
 
-**Linking Solana to Dogecoin.** Each Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so ownership links back to that wallet. The per-user Dogecoin key that signs these records is derived by the portal and is **not exportable, by design**.
+**Linking Solana to Dogecoin.** Each Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so ownership links back to that wallet. The per-user Dogecoin key that signs these records is derived by DustForge and is **not exportable, by design**.
 
 ![Life of one action (planned flow)](assets/action-flow.png)
 
 **Phasing.** Ownership records (profiles, store items, Spaces, channels, gives and sales) go to Dogecoin directly, each as its own transaction. Follows and messages are paid on Solana and recorded to Dogecoin in periodic batches. Sales start in each owner's store. A shared marketplace comes later.
 
-**Kept off-chain, on purpose (planned).** The portal keeps as little as possible in its own database: only what the chains and IPFS cannot hold. Recently viewed profiles stay on your device and are never sent to a server.
+**Kept off-chain, on purpose (planned).** DustForge keeps as little as possible in its own database: only what the chains and IPFS cannot hold. Recently viewed profiles stay on your device and are never sent to a server.
 
 ## 7. Tokenomics and supply
 
@@ -132,12 +132,12 @@ There is no reserved team or marketing allocation and nothing scheduled to unloc
 
 ### 8.1 How an action is priced
 
-Each portal action has a simple price in USD terms, converted to MEOWE at the moment of the action and paid in MEOWE. **A message costs about a penny** (~$0.01, about 1,246 MEOWE at today's estimated price), and **creating a profile costs pennies** (~$0.15, about 19,025 MEOWE). Prices for follows, store mints, Spaces, channels, gives and sales: — (to be published). Every fee is split three ways:
+Each DustForge action has a simple price in USD terms, converted to MEOWE at the moment of the action and paid in MEOWE. **A message costs about a penny** (~$0.01, about 1,246 MEOWE at today's estimated price), and **creating a profile costs pennies** (~$0.15, about 19,025 MEOWE). Prices for follows, store mints, Spaces, channels, gives and sales: — (to be published). Every fee is split three ways:
 
 ![Fee split per action (planned)](assets/fee-split.png)
 
 - **30% burned forever.** Removed from supply permanently.
-- **60% swapped to DOGE.** Goes to the treasury, which keeps the portal running.
+- **60% swapped to DOGE.** Goes to the treasury, which keeps DustForge running.
 - **10% to community nodes.** Pays the people who run IPFS pinning and indexer nodes.
 
 The treasury also sponsors users' Solana network fees, with an optional user-paid speedup for people who want faster processing.
@@ -182,31 +182,31 @@ Supply keeps falling but **never reaches zero**. Mathematically this is geometri
 
 Market cap equals price times supply. Burning tokens **does not by itself raise market cap**: if supply falls and nothing else changes, each token is worth a bit more and the total stays the same. The value case for MEOWE is not "burns make number go up". It is:
 
-1. **Use requires MEOWE.** Every portal action is paid in MEOWE, so using the portal means buying MEOWE. That is real buy pressure tied to real use.
+1. **Use requires MEOWE.** Every DustForge action is paid in MEOWE, so using DustForge means buying MEOWE. That is real buy pressure tied to real use.
 2. **Burns concentrate ownership.** Each burn makes every remaining token a slightly bigger share of the network.
 
-Neither point is a promise of returns. If nobody uses the portal, neither effect happens.
+Neither point is a promise of returns. If nobody uses DustForge, neither effect happens.
 
 ## 9. Holder rewards in DOGE
 
 MEOWE trades in a PumpSwap pool paired with wrapped DOGE. PumpSwap pays a **creator fee** on trading in that pool. The community plans to send **100% of that creator fee to MEOWE holders, paid in wDOGE**.
 
 - **Status: planned / rolling out.** This is not yet confirmed live. Details such as eligibility, frequency and distribution method will be published by the community before or as it goes live.
-- **Separate from the portal treasury.** The creator fee goes to holders, not to the treasury. The treasury runs only on its share of portal fees and its starting deposit.
+- **Separate from the DustForge treasury.** The creator fee goes to holders, not to the treasury. The treasury runs only on its share of DustForge fees and its starting deposit.
 - **Paid in wDOGE.** Holders of a cat token get paid in Doge, which keeps MEOWE tied to the Dogecoin community it came from.
 
 Rewards depend on trading activity in the pool and can be small or zero. They are not interest, yield or a guaranteed income.
 
 ## 10. Treasury sustainability
 
-The treasury keeps the portal running and sponsors users' Solana fees. It is designed to fund itself from usage instead of from a large war chest.
+The treasury keeps DustForge running and sponsors users' Solana fees. It is designed to fund itself from usage instead of from a large war chest.
 
 ![Self-funding treasury loop](assets/treasury-loop.png)
 
 - **Starting deposit.** The treasury starts with a DOGE deposit of a few hundred dollars.
 - **Income.** 60% of every fee is swapped to DOGE inside the user's own transaction, so the treasury receives DOGE, not MEOWE.
-- **What it funds.** Keeping the portal running, including sponsored Solana fees.
-- **Self-funding.** After the starting deposit, the treasury is designed to run on its share of portal fees.
+- **What it funds.** Keeping DustForge running, including sponsored Solana fees.
+- **Self-funding.** After the starting deposit, the treasury is designed to run on its share of DustForge fees.
 - **wDOGE to DOGE.** Swaps produce wrapped DOGE on Solana. The treasury redeems it to native DOGE **on demand**, through a bridge or an exchange.
 
 If prices or network fees change, the fee in MEOWE adjusts, because the price of each action is set in USD or DOGE terms.
@@ -219,7 +219,7 @@ If prices or network fees change, the fee in MEOWE adjusts, because the price of
 
 **Ownership traces back to the payer.** Every Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so an item on Dogecoin can be traced to the wallet that created it.
 
-**Non-exportable Dogecoin key.** The per-user Dogecoin key is derived by the portal, only signs records, never holds coins, and cannot be exported. This keeps a user's Dogecoin identity bound to their Solana wallet.
+**Non-exportable Dogecoin key.** The per-user Dogecoin key is derived by DustForge, only signs records, never holds coins, and cannot be exported. This keeps a user's Dogecoin identity bound to their Solana wallet.
 
 **Files are pinned in more than one place.** IPFS content is pinned by the project's own Kubo node plus public pinning services, with community nodes planned to add more copies.
 
@@ -236,11 +236,12 @@ If prices or network fees change, the fee in MEOWE adjusts, because the price of
 | Phase | Scope | Status |
 |---|---|---|
 | Phase 0 | Community takeover, new site, verified X, Telegram, listings | Done / ongoing |
-| Phase 1 | Portal: wallet, profile, store minting, Spaces and channels, each recorded on Dogecoin. The Dogecoin indexer, reading from the first block | Planned |
+| Phase 1 | DustForge: wallet, profile, store minting, Spaces and channels, each recorded on Dogecoin. The Dogecoin indexer, reading from the first block | Planned |
 | Phase 2 | Messages and follows paid in MEOWE, with periodic Dogecoin batch records. Share any object as a card. Burn engine | Planned |
 | Phase 3 | Selling from your store, including Spaces with their channels. Holder wDOGE rewards | Planned |
 | Phase 4 | Search across everything, or only "Mine". Recently viewed profiles kept on your device. Community-run nodes | Planned |
 | Later | A shared marketplace that lists items from every store. Optional "Carve it on Doge" for single messages | Later |
+| Later | The DustForge may accept other Solana tokens, swapped at checkout, where there is enough liquidity and the token passes safety checks | Later |
 
 ## 13. Community and links
 
@@ -254,7 +255,7 @@ MEOWE is a community takeover: no company, no team allocation, just holders who 
 | Contract address | `FiYTnrwt6CPmWQyWY4evBLK5Lu21jJSRHPYtX4Aepump` |
 | PumpSwap pool (MEOWE/wDOGE) | `5iQ5n8Sir2xKpGDJYcem5VxW6HVqUF6rkVyYeMepLs6u` |
 
-**Always check the contract address** before buying; the only official links are the ones above. Ways to help: make content, share it, run a node when community nodes open up, and give feedback on the portal.
+**Always check the contract address** before buying; the only official links are the ones above. Ways to help: make content, share it, run a node when community nodes open up, and give feedback on DustForge.
 
 <div class="pb"></div>
 
@@ -267,12 +268,12 @@ MEOWE is a community takeover: no company, no team allocation, just holders who 
 **Risks.** Buying, holding or using MEOWE involves serious risk, including:
 
 - **Meme-token volatility.** MEOWE's price can rise or fall sharply, and you can lose all of the money you put in. Liquidity can be thin.
-- **Development risk.** The MEOWE Portal is **not live**. The portal (profiles, stores, Spaces, channels and messaging), burn engine, indexer and holder rewards are planned and may be delayed, changed, reduced or never delivered.
+- **Development risk.** DustForge is **not live**. DustForge (profiles, stores, Spaces, channels and messaging), the burn engine, indexer and holder rewards are planned and may be delayed, changed, reduced or never delivered.
 - **Holder rewards are not confirmed live.** Rewards depend on trading activity and may be small, irregular or zero.
 - **Smart-contract and bridge risk.** wDOGE is a wrapped asset that depends on bridge smart contracts and signers. A bug, hack, pause or failure could make wDOGE impossible to redeem or worthless. Pools, programs and wallets can also contain bugs.
 - **Technology risk.** Solana, Dogecoin, IPFS and pinning services can suffer outages, fee spikes or changes. Content stays available only while someone pins it.
-- **Wallet and key risk.** Lost passwords, phishing or malicious code can mean lost access or stolen funds. The portal's derived Dogecoin key cannot be exported.
-- **Regulatory uncertainty.** Laws on crypto assets, rewards and node payments are unclear and changing in many countries. Future rules could restrict MEOWE, the portal or rewards.
+- **Wallet and key risk.** Lost passwords, phishing or malicious code can mean lost access or stolen funds. DustForge's derived Dogecoin key cannot be exported.
+- **Regulatory uncertainty.** Laws on crypto assets, rewards and node payments are unclear and changing in many countries. Future rules could restrict MEOWE, DustForge or rewards.
 - **Community-run project.** MEOWE is a community takeover with no company behind it. Plans depend on volunteers and may change.
 
 Only use money you can afford to lose. By interacting with MEOWE you accept these risks.

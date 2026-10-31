@@ -55,12 +55,17 @@ const DOCS = [
       'pays for Dogecoin records',
       'to pay for Dogecoin records',
       'fully cover',
-      '$0.05'
+      '$0.05',
+      'MEOWE Portal',
+      'the forge',
+      'Meowe Forge'
     ],
     // Section ids the homepage links to. Keep these headings word for word.
     anchors: ['wh-7-tokenomics-and-supply', 'wh-12-roadmap'],
     sentinels: [
       'Decentralized content monetization, powered by $MEOWE.',
+      'DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token.',
+      'The DustForge may accept other Solana tokens, swapped at checkout, where there is enough liquidity and the token passes safety checks',
       'Memes are forever on Doge.',
       'MEOWE is live on Solana.',
       'P2FK (Pay to Future Key)',
@@ -90,11 +95,16 @@ const DOCS = [
       'fully cover',
       'funded by treasury DOGE',
       'Marketplace (preview first',
-      '$0.05'
+      '$0.05',
+      'MEOWE Portal',
+      'the forge',
+      'Meowe Forge'
     ],
     sentinels: [
       'Meowecoin (MEOWE): Technical Overview',
-      'the MEOWE Portal is in development',
+      'DustForge is in development',
+      'DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token.',
+      'The DustForge may accept other Solana tokens, swapped at checkout, where there is enough liquidity and the token passes safety checks',
       'P2FK (Pay to Future Key)',
       'Dogecoin Core 1.14.6 only',
       'meowe:space:channel',

@@ -1,8 +1,8 @@
 # Meowecoin (MEOWE): Technical Overview
 
-*Decentralized content monetization, powered by $MEOWE. Architecture, data flow and fee mechanics of the MEOWE Portal ("the forge"). Version 1.1, October 2026.*
+*Decentralized content monetization, powered by $MEOWE. Architecture, data flow and fee mechanics of DustForge. Version 1.1, October 2026.*
 
-**Audience:** developers and technical investors. **Status:** the MEOWE Portal is **in development**. Everything in this document about the portal, the burn engine, the indexer, stores, Spaces and holder rewards describes the **planned** design, not a live system. Numbers marked *illustration* use today's estimated prices and are not projections.
+**Audience:** developers and technical investors. **Status:** DustForge is **in development**. DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token. Everything in this document about DustForge, the burn engine, the indexer, stores, Spaces and holder rewards describes the **planned** design, not a live system. Numbers marked *illustration* use today's estimated prices and are not projections.
 
 | Item | Value |
 |---|---|
@@ -14,7 +14,7 @@
 
 ## 1. System overview
 
-The portal is a separate web app from meoweco.in. It lets holders create profiles, open a store and mint items into it, create Spaces with text channels, follow and message each other, and give away or sell what they own from their own store, paying **only in MEOWE**. Four layers do the work:
+DustForge is a separate web app from meoweco.in. DustForge is where you forge content on Dogecoin, and MEOWE is its first and home token. It lets holders create profiles, open a store and mint items into it, create Spaces with text channels, follow and message each other, and give away or sell what they own from their own store, paying **only in MEOWE**. Four layers do the work:
 
 | Layer | Role |
 |---|---|
@@ -23,12 +23,12 @@ The portal is a separate web app from meoweco.in. It lets holders create profile
 | **Dogecoin mainnet** | Ownership layer. Profiles, store items, Spaces and channels, and every give and sale, are each written as their own transaction in P2FK (Pay to Future Key), the record format of embii's Sup!? app, the same way Sup writes records to Bitcoin. Follows and messages are covered by a periodic batch record. |
 | **Backend** | Relayer (watches Solana, builds and broadcasts Dogecoin records, writes the periodic batch record, sponsors users' Solana fees), treasury, and the project's own Dogecoin P2FK indexer. |
 
-![MEOWE Portal architecture (planned)](assets/architecture.png)
+![DustForge architecture (planned)](assets/architecture.png)
 
 ## 2. Wallet and identity
 
-- **Portal wallet.** Each user gets a portal-generated Solana wallet, in the style of SupSpace (supspace.io, built by embiimob): the key is created and encrypted in the browser. Per the design notes, connecting an existing wallet is also supported.
-- **Derived Dogecoin key.** The portal derives a per-user Dogecoin signing key from the user's Solana wallet. It only signs P2FK records and never holds coins. **It is not exportable, by design**, so a Dogecoin identity cannot be separated from the Solana wallet that owns it.
+- **DustForge wallet.** Each user gets a Solana wallet generated in DustForge, in the style of SupSpace (supspace.io, built by embiimob): the key is created and encrypted in the browser. Per the design notes, connecting an existing wallet is also supported.
+- **Derived Dogecoin key.** DustForge derives a per-user Dogecoin signing key from the user's Solana wallet. It only signs P2FK records and never holds coins. **It is not exportable, by design**, so a Dogecoin identity cannot be separated from the Solana wallet that owns it.
 - **Ownership link.** Each Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it. Anyone can therefore trace an item on Dogecoin back to the paying Solana wallet and check that the Solana payment really happened.
 
 ## 3. Data flow of one action
@@ -37,7 +37,7 @@ The portal is a separate web app from meoweco.in. It lets holders create profile
 sequenceDiagram
     autonumber
     participant U as User wallet (Solana)
-    participant P as MEOWE Portal
+    participant P as DustForge
     participant I as IPFS (Kubo + pinning)
     participant S as Solana
     participant R as Relayer + Treasury
@@ -63,15 +63,15 @@ sequenceDiagram
 
 ![Life of one action (planned flow)](assets/action-flow.png)
 
-1. **Compose and pin.** The portal uploads the file and a JSON payload to IPFS and gets a CID.
+1. **Compose and pin.** DustForge uploads the file and a JSON payload to IPFS and gets a CID.
 2. **Quote.** The fee is computed in USD or DOGE terms and converted to MEOWE at the current pool price.
 3. **One Solana transaction.** The user signs a single transaction containing the MEOWE burn, the swap of the swap share into wDOGE paid to the treasury (with a minimum-output guard, so if the price moves too far the transaction fails and nothing is charged), the node share, and an SPL memo. For a follow or a message the memo holds a small JSON pointer, for example (illustrative format): `{"v":1,"t":"msg","id":"<action-id>","cid":"bafy..."}`.
-4. **Relay.** The relayer watches Solana for finalized portal actions.
+4. **Relay.** The relayer watches Solana for finalized DustForge actions.
    - **Owned objects and gives/sales** (profiles, store items, Spaces, channels): it builds a Sup-format P2FK transaction signed by the user's derived Dogecoin key and broadcasts it to Dogecoin mainnet. Each is its own transaction.
    - **Follows and messages**: these are visible as soon as the Solana memo and IPFS CID exist. Periodically, the relayer writes one Dogecoin record (a Merkle root) that covers a whole batch of follows and messages. There is no per-message Dogecoin dust output.
    - **Private messages** are encrypted before they are pinned to IPFS and are covered by the same periodic batch. <!-- [CONFIRM] Private messages are batched like public messages. Owner to confirm before publishing. -->
    - **Exception: "Carve it on Doge"** (planned, optional, opt-in). A user can choose to write one message in full to Dogecoin as its own P2FK transaction, instead of leaving it only in the batch. Price: —.
-5. **Index.** The project's Dogecoin indexer reads every block from block 0 (the first block), rebuilds P2FK records using Sup's rules, and serves the current state ("what does this address own?", "which channels belong to this Space?") back to the portal.
+5. **Index.** The project's Dogecoin indexer reads every block from block 0 (the first block), rebuilds P2FK records using Sup's rules, and serves the current state ("what does this address own?", "which channels belong to this Space?") back to DustForge.
 
 ## 4. The Dogecoin record layer (P2FK)
 
@@ -99,7 +99,7 @@ nodes        = 0.10 × fee_MEOWE   → community IPFS and indexer operators
 
 ![Fee split per action (planned)](assets/fee-split.png)
 
-**Treasury.** Treasury income is the 60% swap share of action fees plus a starting DOGE deposit of a few hundred dollars. (The PumpSwap creator fee is planned to go 100% to holders, so it is not treasury income.) The treasury keeps the portal running and **sponsors users' Solana fees** by acting as fee payer, with an optional user-paid speedup. wDOGE is redeemed to native DOGE **on demand**, via bridge or exchange. After the initial deposit, the treasury is designed to run on its share of portal fees.
+**Treasury.** Treasury income is the 60% swap share of action fees plus a starting DOGE deposit of a few hundred dollars. (The PumpSwap creator fee is planned to go 100% to holders, so it is not treasury income.) The treasury keeps DustForge running and **sponsors users' Solana fees** by acting as fee payer, with an optional user-paid speedup. wDOGE is redeemed to native DOGE **on demand**, via bridge or exchange. After the initial deposit, the treasury is designed to run on its share of DustForge fees.
 
 **Illustration at today's estimated prices (not a projection):**
 
@@ -124,7 +124,7 @@ As supply shrinks and each token is worth more, each action burns **fewer** toke
 
 ![Supply over time, illustration](assets/supply-decay.png)
 
-**Economic honesty.** Market cap = price × supply, so burning tokens does not by itself raise market cap. The value case is (1) using the portal requires buying MEOWE, which is buy pressure, and (2) burns make each remaining token a larger share of the network. No returns or price targets are implied. Owning a profile, store, Space or channel does not entitle anyone to a share of fees.
+**Economic honesty.** Market cap = price × supply, so burning tokens does not by itself raise market cap. The value case is (1) using DustForge requires buying MEOWE, which is buy pressure, and (2) burns make each remaining token a larger share of the network. No returns or price targets are implied. Owning a profile, store, Space or channel does not entitle anyone to a share of fees.
 
 ## 7. Security and trust model
 
@@ -140,10 +140,11 @@ As supply shrinks and each token is worth more, each action burns **fewer** toke
 | Phase | Scope | Status |
 |---|---|---|
 | 0 | Community takeover, new site, verified X, Telegram, listings | Done / ongoing |
-| 1 | Portal: wallet, profiles, store minting, Spaces and channels as Dogecoin P2FK objects + Dogecoin indexer from block 0 | Planned |
+| 1 | DustForge: wallet, profiles, store minting, Spaces and channels as Dogecoin P2FK objects + Dogecoin indexer from block 0 | Planned |
 | 2 | Messages and follows paid in MEOWE, periodic Dogecoin batch records, object cards in messages, burn engine | Planned |
 | 3 | Selling from each owner's store (including Spaces with their channels) + holder wDOGE rewards | Planned |
 | 4 | Search (all, or "Mine" from wallet history), on-device "recently viewed", community-run nodes | Planned |
 | Later | Shared marketplace across all stores; optional "Carve it on Doge" for single messages | Later |
+| Later | The DustForge may accept other Solana tokens, swapped at checkout, where there is enough liquidity and the token passes safety checks | Later |
 
-*Not financial advice. MEOWE is a highly volatile meme token; the portal is not live; wDOGE carries smart-contract and bridge risk; regulation is uncertain. Do your own research.*
+*Not financial advice. MEOWE is a highly volatile meme token; DustForge is not live; wDOGE carries smart-contract and bridge risk; regulation is uncertain. Do your own research.*
