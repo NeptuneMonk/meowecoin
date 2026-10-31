@@ -6,6 +6,17 @@
 // Wording comes only from the .md files. The Mermaid sequence diagram in the
 // technical overview is omitted here because the matching PNG is the next
 // figure (phones do not run Mermaid). Approximation tildes stay tildes.
+//
+// Since PR #10 the homepage (../index.html) no longer embeds the documents, so
+// this script only writes whitepaper/index.html. If the old
+// <!-- DOC:key:start --> / <!-- DOC:key:end --> markers are ever put back in
+// ../index.html, the articles are spliced there too; otherwise that step is
+// skipped. The script also checks that every homepage link into whitepaper/#...
+// points at an id that exists in the rendered reader.
+//
+// Draft-only notes written as <!-- [CONFIRM] ... --> in the Markdown are
+// removed from the HTML and listed as warnings. Run with --strict to make
+// them an error before publishing.
 
 import { createRequire } from 'module';
 import fs from 'fs';
@@ -18,6 +29,8 @@ const { marked } = require('marked');
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const indexPath = path.join(root, 'index.html');
+const strict = process.argv.includes('--strict');
+const warnings = [];
 
 marked.use({
   gfm: true,
@@ -37,9 +50,22 @@ const DOCS = [
     file: 'meowecoin-whitepaper.md',
     h1: 'wp-title',
     images: 9,
+    banned: [
+      'pay-to-fake-key',
+      'pays for Dogecoin records',
+      'to pay for Dogecoin records',
+      'fully cover',
+      '$0.05'
+    ],
+    // Section ids the homepage links to. Keep these headings word for word.
+    anchors: ['wh-7-tokenomics-and-supply', 'wh-12-roadmap'],
     sentinels: [
+      'Decentralized content monetization, powered by $MEOWE.',
       'Memes are forever on Doge.',
       'MEOWE is live on Solana.',
+      'P2FK (Pay to Future Key)',
+      'Carve it on Doge',
+      'Dogecoin Core 1.14.6',
       'reaction emoji in the DOGEos Discord server',
       '~960.7M MEOWE (~39.3M already burned)',
       'tokens burned per action = 30% × (fee in dollars ÷ MEOWE price)',
@@ -56,9 +82,22 @@ const DOCS = [
     file: 'technical-overview.md',
     h1: 'tech-title',
     images: 4,
+    // Wording that must not come back (old claims removed in the v1.1 drafts).
+    banned: [
+      'pay-to-fake-key',
+      'pays for Dogecoin records',
+      'to pay for Dogecoin records',
+      'fully cover',
+      'funded by treasury DOGE',
+      'Marketplace (preview first',
+      '$0.05'
+    ],
     sentinels: [
       'Meowecoin (MEOWE): Technical Overview',
       'the MEOWE Portal is in development',
+      'P2FK (Pay to Future Key)',
+      'Dogecoin Core 1.14.6 only',
+      'meowe:space:channel',
       '~960.7M now (~39.3M burned)',
       '<action-id>',
       'S_t = S_0 × (1 − k)^t',
@@ -145,8 +184,16 @@ function visibleText(html) {
     .trim();
 }
 
+function stripConfirmNotes(md, doc) {
+  return md.replace(/[ \t]*<!--\s*\[CONFIRM\]([\s\S]*?)-->/g, (m, note) => {
+    warnings.push(doc.file + ': [CONFIRM]' + note.replace(/\s+/g, ' ').trimEnd());
+    return '';
+  });
+}
+
 function renderDoc(doc) {
   let md = fs.readFileSync(path.join(here, doc.file), 'utf8');
+  md = stripConfirmNotes(md, doc);
   if (doc.key === 'technical') {
     const stripped = md.replace(/```mermaid[\s\S]*?```\n?/g, '');
     if (stripped === md) throw new Error('Expected a mermaid block to swap for the action-flow figure');
@@ -162,6 +209,13 @@ function renderDoc(doc) {
   doc.sentinels.forEach((s) => {
     if (!text.includes(s)) throw new Error(doc.key + ': missing wording: ' + s);
   });
+  (doc.banned || []).forEach((s) => {
+    if (text.includes(s)) throw new Error(doc.key + ': removed wording is back: ' + s);
+  });
+  if (/<!--/.test(html)) throw new Error(doc.key + ': an HTML comment would ship in the page');
+  (doc.anchors || []).forEach((id) => {
+    if (!html.includes(`id="${id}"`)) throw new Error(doc.key + ': homepage link target missing: #' + id);
+  });
   return `<article class="doc" data-doc="${doc.key}">\n${html}</article>`;
 }
 
@@ -170,9 +224,27 @@ function splice(file, key, article) {
   const start = `<!-- DOC:${key}:start -->`;
   const end = `<!-- DOC:${key}:end -->`;
   const re = new RegExp(`${start}[\\s\\S]*?${end}`);
-  if (!re.test(src)) throw new Error('Missing ' + start + ' in ' + file);
+  if (!re.test(src)) {
+    // PR #10 removed the embedded documents from the homepage. Nothing to splice.
+    if (!src.includes(start) && !src.includes(end)) return false;
+    throw new Error('Only one of ' + start + ' / ' + end + ' found in ' + file);
+  }
   const next = src.replace(re, `${start}\n${article}\n${end}`);
   if (next !== src) fs.writeFileSync(file, next);
+  return true;
+}
+
+// Every href="whitepaper/#id" on the homepage must point at a real id in the reader.
+function checkHomepageLinks(reader) {
+  if (!fs.existsSync(indexPath)) return;
+  const home = fs.readFileSync(indexPath, 'utf8');
+  const ids = new Set([...reader.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
+  const links = [...home.matchAll(/href="(?:\.\/)?whitepaper\/#([^"]+)"/g)].map((m) => m[1]);
+  const known = new Set(['whitepaper', 'technical']); // handled by the reader's tab script
+  links.forEach((id) => {
+    if (!known.has(id) && !ids.has(id)) throw new Error('Homepage links to whitepaper/#' + id + ' but no such id exists');
+  });
+  return links.length;
 }
 
 function readerPage(articles) {
@@ -197,7 +269,7 @@ function readerPage(articles) {
   <a class="skip-link" href="#doc-reader">Skip to document</a>
   <div class="doc-shell">
     <header class="doc-toolbar">
-      <a class="doc-x doc-back" id="doc-back" href="../#whitepaper">← Site</a>
+      <a class="doc-x doc-back" id="doc-back" href="../">← Site</a>
       <p class="doc-kicker">
         <img src="../assets/img/meowecoin-coin-96.png" width="28" height="28" alt="">
         <span>Meowecoin documents</span>
@@ -246,7 +318,6 @@ ${articles.technical}
         var dl = document.getElementById('doc-download');
         dl.href = file;
         dl.setAttribute('download', file);
-        document.getElementById('doc-back').href = '../#' + name;
         document.title = titles[name];
       }
       function select(name, focusTab) {
@@ -281,11 +352,23 @@ ${articles.technical}
 }
 
 const articles = {};
+let spliced = 0;
 DOCS.forEach((doc) => {
   articles[doc.key] = renderDoc(doc);
-  splice(indexPath, doc.key, articles[doc.key]);
+  if (fs.existsSync(indexPath) && splice(indexPath, doc.key, articles[doc.key])) spliced++;
 });
 
+if (strict && warnings.length) {
+  throw new Error('Unresolved [CONFIRM] notes (--strict):\n  ' + warnings.join('\n  '));
+}
+
+const page = readerPage(articles);
+const linkCount = checkHomepageLinks(page);
 const reader = path.join(here, 'index.html');
-fs.writeFileSync(reader, readerPage(articles));
-console.log('Rendered white paper and technical overview into index.html and whitepaper/index.html');
+fs.writeFileSync(reader, page);
+warnings.forEach((w) => console.warn('warning: ' + w + ' (removed from HTML)'));
+console.log(
+  'Rendered white paper and technical overview into whitepaper/index.html' +
+  (spliced ? ' and index.html' : ' (homepage has no DOC markers; splice skipped)') +
+  '. Homepage links checked: ' + (linkCount || 0) + '.'
+);

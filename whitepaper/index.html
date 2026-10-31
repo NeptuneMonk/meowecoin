@@ -19,7 +19,7 @@
   <a class="skip-link" href="#doc-reader">Skip to document</a>
   <div class="doc-shell">
     <header class="doc-toolbar">
-      <a class="doc-x doc-back" id="doc-back" href="../#whitepaper">← Site</a>
+      <a class="doc-x doc-back" id="doc-back" href="../">← Site</a>
       <p class="doc-kicker">
         <img src="../assets/img/meowecoin-coin-96.png" width="28" height="28" alt="">
         <span>Meowecoin documents</span>
@@ -36,18 +36,19 @@
       <div class="doc-scroll" id="reader-whitepaper" role="tabpanel" aria-labelledby="reader-tab-whitepaper" tabindex="0">
 <article class="doc" data-doc="whitepaper">
 <h1 id="wp-title">Meowecoin (MEOWE) White Paper</h1>
-<p><em>Memes are forever on Doge.</em></p>
-<p>Version 1.0 · October 2026 · Community edition</p>
+<p><em>Decentralized content monetization, powered by $MEOWE.</em></p>
+<p>Version 1.1 · October 2026 · Community edition</p>
 <blockquote>
-<p><strong>Status note.</strong> MEOWE is live on Solana. The MEOWE Portal (&quot;the forge&quot;), the burn engine, the Dogecoin indexer, the marketplace and holder rewards in wDOGE are <strong>planned and in development</strong>. Nothing in this paper is a promise of features, timelines, returns or price. Illustrative numbers use today&#39;s estimated prices and are labeled as illustrations.</p>
+<p><strong>Status note.</strong> MEOWE is live on Solana. The MEOWE Portal (&quot;the forge&quot;), including profiles, stores, Spaces and channels, the burn engine, the Dogecoin indexer and holder rewards in wDOGE, is <strong>planned and in development</strong>. Nothing in this paper is a promise of features, timelines, returns or price. Illustrative numbers use today&#39;s estimated prices and are labeled as illustrations.</p>
 </blockquote>
 <div class="pb"></div>
 
 <h2 id="wh-1-abstract">1. Abstract</h2>
 <p>Meowecoin (MEOWE) is a community-run meme token on Solana that started life as a reaction emoji in the DOGEos Discord server. After its original deployer abandoned it, the community took it over and is rebuilding it with a new website, a verified X account, a Telegram group and a product: the <strong>MEOWE Portal</strong>, nicknamed <strong>&quot;the forge&quot;</strong>.</p>
-<p>The portal is planned as a place where memes and social content are made to last. Users get a portal-generated Solana wallet, mint a profile, post messages and memes, mint items and later trade them on a marketplace, paying only in MEOWE. Files live on IPFS. Small pointers to them are written to Solana. Profiles, items and ownership are written permanently to <strong>Dogecoin mainnet</strong> using Sup&#39;s P2FK (pay-to-fake-key) format, the same way Sup records data on Bitcoin.</p>
-<p>Every action is priced in pennies and paid in MEOWE: a post costs about a penny (~$0.01) and creating a profile costs about $0.15. Of each fee, <strong>30% is burned forever</strong>, <strong>60% is swapped to DOGE</strong> to pay for Dogecoin records and fund the treasury, and <strong>10% goes to community nodes</strong> that pin files and run indexers. Separately, the PumpSwap creator fee is planned to go <strong>100% to holders, paid in wDOGE</strong>.</p>
-<p>The design is simple to state: use creates demand for MEOWE, use burns MEOWE, and the records it creates sit on the oldest meme chain there is. Memes are forever on Doge.</p>
+<p>The portal is planned as a place to create, own and sell <strong>tokenized content</strong>. Users get a portal-generated Solana wallet. They can make a profile, open a store, mint items into it, start a <strong>Space</strong> with its own text channels, follow and message other people, and give away or sell what they own from their store. Everything is paid only in MEOWE. Files live on IPFS.</p>
+<p>Anything you own (a profile, a store item, a Space or a channel), and every give or sale of it, is written to <strong>Dogecoin mainnet</strong> as its own transaction. These records use P2FK (Pay to Future Key), the record format of embii&#39;s Sup!? app, which Sup uses on Bitcoin. Ownership is therefore on-chain, not in our database. Follows and messages are paid in MEOWE on Solana, then recorded to Dogecoin together in a periodic batch, instead of one Dogecoin transaction per message.</p>
+<p>Every action is priced in pennies and paid in MEOWE: a message costs about a penny (~$0.01) and creating a profile costs about $0.15. Prices for other actions are not published yet (—). Of each fee, <strong>30% is burned forever</strong>, <strong>60% is swapped to DOGE</strong> for the treasury, and <strong>10% goes to community nodes</strong> that pin files and run indexers. Separately, the PumpSwap creator fee is planned to go <strong>100% to holders, paid in wDOGE</strong>.</p>
+<p>The design is simple to state: using the portal creates demand for MEOWE, using it burns MEOWE, and what you make is tokenized content you own on Dogecoin, the oldest meme chain there is.</p>
 <h2 id="wh-2-origin-and-lore">2. Origin and lore</h2>
 <p>MEOWE did not start as a token. It started as a <strong>reaction emoji in the DOGEos Discord server</strong>, a cat face the community used to react to Doge memes. It spread the way good emojis do, and eventually it became a token.</p>
 <p>The lore leans on two ideas:</p>
@@ -66,15 +67,15 @@
 <li>started building the <strong>MEOWE Portal</strong>, which is under construction.</li>
 </ul>
 <p>There are <strong>no team wallets and no vesting</strong>. Nobody holds a reserved allocation waiting to unlock. The community owns the project because the community is all that is left, and that is the point.</p>
-<h2 id="wh-4-the-problem-memes-are-ephemeral-or-centralized">4. The problem: memes are ephemeral or centralized</h2>
-<p>Memes are the culture of crypto, but where they live is fragile.</p>
+<h2 id="wh-4-the-problem-your-content-isnt-really-yours">4. The problem: your content isn&#39;t really yours</h2>
+<p>Memes and creator content are the culture of crypto, but where they live is fragile.</p>
 <ul>
-<li><strong>Social platforms own your posts.</strong> Accounts get suspended, posts get deleted, platforms change rules or shut down. The meme you made can vanish, and you never really owned it.</li>
+<li><strong>Social platforms own your posts.</strong> Accounts get suspended, posts get deleted, platforms change rules or shut down. The content you made can vanish, and you never really owned it.</li>
 <li><strong>Most chains are not built for history.</strong> Fast chains are great for payments, but many nodes do not keep old transaction history forever. Data that only lives in old transactions can become hard to find.</li>
 <li><strong>&quot;On-chain&quot; art is often a link.</strong> Many NFTs point to files on a single server. When the server goes, the art goes.</li>
 <li><strong>Meme tokens rarely do anything.</strong> Most meme coins have no product, so there is no reason to hold or use them beyond speculation. When the hype fades, so does the token.</li>
 </ul>
-<p>MEOWE&#39;s answer is to give the token a job: paying for a place where memes, profiles and items are recorded on a chain that keeps everything.</p>
+<p>MEOWE&#39;s answer is to give the token a job: paying for a place where your profile, your store, your Spaces and everything in them are tokenized content you own on a chain that keeps everything, and that you can give away or sell.</p>
 <h2 id="wh-5-the-solution-the-meowe-portal-the-forge">5. The solution: the MEOWE Portal (&quot;the forge&quot;)</h2>
 <p>The MEOWE Portal is a web app, separate from the meoweco.in website, that is <strong>in development</strong>. Everything in this section is <strong>planned</strong>.</p>
 <h3 id="wh-what-users-will-be-able-to-do">What users will be able to do</h3>
@@ -93,39 +94,66 @@
 <td>Solana</td>
 </tr>
 <tr>
-<td>Profiles</td>
-<td>Mint a profile with a name, image and bio</td>
-<td>Dogecoin mainnet (P2FK) + IPFS</td>
+<td>Profile</td>
+<td>Your name, picture and bio, as tokenized content you own</td>
+<td>Dogecoin mainnet (its own transaction) + IPFS</td>
 </tr>
 <tr>
-<td>Posts</td>
-<td>Post messages and memes</td>
-<td>Solana memo pointer + IPFS</td>
+<td>Store</td>
+<td>Mint your art, memes, files or small apps as store items. Give them away or list them for sale</td>
+<td>Dogecoin mainnet (each mint, give and sale is its own transaction) + IPFS</td>
 </tr>
 <tr>
-<td>Items</td>
-<td>Mint memes and art as items you own</td>
-<td>Dogecoin mainnet (P2FK) + IPFS</td>
+<td>Spaces</td>
+<td>A community you create and own, with text channels. You can give it away or sell it from your store, and its channels go with it</td>
+<td>Dogecoin mainnet (its own transaction)</td>
 </tr>
 <tr>
-<td>Marketplace</td>
-<td>Browse items, later buy and sell</td>
-<td>Preview first, then trading</td>
+<td>Channels</td>
+<td>Text channels inside a Space. Only channels made by the Space&#39;s owner belong to it</td>
+<td>Dogecoin mainnet (its own transaction)</td>
+</tr>
+<tr>
+<td>Messages</td>
+<td>Chat in a channel, or with any profile, store item, Space or channel. Each of these has its own chat. You can share any of them as a card in a message</td>
+<td>Paid in MEOWE on Solana + IPFS. Recorded to Dogecoin in a periodic batch</td>
+</tr>
+<tr>
+<td>Follows</td>
+<td>Follow a profile</td>
+<td>Paid in MEOWE on Solana. Recorded to Dogecoin in a periodic batch</td>
+</tr>
+<tr>
+<td>Search (planned)</td>
+<td>Search everything, or only &quot;Mine&quot;: things found in your own wallet history</td>
+<td>Read from the Dogecoin indexer</td>
+</tr>
+<tr>
+<td>Recently viewed (planned)</td>
+<td>Profiles you looked at recently</td>
+<td>Kept on your device only</td>
 </tr>
 </tbody></table>
 </div>
-<p><strong>One currency.</strong> Every action is paid <strong>only in MEOWE</strong>. Users never need to hold DOGE or manage a Dogecoin wallet. The backend handles the burns, swaps and Dogecoin conversions behind the scenes.</p>
-<p><strong>Why &quot;the forge&quot;.</strong> Content goes in as a file and comes out as a permanent record: forged onto Dogecoin, pinned on IPFS and paid for with MEOWE that is partly burned in the process.</p>
+<p>There is no shared marketplace at first. You buy something from the owner&#39;s own store. A shared marketplace that lists items from every store is on the roadmap for later.</p>
+<h3 id="wh-spaces-and-channels">Spaces and channels</h3>
+<p>A Space is a community you create. It is tokenized content you own, recorded on Dogecoin. Its text channels are recorded on Dogecoin too, and each one is linked to its Space. Only channels made by the Space&#39;s owner count as part of the Space. You can give a Space to someone, or sell it by listing it in your store. Its channels go with it.</p>
+<p><strong>One currency.</strong> Every action is paid <strong>only in MEOWE</strong>. Users never need to hold DOGE or manage a Dogecoin wallet. The portal takes care of the rest.</p>
+<p><strong>Why &quot;the forge&quot;.</strong> Content goes in as a file and comes out as tokenized content: forged onto Dogecoin, pinned on IPFS and paid for with MEOWE that is partly burned in the process.</p>
 <h2 id="wh-6-architecture">6. Architecture</h2>
 <p>The portal uses three layers, each doing what it is best at: Solana for payments and pointers, IPFS for files and Dogecoin for permanent records.</p>
 <figure class="doc-fig"><img src="/whitepaper/assets/architecture.png" alt="MEOWE Portal architecture (planned)" width="1805" height="1283" loading="lazy" decoding="async"><figcaption aria-hidden="true">MEOWE Portal architecture (planned)</figcaption></figure>
-<p><strong>Solana: the payment and pointer layer.</strong> Every portal action is one Solana transaction. It pays the fee in MEOWE, burns the burn share, swaps the swap share into wDOGE for the treasury, and attaches a memo. The memo is a small JSON pointer holding the IPFS CID (content ID) of the post or profile update.</p>
+<p><strong>Solana: the payment and pointer layer.</strong> Every paid portal action is paid in one Solana transaction. It pays the fee in MEOWE, burns the burn share, swaps the swap share into wDOGE for the treasury, and attaches a memo. For a follow or a message, the memo is a small JSON pointer holding the IPFS CID (content ID) of the message.</p>
 <p><strong>IPFS: the file layer.</strong> Images, memes and JSON payloads live on IPFS. They are pinned by the project&#39;s own Kubo node plus public pinning services, and later by community nodes. A CID is a fingerprint of the content: if the file changes, the CID changes, so a CID recorded on chain proves exactly which file was meant.</p>
-<p><strong>Dogecoin mainnet: the permanent record layer.</strong> Profiles, items and ownership are written to Dogecoin using <strong>Sup&#39;s P2FK (pay-to-fake-key)</strong> structure, the same way Sup does on Bitcoin. P2FK encodes data into tiny unspendable outputs, so every Dogecoin full node keeps it forever.</p>
-<p><strong>Our own Dogecoin indexer.</strong> p2fk.io indexes Sup records on Bitcoin only, so the project runs its own Dogecoin indexer. It reads every Dogecoin block, rebuilds P2FK records with Sup&#39;s rules, and tells the portal who owns what.</p>
+<p><strong>Dogecoin mainnet: where ownership lives.</strong> Profiles, store items, Spaces and channels are each written to Dogecoin as their own transaction, and so is every give and every sale. These use <strong>P2FK (Pay to Future Key)</strong>, the record format of embii&#39;s Sup!? app, the same way Sup does on Bitcoin. P2FK packs data into tiny unspendable outputs, so every Dogecoin full node keeps it forever, and anyone can check who owns what.</p>
+<p><strong>Follows and messages.</strong> A follow or a message is paid in MEOWE on Solana, and the message content is pinned on IPFS. Instead of writing one Dogecoin transaction per message, the portal periodically writes <strong>one</strong> Dogecoin record that covers a whole batch of follows and messages. Anyone who has a message can check it against that record. No tiny Dogecoin payment is made for each message. Private messages are planned to work the same way: encrypted, then covered by the same periodic batch.</p>
+<p><strong>The one exception: &quot;Carve it on Doge&quot;.</strong> A planned optional extra lets you choose to write a single message in full to Dogecoin as its own transaction, instead of leaving it only in the periodic batch. It is opt-in, one message at a time. Price: —.</p>
+<p><strong>Every object has an address.</strong> Each piece of tokenized content (a profile, a store item, a Space or a channel) has its own permanent address: the address of the wallet that first created it. Each one also has its own chat. You can share any of them in a message as a card, by picking it from your store or pasting its address. Objects use the same fields as embii&#39;s Sup samples: a main file reference, image, link, name, description, attributes, license, creators, owners, royalties and maximum supply.</p>
+<p><strong>Our own Dogecoin indexer.</strong> p2fk.io indexes Sup records on Bitcoin only, so the project runs its own Dogecoin indexer. It reads every Dogecoin block, starting from the very first one, rebuilds P2FK records with Sup&#39;s rules, and tells the portal who owns what. It runs on Dogecoin Core 1.14.6 only, because newer versions change the order of transaction outputs, and P2FK depends on that order.</p>
 <p><strong>Linking Solana to Dogecoin.</strong> Each Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so ownership links back to that wallet. The per-user Dogecoin key that signs these records is derived by the portal and is <strong>not exportable, by design</strong>.</p>
 <figure class="doc-fig"><img src="/whitepaper/assets/action-flow.png" alt="Life of one action (planned flow)" width="1805" height="1098" loading="lazy" decoding="async"><figcaption aria-hidden="true">Life of one action (planned flow)</figcaption></figure>
-<p><strong>Phasing.</strong> Phase 1 uses Solana memos plus IPFS CIDs for posts, with Dogecoin (via Sup&#39;s format) for objects. A <strong>daily Dogecoin anchor</strong>, one batch hash covering the day&#39;s Solana activity, is planned for later. The marketplace starts <strong>preview-only</strong>.</p>
+<p><strong>Phasing.</strong> Ownership records (profiles, store items, Spaces, channels, gives and sales) go to Dogecoin directly, each as its own transaction. Follows and messages are paid on Solana and recorded to Dogecoin in periodic batches. Sales start in each owner&#39;s store. A shared marketplace comes later.</p>
+<p><strong>Kept off-chain, on purpose (planned).</strong> The portal keeps as little as possible in its own database: only what the chains and IPFS cannot hold. Recently viewed profiles stay on your device and are never sent to a server.</p>
 <h2 id="wh-7-tokenomics-and-supply">7. Tokenomics and supply</h2>
 <div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
 <table>
@@ -177,11 +205,11 @@
 <p>There is no reserved team or marketing allocation and nothing scheduled to unlock. Supply only goes one way: down, through burns.</p>
 <h2 id="wh-8-burn-mechanics-and-the-fee-model">8. Burn mechanics and the fee model</h2>
 <h3 id="wh-8-1-how-an-action-is-priced">8.1 How an action is priced</h3>
-<p>Each portal action has a simple price in USD terms, converted to MEOWE at the moment of the action and paid in MEOWE. <strong>A post costs about a penny</strong> (~$0.01, about 1,246 MEOWE at today&#39;s estimated price), and <strong>creating a profile costs pennies</strong> (~$0.15, about 19,025 MEOWE). Every fee is split three ways:</p>
+<p>Each portal action has a simple price in USD terms, converted to MEOWE at the moment of the action and paid in MEOWE. <strong>A message costs about a penny</strong> (~$0.01, about 1,246 MEOWE at today&#39;s estimated price), and <strong>creating a profile costs pennies</strong> (~$0.15, about 19,025 MEOWE). Prices for follows, store mints, Spaces, channels, gives and sales: — (to be published). Every fee is split three ways:</p>
 <figure class="doc-fig"><img src="/whitepaper/assets/fee-split.png" alt="Fee split per action (planned)" width="1435" height="969" loading="lazy" decoding="async"><figcaption aria-hidden="true">Fee split per action (planned)</figcaption></figure>
 <ul>
 <li><strong>30% burned forever.</strong> Removed from supply permanently.</li>
-<li><strong>60% swapped to DOGE.</strong> Pays for Dogecoin injections and funds the treasury.</li>
+<li><strong>60% swapped to DOGE.</strong> Goes to the treasury, which keeps the portal running.</li>
 <li><strong>10% to community nodes.</strong> Pays the people who run IPFS pinning and indexer nodes.</li>
 </ul>
 <p>The treasury also sponsors users&#39; Solana network fees, with an optional user-paid speedup for people who want faster processing.</p>
@@ -197,7 +225,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>One post</td>
+<td>One message</td>
 <td>~1,246 MEOWE (~$0.01)</td>
 <td>~374 MEOWE</td>
 </tr>
@@ -207,20 +235,20 @@
 <td>~5,700 MEOWE</td>
 </tr>
 <tr>
-<td>1,000 posts a day</td>
+<td>1,000 messages a day</td>
 <td>~1.25M MEOWE a day</td>
 <td>~374K a day, ~136M a year</td>
 </tr>
 </tbody></table>
 </div>
-<p>At 1,000 posts a day, about <strong>136M MEOWE a year</strong> would be burned, roughly <strong>14% of the current ~960.7M supply</strong>. Each user only burns pennies&#39; worth, but it adds up across the community.</p>
+<p>At 1,000 messages a day, about <strong>136M MEOWE a year</strong> would be burned, roughly <strong>14% of the current ~960.7M supply</strong>. Each user only burns pennies&#39; worth, but it adds up across the community.</p>
 <h3 id="wh-8-3-fees-are-priced-in-pennies-not-tokens">8.3 Fees are priced in pennies, not tokens</h3>
-<p>This is the key mechanic. A post costs about a penny whether MEOWE is cheap or expensive. So the <strong>number of tokens</strong> burned per action depends on price:</p>
+<p>This is the key mechanic. A message costs about a penny whether MEOWE is cheap or expensive. So the <strong>number of tokens</strong> burned per action depends on price:</p>
 <blockquote>
 <p><strong>tokens burned per action = 30% × (fee in dollars ÷ MEOWE price)</strong></p>
 </blockquote>
-<p>If MEOWE&#39;s price rises, the same penny fee burns fewer tokens: at ten times today&#39;s price, a post would burn about 37 MEOWE instead of 374. The dollar value burned stays the same.</p>
-<figure class="doc-fig"><img src="/whitepaper/assets/burn-vs-price.png" alt="Burn per post vs price" width="1715" height="972" loading="lazy" decoding="async"><figcaption aria-hidden="true">Burn per post vs price</figcaption></figure>
+<p>If MEOWE&#39;s price rises, the same penny fee burns fewer tokens: at ten times today&#39;s price, a message would burn about 37 MEOWE instead of 374. The dollar value burned stays the same.</p>
+<figure class="doc-fig"><img src="/whitepaper/assets/burn-vs-price.png" alt="Burn per message vs price" width="1715" height="972" loading="lazy" decoding="async"><figcaption aria-hidden="true">Burn per message vs price</figcaption></figure>
 <p>Now put that together with steady usage and steady demand (a roughly constant market cap). As supply shrinks, each token is worth a little more, so each action burns a little less. The result is that the burn removes a <strong>roughly constant share of the remaining supply</strong> each year, about 14% a year in the illustration, rather than a fixed number of tokens:</p>
 <blockquote>
 <p><strong>supply after t years = today&#39;s supply × (1 − 0.14)^t</strong></p>
@@ -266,18 +294,18 @@
 </ul>
 <p>Rewards depend on trading activity in the pool and can be small or zero. They are not interest, yield or a guaranteed income.</p>
 <h2 id="wh-10-treasury-sustainability">10. Treasury sustainability</h2>
-<p>The treasury keeps the portal running: it funds writing records to Dogecoin and sponsors users&#39; Solana fees. It is designed to fund itself from usage instead of from a large war chest.</p>
+<p>The treasury keeps the portal running and sponsors users&#39; Solana fees. It is designed to fund itself from usage instead of from a large war chest.</p>
 <figure class="doc-fig"><img src="/whitepaper/assets/treasury-loop.png" alt="Self-funding treasury loop" width="1650" height="972" loading="lazy" decoding="async"><figcaption aria-hidden="true">Self-funding treasury loop</figcaption></figure>
 <ul>
 <li><strong>Starting deposit.</strong> The treasury starts with a DOGE deposit of a few hundred dollars.</li>
 <li><strong>Income.</strong> 60% of every fee is swapped to DOGE inside the user&#39;s own transaction, so the treasury receives DOGE, not MEOWE.</li>
-<li><strong>What it funds.</strong> Writing records to Dogecoin and sponsored Solana fees.</li>
-<li><strong>Self-funding.</strong> Fees are set to fully cover writing records to Dogecoin and running the network, so the treasury funds itself from usage after the initial deposit.</li>
-<li><strong>wDOGE to DOGE.</strong> Swaps produce wrapped DOGE on Solana. The treasury redeems it to native DOGE <strong>on demand</strong>, through a bridge or an exchange, when it needs to pay for Dogecoin records.</li>
+<li><strong>What it funds.</strong> Keeping the portal running, including sponsored Solana fees.</li>
+<li><strong>Self-funding.</strong> After the starting deposit, the treasury is designed to run on its share of portal fees.</li>
+<li><strong>wDOGE to DOGE.</strong> Swaps produce wrapped DOGE on Solana. The treasury redeems it to native DOGE <strong>on demand</strong>, through a bridge or an exchange.</li>
 </ul>
 <p>If prices or network fees change, the fee in MEOWE adjusts, because the price of each action is set in USD or DOGE terms.</p>
 <h2 id="wh-11-security-and-verifiability">11. Security and verifiability</h2>
-<p><strong>Anyone can check.</strong> Profiles, items and ownership live on Dogecoin mainnet. Anyone can verify marketplace objects by syncing a Dogecoin node and running the indexer. You do not need to trust the project&#39;s servers.</p>
+<p><strong>Anyone can check.</strong> Profiles, store items, Spaces, channels and who owns them live on Dogecoin mainnet, each as its own transaction. Follows and messages can be checked against the periodic Dogecoin batch record. Anyone can verify all of this by syncing a Dogecoin node and running the indexer. You do not need to trust the project&#39;s servers.</p>
 <figure class="doc-fig"><img src="/whitepaper/assets/ownership-link.png" alt="Ownership link" width="1805" height="782" loading="lazy" decoding="async"><figcaption aria-hidden="true">Ownership link</figcaption></figure>
 <p><strong>Ownership traces back to the payer.</strong> Every Dogecoin P2FK injection carries a signature unique to the Solana wallet that paid or burned for it, so an item on Dogecoin can be traced to the wallet that created it.</p>
 <p><strong>Non-exportable Dogecoin key.</strong> The per-user Dogecoin key is derived by the portal, only signs records, never holds coins, and cannot be exported. This keeps a user&#39;s Dogecoin identity bound to their Solana wallet.</p>
@@ -304,23 +332,28 @@
 </tr>
 <tr>
 <td>Phase 1</td>
-<td>Portal MVP: wallet, profiles, posts, burn engine</td>
+<td>Portal: wallet, profile, store minting, Spaces and channels, each recorded on Dogecoin. The Dogecoin indexer, reading from the first block</td>
 <td>Planned</td>
 </tr>
 <tr>
 <td>Phase 2</td>
-<td>Dogecoin P2FK item minting + the Dogecoin indexer</td>
+<td>Messages and follows paid in MEOWE, with periodic Dogecoin batch records. Share any object as a card. Burn engine</td>
 <td>Planned</td>
 </tr>
 <tr>
 <td>Phase 3</td>
-<td>Marketplace (preview first, then trading) + holder wDOGE rewards</td>
+<td>Selling from your store, including Spaces with their channels. Holder wDOGE rewards</td>
 <td>Planned</td>
 </tr>
 <tr>
 <td>Phase 4</td>
-<td>Daily Dogecoin anchor + community-run nodes</td>
+<td>Search across everything, or only &quot;Mine&quot;. Recently viewed profiles kept on your device. Community-run nodes</td>
 <td>Planned</td>
+</tr>
+<tr>
+<td>Later</td>
+<td>A shared marketplace that lists items from every store. Optional &quot;Carve it on Doge&quot; for single messages</td>
+<td>Later</td>
 </tr>
 </tbody></table>
 </div>
@@ -356,16 +389,16 @@
 </tr>
 </tbody></table>
 </div>
-<p><strong>Always check the contract address</strong> before buying; the only official links are the ones above. Ways to help: make memes, share them, run a node when community nodes open up, and give feedback on the portal.</p>
+<p><strong>Always check the contract address</strong> before buying; the only official links are the ones above. Ways to help: make content, share it, run a node when community nodes open up, and give feedback on the portal.</p>
 <div class="pb"></div>
 
 <h2 id="wh-14-disclaimer">14. Disclaimer</h2>
 <p><strong>Not financial advice.</strong> This white paper is for information and community discussion only. It is not financial, investment, legal or tax advice, and it is not an offer or solicitation to buy or sell any token or security. <strong>Do your own research (DYOR)</strong> and talk to a qualified professional before making any decision.</p>
-<p><strong>No promises.</strong> Nothing here promises returns, profits, price levels, price targets, listings, partnerships or delivery dates. Illustrative figures are based on today&#39;s estimated prices and simple assumptions. They are not projections and actual results may be very different.</p>
+<p><strong>No promises.</strong> Nothing here promises returns, profits, price levels, price targets, listings, partnerships or delivery dates. Illustrative figures are based on today&#39;s estimated prices and simple assumptions. They are not projections and actual results may be very different. Owning a profile, store, Space or channel does not entitle anyone to a share of fees or income.</p>
 <p><strong>Risks.</strong> Buying, holding or using MEOWE involves serious risk, including:</p>
 <ul>
 <li><strong>Meme-token volatility.</strong> MEOWE&#39;s price can rise or fall sharply, and you can lose all of the money you put in. Liquidity can be thin.</li>
-<li><strong>Development risk.</strong> The MEOWE Portal is <strong>not live</strong>. The portal, burn engine, indexer, marketplace and holder rewards are planned and may be delayed, changed, reduced or never delivered.</li>
+<li><strong>Development risk.</strong> The MEOWE Portal is <strong>not live</strong>. The portal (profiles, stores, Spaces, channels and messaging), burn engine, indexer and holder rewards are planned and may be delayed, changed, reduced or never delivered.</li>
 <li><strong>Holder rewards are not confirmed live.</strong> Rewards depend on trading activity and may be small, irregular or zero.</li>
 <li><strong>Smart-contract and bridge risk.</strong> wDOGE is a wrapped asset that depends on bridge smart contracts and signers. A bug, hack, pause or failure could make wDOGE impossible to redeem or worthless. Pools, programs and wallets can also contain bugs.</li>
 <li><strong>Technology risk.</strong> Solana, Dogecoin, IPFS and pinning services can suffer outages, fee spikes or changes. Content stays available only while someone pins it.</li>
@@ -380,8 +413,8 @@
       <div class="doc-scroll" id="reader-technical" role="tabpanel" aria-labelledby="reader-tab-technical" tabindex="0">
 <article class="doc" data-doc="technical">
 <h1 id="tech-title">Meowecoin (MEOWE): Technical Overview</h1>
-<p><em>Architecture, data flow and fee mechanics of the MEOWE Portal (&quot;the forge&quot;). Version 1.0, October 2026.</em></p>
-<p><strong>Audience:</strong> developers and technical investors. <strong>Status:</strong> the MEOWE Portal is <strong>in development</strong>. Everything in this document about the portal, the burn engine, the indexer, the marketplace and holder rewards describes the <strong>planned</strong> design, not a live system. Numbers marked <em>illustration</em> use today&#39;s estimated prices and are not projections.</p>
+<p><em>Decentralized content monetization, powered by $MEOWE. Architecture, data flow and fee mechanics of the MEOWE Portal (&quot;the forge&quot;). Version 1.1, October 2026.</em></p>
+<p><strong>Audience:</strong> developers and technical investors. <strong>Status:</strong> the MEOWE Portal is <strong>in development</strong>. Everything in this document about the portal, the burn engine, the indexer, stores, Spaces and holder rewards describes the <strong>planned</strong> design, not a live system. Numbers marked <em>illustration</em> use today&#39;s estimated prices and are not projections.</p>
 <div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
 <table>
 <thead>
@@ -413,7 +446,7 @@
 </tbody></table>
 </div>
 <h2 id="te-1-system-overview">1. System overview</h2>
-<p>The portal is a separate web app from meoweco.in. It lets holders create profiles, post messages and memes, mint items and later trade them, paying <strong>only in MEOWE</strong>. Four layers do the work:</p>
+<p>The portal is a separate web app from meoweco.in. It lets holders create profiles, open a store and mint items into it, create Spaces with text channels, follow and message each other, and give away or sell what they own from their own store, paying <strong>only in MEOWE</strong>. Four layers do the work:</p>
 <div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
 <table>
 <thead>
@@ -424,7 +457,7 @@
 </thead>
 <tbody><tr>
 <td><strong>Solana</strong></td>
-<td>Payment layer. Every action is one Solana transaction that pays the MEOWE fee, burns the burn share, swaps the swap share to wDOGE for the treasury, and carries an SPL memo with a small JSON pointer (IPFS CID).</td>
+<td>Payment layer. Every paid action is one Solana transaction that pays the MEOWE fee, burns the burn share, swaps the swap share to wDOGE for the treasury, and carries an SPL memo. For follows and messages, the memo is a small JSON pointer holding an IPFS CID.</td>
 </tr>
 <tr>
 <td><strong>IPFS</strong></td>
@@ -432,11 +465,11 @@
 </tr>
 <tr>
 <td><strong>Dogecoin mainnet</strong></td>
-<td>Permanent record layer for profiles, items and ownership, written in Sup&#39;s P2FK (pay-to-fake-key) format, the same way Sup writes records to Bitcoin.</td>
+<td>Ownership layer. Profiles, store items, Spaces and channels, and every give and sale, are each written as their own transaction in P2FK (Pay to Future Key), the record format of embii&#39;s Sup!? app, the same way Sup writes records to Bitcoin. Follows and messages are covered by a periodic batch record.</td>
 </tr>
 <tr>
 <td><strong>Backend</strong></td>
-<td>Relayer (watches Solana, funds and broadcasts Dogecoin injections, sponsors Solana fees), treasury, and the project&#39;s own Dogecoin P2FK indexer.</td>
+<td>Relayer (watches Solana, builds and broadcasts Dogecoin records, writes the periodic batch record, sponsors users&#39; Solana fees), treasury, and the project&#39;s own Dogecoin P2FK indexer.</td>
 </tr>
 </tbody></table>
 </div>
@@ -452,20 +485,30 @@
 <ol>
 <li><strong>Compose and pin.</strong> The portal uploads the file and a JSON payload to IPFS and gets a CID.</li>
 <li><strong>Quote.</strong> The fee is computed in USD or DOGE terms and converted to MEOWE at the current pool price.</li>
-<li><strong>One Solana transaction.</strong> The user signs a single transaction containing the MEOWE burn, the swap of the swap share into wDOGE paid to the treasury (with a minimum-output guard, so if the price moves too far the transaction fails and nothing is charged), the node share, and an SPL memo. The memo holds a small JSON pointer, for example (illustrative format): <code>{&quot;v&quot;:1,&quot;t&quot;:&quot;post&quot;,&quot;id&quot;:&quot;&lt;action-id&gt;&quot;,&quot;cid&quot;:&quot;bafy...&quot;}</code>.</li>
-<li><strong>Relay.</strong> The relayer watches Solana for finalized portal actions. Posts and profile updates are complete at this point (Solana memo + IPFS CID). For lasting records (profiles, items, ownership changes) it builds a Sup-format P2FK transaction signed by the user&#39;s derived Dogecoin key, funds it from treasury DOGE, and broadcasts it to Dogecoin mainnet.</li>
-<li><strong>Index.</strong> The project&#39;s Dogecoin indexer reads every block, rebuilds P2FK messages using Sup&#39;s rules, and serves the current state (&quot;what does this address own?&quot;) back to the portal.</li>
+<li><strong>One Solana transaction.</strong> The user signs a single transaction containing the MEOWE burn, the swap of the swap share into wDOGE paid to the treasury (with a minimum-output guard, so if the price moves too far the transaction fails and nothing is charged), the node share, and an SPL memo. For a follow or a message the memo holds a small JSON pointer, for example (illustrative format): <code>{&quot;v&quot;:1,&quot;t&quot;:&quot;msg&quot;,&quot;id&quot;:&quot;&lt;action-id&gt;&quot;,&quot;cid&quot;:&quot;bafy...&quot;}</code>.</li>
+<li><strong>Relay.</strong> The relayer watches Solana for finalized portal actions.<ul>
+<li><strong>Owned objects and gives/sales</strong> (profiles, store items, Spaces, channels): it builds a Sup-format P2FK transaction signed by the user&#39;s derived Dogecoin key and broadcasts it to Dogecoin mainnet. Each is its own transaction.</li>
+<li><strong>Follows and messages</strong>: these are visible as soon as the Solana memo and IPFS CID exist. Periodically, the relayer writes one Dogecoin record (a Merkle root) that covers a whole batch of follows and messages. There is no per-message Dogecoin dust output.</li>
+<li><strong>Private messages</strong> are encrypted before they are pinned to IPFS and are covered by the same periodic batch.</li>
+<li><strong>Exception: &quot;Carve it on Doge&quot;</strong> (planned, optional, opt-in). A user can choose to write one message in full to Dogecoin as its own P2FK transaction, instead of leaving it only in the batch. Price: —.</li>
+</ul>
+</li>
+<li><strong>Index.</strong> The project&#39;s Dogecoin indexer reads every block from block 0 (the first block), rebuilds P2FK records using Sup&#39;s rules, and serves the current state (&quot;what does this address own?&quot;, &quot;which channels belong to this Space?&quot;) back to the portal.</li>
 </ol>
 <h2 id="te-4-the-dogecoin-record-layer-p2fk">4. The Dogecoin record layer (P2FK)</h2>
 <ul>
-<li><strong>How P2FK stores data.</strong> A message is cut into small pieces, each encoded as a &quot;fake&quot; destination address that receives a dust output. Those outputs can never be spent, so every Dogecoin full node keeps them forever. Sup reassembles the pieces in output order and verifies the signature at the front.</li>
-<li><strong>Why our own indexer.</strong> p2fk.io indexes Sup records on Bitcoin only. The project therefore runs its own Dogecoin indexer that applies Sup&#39;s profile and object rules and answers the same kinds of queries. Community nodes can run the same indexer later.</li>
-<li><strong>Verifiability.</strong> Anyone can verify marketplace objects and ownership by syncing a Dogecoin node and running the indexer; no trust in the project&#39;s servers is required.</li>
-<li><strong>Phasing.</strong> Phase 1 uses Solana memo + IPFS CID, with Dogecoin (via Sup&#39;s format) for objects. A <strong>daily Dogecoin anchor</strong>, one batch hash of the day&#39;s Solana actions, comes later (Phase 4). The marketplace starts <strong>preview-only</strong>.</li>
+<li><strong>How P2FK stores data.</strong> A record is cut into small pieces, each encoded as a destination address that receives a dust output. No one holds a key for those addresses, so the outputs are never spent and every Dogecoin full node keeps them forever. Sup reassembles the pieces in output order and verifies the signature at the front.</li>
+<li><strong>Object fields.</strong> Objects use the same fields as embii&#39;s Sup samples: <code>urn</code> (main file), <code>img</code>, <code>uri</code>, <code>nme</code> (name), <code>dsc</code> (description), <code>atr</code> (attributes), <code>lic</code> (license), <code>cre</code> (creators), <code>own</code> (owners), <code>roy</code> (royalties) and <code>max</code> (maximum supply).</li>
+<li><strong>Object address.</strong> Every object&#39;s permanent address is its first creator address (<code>cre[0]</code>). Each object (profile, store item, Space, channel) has its own chat at that address, and a message can share any object as a card, picked from the user&#39;s store or pasted by address.</li>
+<li><strong>Spaces and channels.</strong> A Space is an object with <code>lic</code> = <code>meowe:space</code>. A channel is an object with <code>lic</code> = <code>meowe:space:channel</code> and <code>uri</code> set to its Space&#39;s address. Only channels created by the Space&#39;s owner count as part of the Space. Giving or selling a Space moves its channels with it. Spaces are sold through the owner&#39;s store.</li>
+<li><strong>Why our own indexer.</strong> p2fk.io indexes Sup records on Bitcoin only. The project therefore runs its own Dogecoin indexer that applies Sup&#39;s profile and object rules and answers the same kinds of queries. It runs on <strong>Dogecoin Core 1.14.6 only</strong>, because newer versions reorder <code>sendmany</code> outputs and P2FK depends on output order. Community nodes can run the same indexer later.</li>
+<li><strong>Verifiability.</strong> Anyone can verify store items, Spaces, channels and ownership by syncing a Dogecoin node and running the indexer; no trust in the project&#39;s servers is required. A message can be checked against the periodic batch record that covers it.</li>
+<li><strong>Phasing.</strong> Owned objects and every give and sale go to Dogecoin directly, each as its own transaction. Follows and messages are paid on Solana and recorded to Dogecoin in periodic batches. Selling starts in each owner&#39;s store; a shared marketplace across all stores comes later.</li>
+<li><strong>Kept off-chain (planned).</strong> A minimal database holds only what the chains and IPFS cannot. &quot;Recently viewed&quot; profiles are stored on the user&#39;s device only.</li>
 </ul>
 <h2 id="te-5-fee-mechanics">5. Fee mechanics</h2>
-<p><strong>Pricing.</strong> Each action has a simple price in USD terms and is paid in MEOWE at the current price. A post costs about a penny (~$0.01, about 1,246 MEOWE at today&#39;s estimated price); creating a profile costs pennies (~$0.15, about 19,025 MEOWE).</p>
-<pre><code>fee_USD      = price of the action in USD   (post ≈ $0.01, profile ≈ $0.15)
+<p><strong>Pricing.</strong> Each action has a simple price in USD terms and is paid in MEOWE at the current price. A message costs about a penny (~$0.01, about 1,246 MEOWE at today&#39;s estimated price); creating a profile costs pennies (~$0.15, about 19,025 MEOWE). Other actions (follows, store mints, Spaces, channels, gives, sales, &quot;Carve it on Doge&quot;): — (to be published).</p>
+<pre><code>fee_USD      = price of the action in USD   (message ≈ $0.01, profile ≈ $0.15)
 fee_MEOWE    = fee_USD / P_MEOWE             (P_MEOWE = MEOWE price in USD at quote time)
 
 burn         = 0.30 × fee_MEOWE   → burned forever (sent to the burn, removed from supply)
@@ -473,7 +516,7 @@ swap         = 0.60 × fee_MEOWE   → swapped to wDOGE in the same tx → treas
 nodes        = 0.10 × fee_MEOWE   → community IPFS and indexer operators
 </code></pre>
 <figure class="doc-fig"><img src="/whitepaper/assets/fee-split.png" alt="Fee split per action (planned)" width="1435" height="969" loading="lazy" decoding="async"><figcaption aria-hidden="true">Fee split per action (planned)</figcaption></figure>
-<p><strong>Treasury.</strong> Treasury income is the 60% swap share of action fees plus a starting DOGE deposit of a few hundred dollars. (The PumpSwap creator fee is planned to go 100% to holders, so it is not treasury income.) The treasury funds the Dogecoin record writes and <strong>sponsors users&#39; Solana fees</strong> by acting as fee payer, with an optional user-paid speedup. wDOGE is redeemed to native DOGE <strong>on demand</strong>, via bridge or exchange. Fees are set to fully cover writing records to Dogecoin and running the network, so the treasury funds itself from usage after the initial deposit.</p>
+<p><strong>Treasury.</strong> Treasury income is the 60% swap share of action fees plus a starting DOGE deposit of a few hundred dollars. (The PumpSwap creator fee is planned to go 100% to holders, so it is not treasury income.) The treasury keeps the portal running and <strong>sponsors users&#39; Solana fees</strong> by acting as fee payer, with an optional user-paid speedup. wDOGE is redeemed to native DOGE <strong>on demand</strong>, via bridge or exchange. After the initial deposit, the treasury is designed to run on its share of portal fees.</p>
 <p><strong>Illustration at today&#39;s estimated prices (not a projection):</strong></p>
 <div class="doc-table" tabindex="0" role="region" aria-label="Scrollable table">
 <table>
@@ -485,7 +528,7 @@ nodes        = 0.10 × fee_MEOWE   → community IPFS and indexer operators
 </tr>
 </thead>
 <tbody><tr>
-<td>Post</td>
+<td>Message</td>
 <td>~1,246 MEOWE (~$0.01)</td>
 <td>~374 MEOWE</td>
 </tr>
@@ -495,7 +538,7 @@ nodes        = 0.10 × fee_MEOWE   → community IPFS and indexer operators
 <td>~5,700 MEOWE</td>
 </tr>
 <tr>
-<td>1,000 posts/day</td>
+<td>1,000 messages/day</td>
 <td>~1.25M MEOWE/day</td>
 <td>~374K/day ≈ 136M/yr ≈ 14% of ~960.7M</td>
 </tr>
@@ -510,10 +553,10 @@ supply after t years     S_t = S_0 × (1 − k)^t      (illustration: k ≈ 0.14
 </code></pre>
 <p>As supply shrinks and each token is worth more, each action burns <strong>fewer</strong> tokens. Under steady usage and demand the burn removes a roughly constant share of what remains: supply keeps falling but never reaches zero (geometric decay). At 14% a year the illustrative path is ~960.7M → ~452M after 5 years → ~213M after 10 years.</p>
 <figure class="doc-fig"><img src="/whitepaper/assets/supply-decay.png" alt="Supply over time, illustration" width="1624" height="1036" loading="lazy" decoding="async"><figcaption aria-hidden="true">Supply over time, illustration</figcaption></figure>
-<p><strong>Economic honesty.</strong> Market cap = price × supply, so burning tokens does not by itself raise market cap. The value case is (1) using the portal requires buying MEOWE, which is buy pressure, and (2) burns make each remaining token a larger share of the network. No returns or price targets are implied.</p>
+<p><strong>Economic honesty.</strong> Market cap = price × supply, so burning tokens does not by itself raise market cap. The value case is (1) using the portal requires buying MEOWE, which is buy pressure, and (2) burns make each remaining token a larger share of the network. No returns or price targets are implied. Owning a profile, store, Space or channel does not entitle anyone to a share of fees.</p>
 <h2 id="te-7-security-and-trust-model">7. Security and trust model</h2>
 <ul>
-<li><strong>Verifiable records:</strong> profiles, items and ownership live on Dogecoin mainnet and can be checked by anyone with a Dogecoin node and the indexer.</li>
+<li><strong>Verifiable records:</strong> profiles, store items, Spaces, channels and ownership live on Dogecoin mainnet and can be checked by anyone with a Dogecoin node and the indexer. Follows and messages can be checked against the periodic batch record.</li>
 <li><strong>Atomic payment:</strong> burn, swap and memo are in one Solana transaction with a slippage guard; it either all succeeds or nothing is charged.</li>
 <li><strong>Key design:</strong> the derived Dogecoin key is non-exportable and signs only; browser-held wallets depend on the user&#39;s password and on the site serving clean code.</li>
 <li><strong>Treasury hot wallet:</strong> the relayer needs a funded Dogecoin key; the design keeps only an operating float online.</li>
@@ -537,23 +580,28 @@ supply after t years     S_t = S_0 × (1 − k)^t      (illustration: k ≈ 0.14
 </tr>
 <tr>
 <td>1</td>
-<td>Portal MVP: wallet, profiles, posts, burn engine</td>
+<td>Portal: wallet, profiles, store minting, Spaces and channels as Dogecoin P2FK objects + Dogecoin indexer from block 0</td>
 <td>Planned</td>
 </tr>
 <tr>
 <td>2</td>
-<td>Dogecoin P2FK item minting + Dogecoin indexer</td>
+<td>Messages and follows paid in MEOWE, periodic Dogecoin batch records, object cards in messages, burn engine</td>
 <td>Planned</td>
 </tr>
 <tr>
 <td>3</td>
-<td>Marketplace (preview first, then trading) + holder wDOGE rewards</td>
+<td>Selling from each owner&#39;s store (including Spaces with their channels) + holder wDOGE rewards</td>
 <td>Planned</td>
 </tr>
 <tr>
 <td>4</td>
-<td>Daily Dogecoin anchor + community-run nodes</td>
+<td>Search (all, or &quot;Mine&quot; from wallet history), on-device &quot;recently viewed&quot;, community-run nodes</td>
 <td>Planned</td>
+</tr>
+<tr>
+<td>Later</td>
+<td>Shared marketplace across all stores; optional &quot;Carve it on Doge&quot; for single messages</td>
+<td>Later</td>
 </tr>
 </tbody></table>
 </div>
@@ -589,7 +637,6 @@ supply after t years     S_t = S_0 × (1 − k)^t      (illustration: k ≈ 0.14
         var dl = document.getElementById('doc-download');
         dl.href = file;
         dl.setAttribute('download', file);
-        document.getElementById('doc-back').href = '../#' + name;
         document.title = titles[name];
       }
       function select(name, focusTab) {
