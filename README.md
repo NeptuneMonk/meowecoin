@@ -4,7 +4,7 @@
 
 Meowecoin (MEOWE) is a community-run token on Solana, paired with wrapped DOGE. The community is building **DustForge**, where you forge content on Dogecoin. MEOWE is its first and home token. DustForge is a place to create, own and sell tokenized content. Profiles, store items, Spaces and channels are recorded on Dogecoin mainnet with P2FK, and every action is paid in MEOWE.
 
-This repo is the **meoweco.in website**: plain HTML and CSS with a little inline JavaScript. There is no build step for the site, no backend, no wallet connection and no live transactions. DustForge itself is a separate app; the site links to its preview at https://neptunemonk.github.io/meowcoin-portal/.
+This repo is the **meoweco.in website**: plain HTML and CSS with a little inline JavaScript. There is no build step for the site, no backend, no wallet connection and no live transactions. DustForge itself is a separate app; the site links to its preview at https://thedustforge.in/.
 
 ## Structure
 
